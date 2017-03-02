@@ -1,0 +1,19 @@
+<view class="loginwrap">
+  <view class="loginbox">
+    <input class="logininput" type="tel" placeholder="请输入手机号码" />
+  </view>
+  <view class="loginbox">
+    <input class="logininput" type="text" placeholder="请输入密码" />
+  </view>
+</view>
+<view>
+  <label class="checkbox">
+    <checkbox value="1" checked="checked" />
+    <text>记住密码</text>
+  </label>
+</view>
+<view class="loginbtn">登录</view>
+<view class="regpwd">
+    <text class="txtleft">注册</text>
+    <text class="txtright">忘记密码</text>
+</view>

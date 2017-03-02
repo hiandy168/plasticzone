@@ -1,0 +1,18 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/protocol/protocol",
+    "pages/help/help",
+    "pages/login/login",
+    "pages/headline/headline",
+    "pages/headlinedetail/headlinedetail"
+    
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#ff5000",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"#fff",
+    "backgroundColor": "#eeeeee"
+  }
+}

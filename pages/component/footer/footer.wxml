@@ -1,0 +1,31 @@
+<template name="footer">
+  <view class="footer">
+    <view class="footerli">
+      <view class="footerwrap" bindtap="toRelease">
+        <view class="footerico footer1"></view>
+        <text>供求</text>
+      </view>
+    </view>
+    <view class="footerli">
+      <view class="footerwrap" bindtap="toIndex">
+        <view class="footerico footer2"></view>
+        <text>通讯录</text>
+      </view>
+    </view>
+    <view class="footerli">
+        <view class="releaseicon"></view>
+    </view>
+    <view class="footerli">
+      <view class="footerwrap">
+        <view class="footerico footer3"></view>
+        <text>发现</text>
+      </view>
+    </view>
+    <view class="footerli">
+      <view class="footerwrap">
+        <view class="footerico footer4"></view>
+        <text>我的</text>
+      </view>
+    </view>
+  </view>
+</template>

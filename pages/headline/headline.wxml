@@ -1,0 +1,65 @@
+<view class="headlineul">
+  <view class="headlineli">
+    <view class="headlineicon hicon"></view>
+    <view>塑料上游</view>
+  </view>
+  <view class="headlineli">
+    <view class="headlineicon hicon2"></view>
+    <view>早盘预报</view>
+  </view>
+  <view class="headlineli">
+    <view class="headlineicon hicon3"></view>
+    <view>企业动态</view>
+  </view>
+  <view class="headlineli">
+    <view class="headlineicon hicon4"></view>
+    <view>中晨塑说</view>
+  </view>
+  <view class="headlineli">
+    <view class="headlineicon hicon5"></view>
+    <view>美金市场</view>
+  </view>
+  <view class="headlineli">
+    <view class="headlineicon hicon6"></view>
+    <view>期货资讯</view>
+  </view>
+  <view class="headlineli">
+    <view class="headlineicon hicon7"></view>
+    <view>装置动态</view>
+  </view>
+  <view class="headlineli">
+    <view class="headlineicon hicon8"></view>
+    <view>期刊报告</view>
+  </view>
+  <view class="headlineli">
+    <view class="headlineicon hicon9"></view>
+    <view>独家解读</view>
+  </view>
+</view>
+<view class="headlineul2">
+  <view class="headlineli2">
+    <view class="title">[PVC]期货早报：夜盘一片红 能否影响塑市交投？</view>
+    <view class="description">我的塑料网预计今日国内PE市场横盘整理。LLDPE主流市场价格在10000-10400元/吨，LDPE主流市场价格在11...</view>
+    <view class="time">08:34</view>
+  </view>
+  <view class="headlineli2">
+    <view class="title">[PP]早盘预测：塑市盘整运行，原油上行能否提振商家信心？</view>
+    <view class="description">我的塑料网预计今日国内PE市场横盘整理。LLDPE主流市场价格在10000-10400元/吨，LDPE主流市场价格在11...</view>
+    <view class="time">08:34</view>
+  </view>
+  <view class="headlineli2">
+    <view class="title">[PVC]期货早报：夜盘一片红 能否影响塑市交投？</view>
+    <view class="description">我的塑料网预计今日国内PE市场横盘整理。LLDPE主流市场价格在10000-10400元/吨，LDPE主流市场价格在11...</view>
+  <view class="time">08:34</view>
+  </view>
+  <view class="headlineli2">
+    <view class="title">[PVC]2月13聚氯乙烯PVC早提示</view>
+    <view class="description">【早提示】我的塑料网（www.myplas.com）上周末国内PVC市场实盘出现小幅让利。PVC期货尾盘拉高，但华东、华...</view>
+  <view class="time">08:34</view>
+  </view>
+    <view class="headlineli2">
+    <view class="title">[PVC]2月13聚氯乙烯PVC早提示</view>
+    <view class="description">【早提示】我的塑料网（www.myplas.com）上周末国内PVC市场实盘出现小幅让利。PVC期货尾盘拉高，但华东、华...</view>
+  <view class="time">08:34</view>
+  </view>
+</view>

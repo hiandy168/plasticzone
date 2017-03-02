@@ -1,0 +1,11 @@
+<import src="../../wxParse/wxParse.wxml"/> 
+<view class="headlinewrap">
+    <view class="headlinetitle">
+        <view class="headlineh">[PE] 交易收评：多头上膛，塑市打响上涨枪声</view>
+        <view class="headlinep">作者:中晨   阅读数量:298 发布时间：2017-02-13</view>
+    </view>
+    <view class="headlinetxt">   
+    <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+    </view>
+</view>
+

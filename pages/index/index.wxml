@@ -1,0 +1,85 @@
+
+<!--<import src="/pages/component/footer/footer.wxml" />-->
+<view class="search">
+  <view class="searchwrap">
+    <view class="searchicon"></view>
+    <input class="searchinput" placeholder="请输入公司、姓名、牌号查询" />
+  </view>
+  <view class="filter" bindtap="actionSheetTap">
+    综合排序
+    <view class="downarrow"></view>
+  </view>
+</view>
+<view class="payfans">
+  <view class="fanswrap">
+    <view id="img1" class="fansimg"></view>
+    <view class="fanstxt">我关注的人</view>
+  </view>
+  <view class="fanswrap">
+    <view id="img2" class="fansimg"></view>
+    <view class="fanstxt">关注我的人</view>
+  </view>
+</view>
+<view class="nameul">
+  <view class="nameli" wx:for="{{name}}">
+    <view class="avatorwrap">
+      <view class="avator">
+        <image class="avatorimg" src="{{item.thumb}}"></image>
+      </view>
+      <view class="iconV {{item.is_pass == 1 ? 'v1':'v2'}}"></view>
+    </view>
+    <view class="nameinfo">
+      <view class="p first">
+        <view class="icon wxGs"></view>
+        {{item.c_name}}
+        <view class="icon wxName"></view>
+        {{item.name}} {{item.sex}}
+      </view>
+      <view class="p second">
+        供给:{{item.buy_count}} 求购:{{item.sale_count}} 粉丝:{{item.fans}} 等级:{{item.member_level}}
+      </view>
+      <view class="p third">
+        主营：{{item.need_product}}
+      </view>
+    </view>
+  </view>
+</view>
+
+
+<view class="footer">
+  <view class="footerli">
+    <view class="footerwrap {{isRelease}}" bindtap="toRelease">
+      <view class="footerico footer1"></view>
+      <text>供求</text>
+    </view>
+  </view>
+  <view class="footerli">
+    <view class="footerwrap {{isIndex}}" bindtap="toIndex">
+      <view class="footerico footer2"></view>
+      <text>通讯录</text>
+    </view>
+  </view>
+  <view class="footerli">
+    <view class="releaseicon"></view>
+  </view>
+  <view class="footerli">
+    <view class="footerwrap {{isHeadline}}">
+      <view class="footerico footer3"></view>
+      <text>发现</text>
+    </view>
+  </view>
+  <view class="footerli">
+    <view class="footerwrap {{isMyzone}}">
+      <view class="footerico footer4"></view>
+      <text>我的</text>
+    </view>
+  </view>
+</view>
+
+
+<action-sheet hidden="{{actionSheetHidden}}" bindchange="actionSheetChange">
+  <block wx:for="{{actionSheetItems}}">
+    <action-sheet-item class="item" bindtap="bind{{item}}">{{item}}</action-sheet-item>
+  </block>
+  <action-sheet-cancel class="cancel">取消</action-sheet-cancel>
+</action-sheet>

@@ -1,0 +1,27 @@
+@import "/wxParse/wxParse.wxss";
+page{
+    background: #ffffff;
+}
+.headlinewrap{
+    padding: 20rpx;
+}
+.headlinetitle{
+    border-bottom: 1rpx solid #CCCCCC;
+}
+.headlineh{
+    font-size: 30rpx;
+    color: #272435;
+    font-weight: normal;
+    margin: 0 0 20rpx 0;
+}
+.headlinep{
+    font-size: 24rpx;
+    color: #999999;
+    line-height: 30rpx;
+    margin: 0;
+    padding: 0 0 20rpx 0;
+}
+.headlinetxt{
+    padding: 20rpx 0;
+    font-size: 28rpx;
+}
