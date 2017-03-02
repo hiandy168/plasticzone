@@ -15,8 +15,8 @@ page{
 .logininput{
     font-size: 34rpx;
     color: #bbbbbb;
-    line-height: 42rpx;
-    height: 80rpx;
+    height: 110rpx;
+    line-height: 110rpx;
     margin: 16rpx 20rpx 0 20rpx;
 }
 .checkbox{

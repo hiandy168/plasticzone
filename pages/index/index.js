@@ -2,29 +2,121 @@
 
 //获取应用实例
 var app = getApp();
-var items = ['综合排序', '最近注册'];
 Page({
   data: {
+    modalHidden: true,
     actionSheetHidden: true,
-    actionSheetItems: items,
     name: [],
     isRelease: "",
     isIndex: "",
     isHeadline: "",
     isMyzone: "",
-    keywords:"",
-    page:1,
-    size:10,
-    sortField: "input_time",
-		sortOrder: "desc"
+    keywords: "",
+    page: 1,
+    size: 10,
+    sortField: "default",
+    sortOrder: "desc",
+    sortFieldTxt: "综合排序",
+    token: ""
   },
   toRelease: function () {
+    this.setData({
+      token: wx.getStorageSync('token')
+    });
+    if (this.data.token) {
 
+    } else {
+      this.setData({
+        modalHidden: false
+      })
+    }
+  },
+  modalConfirm: function (e) {
+    this.setData({
+      modalHidden: true
+    });
+    wx.navigateTo({
+      url: '../../pages/login/login'
+    })
+  },
+  modalCancel: function (e) {
+    this.setData({
+      modalHidden: true
+    })
   },
   toIndex: function () {
 
   },
-  plasticPerson: function (keywords,page,size,sortField,sortOrder) {
+  fnSortField: function () {
+    this.setData({
+      sortField: "default",
+      actionSheetHidden: !this.data.actionSheetHidden,
+      sortFieldTxt: "综合排序"
+    })
+
+    var _this = this;
+    wx.request({
+      url: app.globalData.apiHost + '/getPlasticPerson',
+      data: {
+        keywords: _this.data.keywords,
+        page: _this.data.page,
+        size: _this.data.size,
+        sortField: _this.data.sortField,
+        token: wx.getStorageSync('token')
+      },
+      method: "GET",
+      header: {
+        'content-type': 'application/json'
+      },
+      success: function (res) {
+        console.log(res);
+        if (res.data.err == 0) {
+          _this.setData({
+            name: res.data.persons
+          });
+        }
+      },
+      fail: function (res) {
+
+      },
+      complete: function () {
+
+      }
+    });
+  },
+  fnSortOrder: function () {
+    this.setData({
+      sortField: "input_time",
+      sortOrder: "desc",
+      actionSheetHidden: !this.data.actionSheetHidden,
+      sortFieldTxt: "最近注册"
+    })
+    var _this = this;
+    wx.request({
+      url: app.globalData.apiHost + '/getPlasticPerson',
+      data: {
+        keywords: _this.data.keywords,
+        page: _this.data.page,
+        size: _this.data.size,
+        sortField: _this.data.sortField,
+        sortOrder: _this.data.sortOrder,
+        token: wx.getStorageSync('token')
+      },
+      method: "GET",
+      header: {
+        'content-type': 'application/json'
+      },
+      success: function (res) {
+        console.log(res);
+        if (res.data.err == 0) {
+          _this.setData({
+            name: res.data.persons
+          });
+        }
+      }
+    });
+  },
+  fnPlasticPerson: function (keywords, page, size, sortField, sortOrder) {
     var _this = this;
     wx.request({
       url: app.globalData.apiHost + '/getPlasticPerson',
@@ -33,10 +125,10 @@ Page({
         page: page,
         size: size,
         sortField: sortField,
-				sortOrder: sortOrder,
-        token: ""
+        sortOrder: sortOrder,
+        token: wx.getStorageSync('token')
       },
-      method: "POST",
+      method: "GET",
       header: {
         'content-type': 'application/json'
       },
@@ -65,7 +157,7 @@ Page({
   onLoad: function (options) {
     // 生命周期函数--监听页面加载
     //new app.Footer();
-    
+
     var router = getCurrentPages()[0].__route__;
     console.log(router);
     switch (router) {
@@ -83,7 +175,7 @@ Page({
         break;
     }
 
-    this.plasticPerson(this.data.keywords,this.data.page,this.data.size,"","");
+    this.fnPlasticPerson(this.data.keywords, this.data.page, this.data.size, this.data.sortField, "");
 
   },
   onReady: function () {
@@ -105,7 +197,7 @@ Page({
   onPullDownRefresh: function () {
     // 页面相关事件处理函数--监听用户下拉动作
     //String7
-    this.plasticPerson(this.data.keywords,this.data.page,this.data.size,"","");
+    this.fnPlasticPerson(this.data.keywords, this.data.page, this.data.size, this.data.sortField, this.data.sortOrder);
   },
   onReachBottom: function () {
     // 页面上拉触底事件的处理函数

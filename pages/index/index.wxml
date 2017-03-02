@@ -6,7 +6,7 @@
     <input class="searchinput" placeholder="请输入公司、姓名、牌号查询" />
   </view>
   <view class="filter" bindtap="actionSheetTap">
-    综合排序
+    {{sortFieldTxt}}
     <view class="downarrow"></view>
   </view>
 </view>
@@ -78,8 +78,11 @@
 
 
 <action-sheet hidden="{{actionSheetHidden}}" bindchange="actionSheetChange">
-  <block wx:for="{{actionSheetItems}}">
-    <action-sheet-item class="item" bindtap="bind{{item}}">{{item}}</action-sheet-item>
+  <block>
+    <action-sheet-item class="item" bindtap="fnSortField">综合排序</action-sheet-item>
+    <action-sheet-item class="item" bindtap="fnSortOrder">最近注册</action-sheet-item>
   </block>
   <action-sheet-cancel class="cancel">取消</action-sheet-cancel>
 </action-sheet>
+
+<modal title="塑料圈通讯录" confirm-text="确定" cancel-text="取消" hidden="{{modalHidden}}" mask bindconfirm="modalConfirm" bindcancel="modalCancel">您未登录塑料圈，无法查看企业及个人信息</modal>

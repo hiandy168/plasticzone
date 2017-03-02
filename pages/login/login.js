@@ -4,7 +4,44 @@ var app = getApp();
 
 Page({
   data: {
-   
+    mobile: "",
+    pwd: ""
+  },
+  bindMobileInput:function(e){
+    this.setData({
+      mobile:e.detail.value
+    })
+  },
+  bindPwdInput:function(e){
+    this.setData({
+      pwd:e.detail.value
+    })
+  },
+  login: function () {
+    var _this=this;
+    wx.request({
+      url: app.globalData.apiHost + '/login',
+      data: {
+        username: _this.data.mobile,
+        password: _this.data.pwd
+      },
+      method: 'GET',
+      header: { 'content-type': 'application/json' },
+      success: function (res) {
+        if(res.data.err==0){
+          wx.setStorageSync('token', res.data.dataToken);
+          wx.navigateBack({
+            delta: 5
+          })
+        }
+      },
+      fail: function () {
+
+      },
+      complete: function () {
+
+      }
+    })
   },
   onLoad: function (options) {
     // 生命周期函数--监听页面加载
