@@ -1,12 +1,13 @@
 {
   "pages":[
     "pages/index/index",
+    "pages/myinvite/myinvite",
+    "pages/myfans/myfans",
     "pages/protocol/protocol",
     "pages/help/help",
     "pages/login/login",
     "pages/headline/headline",
     "pages/headlinedetail/headlinedetail"
-    
   ],
   "window":{
     "backgroundTextStyle":"light",

@@ -17,7 +17,8 @@ Page({
     sortField: "default",
     sortOrder: "desc",
     sortFieldTxt: "综合排序",
-    token: ""
+    token: "",
+    moreHidden:true
   },
   toRelease: function () {
     this.setData({
@@ -25,6 +26,34 @@ Page({
     });
     if (this.data.token) {
 
+    } else {
+      this.setData({
+        modalHidden: false
+      })
+    }
+  },
+  toMyfans: function () {
+    this.setData({
+      token: wx.getStorageSync('token')
+    });
+    if (this.data.token) {
+        wx.navigateTo({
+          url: '../../pages/myfans/myfans'
+        })
+    } else {
+      this.setData({
+        modalHidden: false
+      })
+    }
+  },
+    toMyinvite: function () {
+    this.setData({
+      token: wx.getStorageSync('token')
+    });
+    if (this.data.token) {
+        wx.navigateTo({
+          url: '../../pages/myinvite/myinvite'
+        })
     } else {
       this.setData({
         modalHidden: false
@@ -51,7 +80,8 @@ Page({
     this.setData({
       sortField: "default",
       actionSheetHidden: !this.data.actionSheetHidden,
-      sortFieldTxt: "综合排序"
+      sortFieldTxt: "综合排序",
+      page:1
     })
 
     var _this = this;
@@ -89,7 +119,8 @@ Page({
       sortField: "input_time",
       sortOrder: "desc",
       actionSheetHidden: !this.data.actionSheetHidden,
-      sortFieldTxt: "最近注册"
+      sortFieldTxt: "最近注册",
+      page: 1
     })
     var _this = this;
     wx.request({
@@ -115,34 +146,6 @@ Page({
         }
       }
     });
-  },
-  fnPlasticPerson: function (keywords, page, size, sortField, sortOrder) {
-    var _this = this;
-    wx.request({
-      url: app.globalData.apiHost + '/getPlasticPerson',
-      data: {
-        keywords: keywords,
-        page: page,
-        size: size,
-        sortField: sortField,
-        sortOrder: sortOrder,
-        token: wx.getStorageSync('token')
-      },
-      method: "GET",
-      header: {
-        'content-type': 'application/json'
-      },
-      success: function (res) {
-        console.log(res);
-        if (res.data.err == 0) {
-          _this.setData({
-            name: res.data.persons
-          });
-          wx.stopPullDownRefresh();
-        }
-      }
-    });
-
   },
   actionSheetTap: function (e) {
     this.setData({
@@ -175,33 +178,113 @@ Page({
         break;
     }
 
-    this.fnPlasticPerson(this.data.keywords, this.data.page, this.data.size, this.data.sortField, "");
+    var _this = this;
+    wx.request({
+      url: app.globalData.apiHost + '/getPlasticPerson',
+      data: {
+        keywords: _this.data.keywords,
+        page: 1,
+        size: _this.data.size,
+        sortField: _this.data.sortField,
+        sortOrder: _this.data.sortOrder,
+        token: wx.getStorageSync('token')
+      },
+      method: "GET",
+      header: {
+        'content-type': 'application/json'
+      },
+      success: function (res) {
+        console.log(res);
+        if (res.data.err == 0) {
+          _this.setData({
+            name: res.data.persons
+          });
+        }
+      }
+    });
 
   },
   onReady: function () {
     // 生命周期函数--监听页面初次渲染完成
-    //String3
+
   },
   onShow: function () {
     // 生命周期函数--监听页面显示
-    //String4
+
   },
   onHide: function () {
     // 生命周期函数--监听页面隐藏
-    //String5
+
   },
   onUnload: function () {
     // 生命周期函数--监听页面卸载
-    //String6
+
   },
   onPullDownRefresh: function () {
     // 页面相关事件处理函数--监听用户下拉动作
-    //String7
-    this.fnPlasticPerson(this.data.keywords, this.data.page, this.data.size, this.data.sortField, this.data.sortOrder);
+    var _this = this;
+    this.setData({page: 1});
+    wx.request({
+      url: app.globalData.apiHost + '/getPlasticPerson',
+      data: {
+        keywords: _this.data.keywords,
+        page: _this.data.page,
+        size: _this.data.size,
+        sortField: _this.data.sortField,
+        sortOrder: _this.data.sortOrder,
+        token: wx.getStorageSync('token')
+      },
+      method: "GET",
+      header: {
+        'content-type': 'application/json'
+      },
+      success: function (res) {
+        console.log(res);
+        if (res.data.err == 0) {
+          _this.setData({
+            name: res.data.persons
+          });
+          wx.stopPullDownRefresh();
+        }
+      }
+    });
   },
   onReachBottom: function () {
     // 页面上拉触底事件的处理函数
-    //String8
+    this.setData({moreHidden: false});
+    var _this = this;
+    _this.data.page++;
+    wx.request({
+      url: app.globalData.apiHost + '/getPlasticPerson',
+      data: {
+        keywords: _this.data.keywords,
+        page: _this.data.page,
+        size: _this.data.size,
+        sortField: _this.data.sortField,
+        sortOrder: _this.data.sortOrder,
+        token: wx.getStorageSync('token')
+      },
+      method: "GET",
+      header: {
+        'content-type': 'application/json'
+      },
+      success: function (res) {
+        console.log(res);
+        if (res.data.err == 0) {
+          _this.setData({
+            name: _this.data.name.concat(res.data.persons)
+          });
+        }
+      },
+      fail:function(){
+
+      },
+      complete:function(){
+        _this.setData({
+          moreHidden: true
+        })
+      }
+    });    
   },
   onShareAppMessage: function () {
     // 用户点击右上角分享

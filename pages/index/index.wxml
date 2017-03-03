@@ -11,17 +11,18 @@
   </view>
 </view>
 <view class="payfans">
-  <view class="fanswrap">
+  <view class="fanswrap" bindtap="toMyinvite">
     <view id="img1" class="fansimg"></view>
     <view class="fanstxt">我关注的人</view>
   </view>
-  <view class="fanswrap">
+  <view class="fanswrap" bindtap="toMyfans">
     <view id="img2" class="fansimg"></view>
     <view class="fanstxt">关注我的人</view>
   </view>
 </view>
 <view class="nameul">
   <view class="nameli" wx:for="{{name}}">
+    <view class="rightArrow"></view>
     <view class="avatorwrap">
       <view class="avator">
         <image class="avatorimg" src="{{item.thumb}}"></image>
@@ -43,6 +44,9 @@
       </view>
     </view>
   </view>
+</view>
+<view class="more" hidden="{{moreHidden}}">
+  加载中...
 </view>
 
 

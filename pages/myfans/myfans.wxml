@@ -1,0 +1,25 @@
+<view class="nameul">
+  <view class="nameli" wx:for="{{name}}">
+    <view class="avatorwrap">
+      <view class="avator">
+        <image class="avatorimg" src="{{item.user_id.thumb}}"></image>
+      </view>
+      <view class="iconV {{item.is_pass == 1 ? 'v1':'v2'}}"></view>
+    </view>
+    <view class="nameinfo">
+      <view class="p first">
+        <view class="icon wxGs"></view>
+        {{item.user_id.c_name}}
+      </view>
+      <view class="p second">
+        <view class="icon wxName"></view>
+        {{item.user_id.name}}
+        <view class="icon wxTel"></view>
+        {{item.user_id.mobile}}
+      </view>
+      <view class="p third">
+        发布供给:{{item.user_id.sale}}条 发布求购:{{item.user_id.buy}}条
+      </view>
+    </view>
+  </view>
+</view>
