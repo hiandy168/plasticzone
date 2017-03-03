@@ -4,7 +4,7 @@
       <view class="avator">
         <image class="avatorimg" src="{{item.user_id.thumb}}"></image>
       </view>
-      <view class="iconV {{item.is_pass == 1 ? 'v1':'v2'}}"></view>
+      <view class="iconV {{item.user_id.is_pass == 1 ? 'v1':'v2'}}"></view>
     </view>
     <view class="nameinfo">
       <view class="p first">

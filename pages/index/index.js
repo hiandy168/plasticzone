@@ -46,13 +46,13 @@ Page({
       })
     }
   },
-    toMyinvite: function () {
+  toMypay: function () {
     this.setData({
       token: wx.getStorageSync('token')
     });
     if (this.data.token) {
         wx.navigateTo({
-          url: '../../pages/myinvite/myinvite'
+          url: '../../pages/mypay/mypay'
         })
     } else {
       this.setData({

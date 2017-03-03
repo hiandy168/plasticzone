@@ -1,4 +1,4 @@
-//myfans.js
+//myfans2.js
 
 //获取应用实例
 var app = getApp();
@@ -10,8 +10,9 @@ Page({
     // 生命周期函数--监听页面加载
     var _this = this;
     wx.request({
-      url: app.globalData.apiHost + '/getMyIntroduction',
+      url: app.globalData.apiHost + '/getMyFuns',
       data: {
+        type:2,
         page: 1,
         size: 100,
         token: wx.getStorageSync('token')

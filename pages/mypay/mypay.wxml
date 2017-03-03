@@ -2,23 +2,23 @@
   <view class="nameli" wx:for="{{name}}">
     <view class="avatorwrap">
       <view class="avator">
-        <image class="avatorimg" src="{{item.thumb}}"></image>
+        <image class="avatorimg" src="{{item.focused_id.thumb}}"></image>
       </view>
-      <view class="iconV {{item.is_pass == 1 ? 'v1':'v2'}}"></view>
+      <view class="iconV {{item.focused_id.is_pass == 1 ? 'v1':'v2'}}"></view>
     </view>
     <view class="nameinfo">
       <view class="p first">
         <view class="icon wxGs"></view>
-        {{item.c_name}}
+        {{item.focused_id.c_name}}
       </view>
       <view class="p second">
         <view class="icon wxName"></view>
-        {{item.name}}
+        {{item.focused_id.name}}
         <view class="icon wxTel"></view>
-        {{item.mobile}}
+        {{item.focused_id.mobile}}
       </view>
       <view class="p third">
-        发布供给:{{item.sale}}条 发布求购:{{item.buy}}条
+        发布供给:{{item.focused_id.sale}}条 发布求购:{{item.focused_id.buy}}条
       </view>
     </view>
   </view>
