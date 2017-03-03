@@ -11,7 +11,7 @@
   </view>
 </view>
 <view class="payfans">
-  <view class="fanswrap" bindtap="toMyfans2">
+  <view class="fanswrap" bindtap="toMypay">
     <view id="img1" class="fansimg"></view>
     <view class="fanstxt">我关注的人</view>
   </view>
