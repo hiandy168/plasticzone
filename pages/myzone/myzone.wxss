@@ -1,0 +1,291 @@
+page {
+  background: #efeff4;
+  padding-bottom: 140rpx;
+}
+
+.myzoneHeader {
+  width: 100%;
+  height: 294rpx;
+  position: relative;
+  background: url(http://statics.myplas.com/myapp/img/myzoneBg.jpg) no-repeat;
+}
+
+.myzoneInfo {
+  padding: 50rpx 0 0 50rpx;
+}
+
+.avatorWrap {
+  width: 110rpx;
+  height: 110rpx;
+  float: left;
+  margin: 0;
+  position: relative;
+}
+
+.avator {
+  width: 110rpx;
+  height: 110rpx;
+  border-radius: 12rpx;
+  background: url(http://statics.myplas.com/upload/16/09/02/logos.jpg) no-repeat;
+  background-size: 100% 100%;
+  float: left;
+  border: 1rpx solid #f88f5f;
+  overflow: hidden;
+}
+
+.avatorImg {
+  width: 110rpx;
+  height: 110rpx;
+}
+
+.myzonetxt {
+  margin: 0 0 0 130rpx;
+}
+
+.iconV {
+  width: 30rpx;
+  height: 30rpx;
+  position: absolute;
+  border: 1rpx solid #eee;
+  border-radius: 50%;
+  right: -14rpx;
+  bottom: -10rpx;
+}
+
+.iconV.v1 {
+  background: url(http://statics.myplas.com/myapp/img/v1.png) no-repeat;
+  background-size: 100% 100%;
+}
+
+.iconV.v2 {
+  background: url(http://statics.myplas.com/myapp/img/v2.png) no-repeat;
+  background-size: 100% 100%;
+}
+
+.iconinfo {
+  width: 40rpx;
+  height: 40rpx;
+  float: left;
+}
+
+.iconinfo.edit {
+  background: url(http://statics.myplas.com/myapp/img/editzone.png) no-repeat;
+  background-size: 100% 100%;
+}
+
+.p {
+  margin: 0;
+  font-size: 28rpx;
+  color: #6b6767;
+  height: 36rpx;
+  line-height: 36rpx;
+}
+
+.myzonenum {
+  display: flex;
+  width: 100%;
+  flex-wrap: nowrap;
+  height: 80rpx;
+  position: absolute;
+  margin: 0;
+  bottom: 0;
+  left: 0;
+  padding: 18rpx 0 0 0;
+  font-size: 24rpx;
+  line-height: 32rpx;
+  background: rgba(179, 188, 186, 0.5);
+  text-align: center;
+  color: #fff;
+}
+
+.myzonenum .num {
+  width: 100%;
+  height: 64rpx;
+  border-right: 1rpx solid #fff;
+}
+
+.myzonenum .num:last-of-type {
+  border: none;
+}
+
+.myzonenum text {
+  font-size: 24rpx;
+}
+
+.myzoneUl {
+  margin: 20rpx 0 0 0;
+}
+
+.myzoneLi {
+  width: auto;
+  height: 80rpx;
+  color: #333;
+  border-bottom: 1rpx solid #d1d1d1;
+  line-height: 80rpx;
+  font-size: 28rpx;
+  position: relative;
+  background: #fff;
+  padding: 0 20rpx;
+}
+
+.myzoneUl .myzoneLi:last-of-type {
+  border: none;
+}
+
+.iconZone {
+  width: 52rpx;
+  height: 52rpx;
+  float: left;
+  margin: 14rpx 20rpx 0 0;
+}
+
+.iconZone.zone {
+  background: url(http://statics.myplas.com/myapp/img/myZone.jpg) no-repeat;
+  background-size: 100% 100%;
+}
+
+.iconZone.zone2 {
+  background: url(http://statics.myplas.com/myapp/img/myZone3.jpg) no-repeat;
+  background-size: 100% 100%;
+}
+
+.iconZone.zone3 {
+  background: url(http://statics.myplas.com/myapp/img/myZone4.jpg) no-repeat;
+  background-size: 100% 100%;
+}
+
+.iconZone.zone4 {
+  background: url(http://statics.myplas.com/myapp/img/myZone5.jpg) no-repeat;
+  background-size: 100% 100%;
+}
+
+.iconZone.zone5 {
+  background: url(http://statics.myplas.com/myapp/img/myZone6.jpg) no-repeat;
+  background-size: 100% 100%;
+}
+
+.iconZone.zone6 {
+  background: url(http://statics.myplas.com/myapp/img/myZone7.jpg) no-repeat;
+  background-size: 100% 100%;
+}
+
+.iconZone.zone7 {
+  background: url(http://statics.myplas.com/myapp/img/myZone2.png) no-repeat;
+  background-size: 100% 100%;
+}
+
+.iconZone.zone9 {
+  background: url(http://statics.myplas.com/myapp/img/myZone9.png) no-repeat;
+  background-size: 100% 100%;
+}
+
+.iconZone.zone10 {
+  background: url(http://statics.myplas.com/myapp/img/myZone10.png) no-repeat;
+  background-size: 100% 100%;
+}
+
+.myzoneUl text {
+  float: right;
+  margin: 0 30rpx 0 0;
+  color: #999;
+  font-size: 24rpx;
+}
+
+.icon2 {
+  width: 44rpx;
+  height: 44rpx;
+  position: absolute;
+  right: 0;
+  top: 18rpx;
+}
+
+.icon2.rightArrow {
+  background: url(http://statics.myplas.com/myapp/img/classifyBack.png) no-repeat;
+  background-size: 100% 100%;
+}
+
+/* 底部导航 */
+
+.footer {
+  width: 100%;
+  height: 120rpx;
+  background: #fff;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  font-size: 26rpx;
+  border-top: 1rpx solid #d9d9d9;
+}
+
+.footerli {
+  width: 20%;
+  height: 100rpx;
+  float: left;
+  text-align: center;
+  font-size: 26rpx;
+  color: #7a7e83;
+  margin: 12rpx 0 0 0;
+}
+
+.footerwrap {
+  width: 130rpx;
+  height: 130rpx;
+}
+
+.footerico {
+  width: 60rpx;
+  height: 60rpx;
+  margin: 0 auto;
+}
+
+.releaseicon {
+  width: 88rpx;
+  height: 88rpx;
+  margin: 6rpx auto 0 auto;
+  background: url(http://pic.myplas.com/myapp/img/releaseicon.png) no-repeat;
+  background-size: 100% 100%;
+}
+
+.footerOn {
+  color: #ff5000;
+}
+
+.footerico.footer1 {
+  background: url(http://pic.myplas.com/myapp/img/zone2.png) no-repeat;
+  background-size: 100% 100%;
+}
+
+.footerOn .footer1 {
+  background: url(http://pic.myplas.com/myapp/img/zone2On.png) no-repeat;
+  background-size: 100% 100%;
+}
+
+.footerico.footer2 {
+  background: url(http://pic.myplas.com/myapp/img/zone.png) no-repeat;
+  background-size: 100% 100%;
+}
+
+.footerOn .footer2 {
+  background: url(http://pic.myplas.com/myapp/img/zoneOn.png) no-repeat;
+  background-size: 100% 100%;
+}
+
+.footerico.footer3 {
+  background: url(http://pic.myplas.com/myapp/img/zone5.png) no-repeat;
+  background-size: 100% 100%;
+}
+
+.footerOn .footer3 {
+  background: url(http://pic.myplas.com/myapp/img/zone5On.png) no-repeat;
+  background-size: 100% 100%;
+}
+
+.footerico.footer4 {
+  background: url(http://pic.myplas.com/myapp/img/zone3.png) no-repeat;
+  background-size: 100% 100%;
+}
+
+.footerOn .footer4 {
+  background: url(http://pic.myplas.com/myapp/img/zone3On.png) no-repeat;
+  background-size: 100% 100%;
+}

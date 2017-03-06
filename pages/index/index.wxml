@@ -73,7 +73,7 @@
     </view>
   </view>
   <view class="footerli">
-    <view class="footerwrap {{isMyzone}}">
+    <view class="footerwrap {{isMyzone}}" bindtap="toMyzone">
       <view class="footerico footer4"></view>
       <text>我的</text>
     </view>
