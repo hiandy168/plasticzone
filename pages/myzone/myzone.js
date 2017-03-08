@@ -63,6 +63,21 @@ Page({
       })
     }
   },
+  toHelp: function () {
+    this.setData({
+      token: wx.getStorageSync('token')
+    });
+    if (this.data.token) {
+        wx.navigateTo({
+          url: '../../pages/help/help'
+        })
+    } else {
+      this.setData({
+        modalHidden: false
+      })
+    }
+  },
+
   toMypay: function () {
     this.setData({
       token: wx.getStorageSync('token')

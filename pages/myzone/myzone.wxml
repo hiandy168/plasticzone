@@ -104,7 +104,7 @@
   </view>
 </view>
 <view class="myzoneUl">
-  <view class="myzoneLi">
+  <view class="myzoneLi" bindtap="toHelp">
     <view class="iconZone zone10"></view>
     帮助
     <text>常见问题及联系客服</text>
