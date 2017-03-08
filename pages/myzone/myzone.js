@@ -35,6 +35,20 @@ Page({
       })
     }
   },
+  toMyinvite: function () {
+    this.setData({
+      token: wx.getStorageSync('token')
+    });
+    if (this.data.token) {
+        wx.navigateTo({
+          url: '../../pages/myinvite/myinvite'
+        })
+    } else {
+      this.setData({
+        modalHidden: false
+      })
+    }
+  },
   toMyfans: function () {
     this.setData({
       token: wx.getStorageSync('token')

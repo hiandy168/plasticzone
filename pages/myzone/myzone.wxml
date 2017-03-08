@@ -62,7 +62,7 @@
   </view>
 </view>
 <view class="myzoneUl">
-  <view class="myzoneLi">
+  <view class="myzoneLi" bindtap="toMyinvite">
     <view class="iconZone zone4"></view>
     我的引荐
     <text>{{invite}}</text>

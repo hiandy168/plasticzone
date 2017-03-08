@@ -4,6 +4,7 @@
     "pages/myzone/myzone",
     "pages/mypay/mypay",
     "pages/myfans/myfans",
+    "pages/myinvite/myinvite",
     "pages/protocol/protocol",
     "pages/help/help",
     "pages/login/login",
