@@ -88,7 +88,7 @@
     <text>{{msg}}</text>
     <view class="icon2 rightArrow"></view>
   </view>
-  <view class="myzoneLi">
+  <view class="myzoneLi" bindtap="toMymsg2">
     <view class="iconZone zone9"></view>
     我的消息
     <text>{{msg2}}</text>

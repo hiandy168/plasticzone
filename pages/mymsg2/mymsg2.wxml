@@ -1,0 +1,14 @@
+<view class="mymsg2choose">
+  <view class="on">系统消息</view> 
+</view>
+<view class="mymsg2ul">
+  <view class="mymsg2li" wx:for="{{resMsg}}" v-for="r in resMsg">
+    <view class="myreleaseInfo">
+      <view class="myreleasetxt3">
+        <view class="mymsgwrap">
+          {{item.content}}
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

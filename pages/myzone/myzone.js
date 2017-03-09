@@ -77,7 +77,6 @@ Page({
       })
     }
   },
-
   toMypay: function () {
     this.setData({
       token: wx.getStorageSync('token')
@@ -85,6 +84,20 @@ Page({
     if (this.data.token) {
         wx.navigateTo({
           url: '../../pages/mypay/mypay'
+        })
+    } else {
+      this.setData({
+        modalHidden: false
+      })
+    }
+  },
+  toMymsg2: function () {
+    this.setData({
+      token: wx.getStorageSync('token')
+    });
+    if (this.data.token) {
+        wx.navigateTo({
+          url: '../../pages/mymsg2/mymsg2'
         })
     } else {
       this.setData({

@@ -1,8 +1,10 @@
 {
   "pages":[
+    
     "pages/index/index",
     "pages/myzone/myzone",
     "pages/mypay/mypay",
+    "pages/mymsg2/mymsg2",
     "pages/myfans/myfans",
     "pages/myinvite/myinvite",
     "pages/protocol/protocol",
