@@ -68,13 +68,13 @@
     <text>{{invite}}</text>
     <view class="icon2 rightArrow"></view>
   </view>
-  <view class="myzoneLi">
+  <view class="myzoneLi" bindtap="toMyfans">
     <view class="iconZone zone5"></view>
     我的粉丝
     <text>{{fans}}</text>
     <view class="icon2 rightArrow"></view>
   </view>
-  <view class="myzoneLi">
+  <view class="myzoneLi" bindtap="toMypay">
     <view class="iconZone zone6"></view>
     我的关注
     <text>{{pay}}</text>
