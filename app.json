@@ -1,6 +1,6 @@
 {
   "pages":[
-    
+    "pages/mysupply/mysupply",
     "pages/index/index",
     "pages/myzone/myzone",
     "pages/mypay/mypay",
