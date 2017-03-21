@@ -2,6 +2,7 @@
   "pages":[
     "pages/mysupply/mysupply",
     "pages/index/index",
+    
     "pages/myzone/myzone",
     "pages/mypay/mypay",
     "pages/mymsg2/mymsg2",

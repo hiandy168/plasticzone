@@ -1,0 +1,32 @@
+<view class="supplyUl">
+    <view class="supplyLi" wx:for="{{name}}">
+        <view class="supplytitle">
+            <view class="supplytitleH3">
+            {{item.input_time}}
+            <text>删除</text>
+            </view>
+            <view class="supplytitleP">
+            我的供给:{{item.contents}}
+            </view>
+        </view>
+        <view class="supplycontent">
+            <view class="supplycontentH3">
+            <view class="myicon iconSupply2"></view>
+            系统消息
+            </view>
+            <view class="supplycontentP">
+            在信息库中，没有找到在卖（买）此牌号的商家！
+            </view>
+            <view class="supplycontentP">
+            参考价：<text>塑料圈查无此价格</text>
+            </view>
+            <view class="supplycontentH3">
+            <view class="myicon iconSupply3"></view>
+            塑料圈友
+            </view>
+            <view class="replyRelease2" wx:for="{{item.says}}">
+            <text>{{item.user_name}}</text>说:{{item.content}}
+            </view>
+        </view>
+    </view>
+</view>

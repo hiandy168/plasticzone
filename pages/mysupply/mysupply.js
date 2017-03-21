@@ -4,21 +4,33 @@
 var app = getApp();
 Page({
   data: {
-
+		name: [],
+		page: 1,
+		condition: true,
+		id: "",
+		user_id: ""
   },
   onLoad: function (options) {
     // 生命周期函数--监听页面加载
     var _this = this;
     wx.request({
-      url: app.globalData.apiHost+'/myZone',
+      url: app.globalData.apiHost+'/getMyMsg',
       data: {
-          token: wx.getStorageSync('token')
+          type: 2,
+			    page: _this.data.page,
+          token: wx.getStorageSync('token'),
+          size: 100
       },
       method: 'GET', 
       header: {
         'content-type': 'application/json'
       },
       success: function(res){
+        if (res.data.err == 0) {
+          _this.setData({
+            name: res.data.data
+          });
+        }
        
       },
       fail: function() {
