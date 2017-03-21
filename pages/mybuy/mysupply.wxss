@@ -1,0 +1,85 @@
+page{
+    background: #efeff4;
+}
+.supplyUl {
+    margin: 0;
+    padding: 20rpx;
+    list-style: none;
+}
+.supplyLi {
+    width: 100%;
+    background: #FFFFFF;
+    border-radius: 10rpx;
+    margin: 0 0 20rpx 0;
+}
+.supplytitle{
+    border-bottom: 1rpx dashed #E1E1E1;
+    padding: 20rpx 20rpx 20rpx 70rpx;
+}
+.supplycontent {
+    padding: 20rpx 20rpx 20rpx 70rpx;
+}
+.supplytitleH3{
+    font-size: 24rpx;
+    color: #999999;
+    font-weight: normal;
+    position: relative;
+}
+.supplytitleH3 text{
+    color: #62759e;
+    float:right;
+}
+.supplytitleP{
+    width: 100%;
+    word-break: break-all;
+    margin: 0;
+    font-size: 28rpx;
+    line-height: 42rpx;
+    color: #333333;
+    position: relative
+}
+.supplycontentH3 {
+    margin: 14rpx 0;
+    font-size: 28rpx;
+    color: #333333;
+    font-weight: normal;
+    position: relative;
+}
+
+.supplycontentP {
+    margin: 0;
+    line-height: 42rpx;
+    font-size: 24rpx;
+    color: #666666;
+}
+.supplycontentP text{
+    color:#ff5000;
+}
+.replyRelease2{
+    width: auto;
+    height: auto;
+    overflow: hidden;
+    background: #e8e8eb;
+    padding: 10rpx;
+    font-size: 24rpx;
+    line-height: 42rpx;
+    color: #666;
+}
+.replyRelease2 text{
+    color: #63769d;
+}
+.myicon {
+    width: 50rpx;
+    height: 50rpx;
+    position: absolute;
+    left: -56rpx;
+    top: -8rpx;
+}
+.myicon.iconSupply2 {
+    background: url(http://static.online.com/myapp/img/iconSupply2.png) no-repeat;
+    background-size: 100% 100%;
+}
+.myicon.iconSupply3 {
+    background: url(http://static.online.com/myapp/img/iconSupply3.png) no-repeat;
+    background-size: 100% 100%;
+}
