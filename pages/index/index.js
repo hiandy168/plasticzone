@@ -14,9 +14,9 @@ Page({
     keywords: "",
     page: 1,
     size: 10,
-    sortField: "default",
+    sortField: "input_time",
     sortOrder: "desc",
-    sortFieldTxt: "综合排序",
+    sortFieldTxt: "最近注册",
     token: "",
     moreHidden:true
   },
@@ -118,9 +118,9 @@ Page({
         sortField: _this.data.sortField,
         token: wx.getStorageSync('token')
       },
-      method: "GET",
+      method: "POST",
       header: {
-        'content-type': 'application/json'
+        'content-type': 'application/x-www-form-urlencoded/json'
       },
       success: function (res) {
         console.log(res);
@@ -157,9 +157,9 @@ Page({
         sortOrder: _this.data.sortOrder,
         token: wx.getStorageSync('token')
       },
-      method: "GET",
+      method: "POST",
       header: {
-        'content-type': 'application/json'
+        'content-type': 'application/x-www-form-urlencoded'
       },
       success: function (res) {
         console.log(res);

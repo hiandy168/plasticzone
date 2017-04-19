@@ -37,10 +37,13 @@
         {{item.name}} {{item.sex}}
       </view>
       <view class="p second">
-        供给:{{item.buy_count}} 求购:{{item.sale_count}} 粉丝:{{item.fans}} 等级:{{item.member_level}}
+        <text wx:if="{{item.type==='3'||item.type==='1'}}">产品:{{item.main_product}} 月用量:{{item.month_consum}}</text>
       </view>
-      <view class="p third">
-        主营：{{item.need_product}}
+      <view wx:if="{{item.type==='3'||item.type==='1'}}" class="p third">
+        供:{{item.buy_count}} 求:{{item.sale_count}} 需求：{{item.need_product}}
+      </view>
+      <view wx:if="{{item.type==='0'||item.type==='2'}}" class="p third">
+        供:{{item.buy_count}} 求:{{item.sale_count}} 主营：{{item.need_product}}
       </view>
     </view>
   </view>

@@ -1,8 +1,8 @@
 {
   "pages":[
-    "pages/mysupply/mysupply",
-    "pages/index/index",
     
+    "pages/index/index",
+    "pages/mysupply/mysupply",
     "pages/myzone/myzone",
     "pages/mypay/mypay",
     "pages/mymsg2/mymsg2",

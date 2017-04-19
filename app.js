@@ -14,7 +14,7 @@ App({
     
   },
   globalData:{
-    apiHost: 'https://ssl.myplas.com/api/qapi1_1'
-    //apiHost: 'https://api.myplas.com/api/qapi1_1'
+    apiHost: 'https://ssl.myplas.com/api/qapi1_2'
+    //apiHost: 'https://api.myplas.com/api/qapi1_2'
   }
 })

@@ -7,40 +7,42 @@ Page({
     mobile: "",
     pwd: ""
   },
-  bindMobileInput:function(e){
+  bindMobileInput: function (e) {
     this.setData({
-      mobile:e.detail.value
+      mobile: e.detail.value
     })
   },
-  bindPwdInput:function(e){
+  bindPwdInput: function (e) {
     this.setData({
-      pwd:e.detail.value
+      pwd: e.detail.value
     })
   },
   login: function () {
-    var _this=this;
+    var _this = this;
     wx.request({
       url: app.globalData.apiHost + '/login',
       data: {
         username: _this.data.mobile,
         password: _this.data.pwd
       },
-      method: 'GET',
-      header: { 'content-type': 'application/json' },
+      method: 'POST',
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
       success: function (res) {
-        if(res.data.err==0){
+        if (res.data.err == 0) {
           wx.setStorageSync('token', res.data.dataToken);
           wx.navigateBack({
             delta: 5
           })
         }
       },
-      fail: function () {
-
+      fail: function (res) {
+        console.log(res);
       },
       complete: function () {
 
-      }
+      },
     })
   },
   onLoad: function (options) {

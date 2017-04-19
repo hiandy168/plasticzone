@@ -146,6 +146,7 @@ page{
 }
 .p{
   font-size: 26rpx;
+  height: 36rpx;
     line-height: 36rpx;
     margin: 0;
     color: #000;

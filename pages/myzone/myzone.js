@@ -149,9 +149,9 @@ Page({
       data: {
           token: wx.getStorageSync('token')
       },
-      method: 'GET', 
+      method: 'POST', 
       header: {
-        'content-type': 'application/json'
+        'content-type': 'application/x-www-form-urlencoded'
       },
       success: function(res){
           if(res.data.err==1){
