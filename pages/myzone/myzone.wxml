@@ -112,7 +112,7 @@
   </view>
 </view>
 <view class="myzoneUl">
-  <view class="myzoneLi" style="text-align: center; color: rgb(255, 80, 0);">
+  <view class="myzoneLi" bindtap="logOut" style="text-align: center; color: rgb(255, 80, 0);">
     退出登录
   </view>
 </view>

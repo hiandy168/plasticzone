@@ -40,9 +40,9 @@ Page({
       token: wx.getStorageSync('token')
     });
     if (this.data.token) {
-        wx.navigateTo({
-          url: '../../pages/myinvite/myinvite'
-        })
+      wx.navigateTo({
+        url: '../../pages/myinvite/myinvite'
+      })
     } else {
       this.setData({
         modalHidden: false
@@ -54,9 +54,9 @@ Page({
       token: wx.getStorageSync('token')
     });
     if (this.data.token) {
-        wx.navigateTo({
-          url: '../../pages/myfans/myfans'
-        })
+      wx.navigateTo({
+        url: '../../pages/myfans/myfans'
+      })
     } else {
       this.setData({
         modalHidden: false
@@ -68,9 +68,9 @@ Page({
       token: wx.getStorageSync('token')
     });
     if (this.data.token) {
-        wx.navigateTo({
-          url: '../../pages/help/help'
-        })
+      wx.navigateTo({
+        url: '../../pages/help/help'
+      })
     } else {
       this.setData({
         modalHidden: false
@@ -82,9 +82,9 @@ Page({
       token: wx.getStorageSync('token')
     });
     if (this.data.token) {
-        wx.navigateTo({
-          url: '../../pages/mypay/mypay'
-        })
+      wx.navigateTo({
+        url: '../../pages/mypay/mypay'
+      })
     } else {
       this.setData({
         modalHidden: false
@@ -96,9 +96,9 @@ Page({
       token: wx.getStorageSync('token')
     });
     if (this.data.token) {
-        wx.navigateTo({
-          url: '../../pages/mymsg2/mymsg2'
-        })
+      wx.navigateTo({
+        url: '../../pages/mymsg2/mymsg2'
+      })
     } else {
       this.setData({
         modalHidden: false
@@ -106,22 +106,58 @@ Page({
     }
   },
   toIndex: function () {
-      if( wx.getStorageSync('token')){
+    if (wx.getStorageSync('token')) {
+      wx.redirectTo({
+        url: '../../pages/index/index',
+        success: function (res) {
+          // success
+        },
+        fail: function () {
+          // fail
+        },
+        complete: function () {
+          // complete
+        }
+      })
+    } else {
+
+    }
+  },
+  logOut: function () {
+    wx.request({
+      url: app.globalData.apiHost + '/logOut',
+      data: {
+        token: wx.getStorageSync('token')
+      },
+      method: 'POST',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      success: function (res) {
+        if (res.data.err == 0) {
+          wx.setStorageSync('token', '')
           wx.redirectTo({
             url: '../../pages/index/index',
-            success: function(res){
+            success: function (res) {
               // success
             },
-            fail: function() {
+            fail: function () {
               // fail
             },
-            complete: function() {
+            complete: function () {
               // complete
             }
           })
-      }else{
 
+        }
+      },
+      fail: function () {
+        // fail
+      },
+      complete: function () {
+        // complete
       }
+    })
   },
   onLoad: function (options) {
     // 生命周期函数--监听页面加载
@@ -145,39 +181,39 @@ Page({
 
     var _this = this;
     wx.request({
-      url: app.globalData.apiHost+'/myZone',
+      url: app.globalData.apiHost + '/myZone',
       data: {
-          token: wx.getStorageSync('token')
+        token: wx.getStorageSync('token')
       },
-      method: 'POST', 
+      method: 'POST',
       header: {
         'content-type': 'application/x-www-form-urlencoded'
       },
-      success: function(res){
-          if(res.data.err==1){
-              console.log("1");
-          }else{
-              _this.setData({
-                  name: res.data.data.name,
-                  c_name:res.data.data.c_name,
-                  mobile:res.data.data.mobile,
-                  thumb:res.data.data.thumb,
-                  is_pass:res.data.data.is_pass,
-                  buy:res.data.s_in_count,
-                  supply:res.data.s_out_count,
-                  points:res.data.points,
-                  msg:res.data.leaveword,
-                  msg2:res.data.message,
-                  invite:res.data.introduction,
-                  fans:res.data.myfans,
-                  pay:res.data.myconcerns
-                });			
-          }        
+      success: function (res) {
+        if (res.data.err == 1) {
+          console.log("1");
+        } else {
+          _this.setData({
+            name: res.data.data.name,
+            c_name: res.data.data.c_name,
+            mobile: res.data.data.mobile,
+            thumb: res.data.data.thumb,
+            is_pass: res.data.data.is_pass,
+            buy: res.data.s_in_count,
+            supply: res.data.s_out_count,
+            points: res.data.points,
+            msg: res.data.leaveword,
+            msg2: res.data.message,
+            invite: res.data.introduction,
+            fans: res.data.myfans,
+            pay: res.data.myconcerns
+          });
+        }
       },
-      fail: function() {
+      fail: function () {
         // fail
       },
-      complete: function() {
+      complete: function () {
         // complete
       }
     })
