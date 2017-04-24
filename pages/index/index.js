@@ -2,6 +2,7 @@
 
 //获取应用实例
 var app = getApp();
+
 Page({
   data: {
     modalHidden: true,
@@ -31,6 +32,22 @@ Page({
         modalHidden: false
       })
     }
+  },
+  toPersonInfo:function(event){
+    //console.log(event);
+    console.log(event.currentTarget.dataset.id);
+    this.setData({
+      token: wx.getStorageSync('token')
+    });
+    if (this.data.token) {
+        wx.navigateTo({
+          url: '../../pages/personinfo/personinfo?id='+event.currentTarget.dataset.id
+        })
+    } else {
+      this.setData({
+        modalHidden: false
+      })
+    }    
   },
   toMyfans: function () {
     this.setData({

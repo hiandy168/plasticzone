@@ -21,7 +21,7 @@
   </view>
 </view>
 <view class="nameul">
-  <view class="nameli" wx:for="{{name}}">
+  <view class="nameli" data-id="{{item.user_id}}" wx:for="{{name}}" bindtap="toPersonInfo">
     <view class="rightArrow"></view>
     <view class="avatorwrap">
       <view class="avator">

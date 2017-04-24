@@ -1,0 +1,67 @@
+<view class="personInfo">
+  <view style="float: left; width: 100%; margin: 0 0 17px 0;">
+    <view style=" width: 160rpx; height: 160rpx; margin: 0 30rpx 0 0; position: relative; float: left;">
+      <view class="personAvator">
+        <image src="{{thumb}}"></image>
+      </view>
+      <i class="iconV {{is_pass == 1 ? 'v1':'v2'}}"></i>
+    </view>
+    <view class="personName" style="margin: 40rpx 0 0 0;">{{name}} {{sex}}
+      <text class="orange">{{status}}</text>
+    </view>
+    <view class="personNum" style="margin: 10rpx 0 0 0;">
+      <text>发布供给：<text style=" color: #63769d;">{{sale}}条</text>
+      </text>
+      <text>发布需求：<text style=" color: #63769d;">{{buy}}条</text>
+      </text>
+    </view>
+  </view>
+  <view class="personInfoList">
+    <view class="p">公司：{{c_name}}</view>
+    <view class="p">地址：{{address}}</view>
+    <view class="p">联系电话：{{mobile}}
+      <text class="telephone"></text>
+    </view>
+    <view class="p" wx:if="{{type==='0'||type==='2'}}" style="border-bottom: 1rpx solid #D1D1D1;">我的主营：{{need_product}}</view>
+    <view class="p" wx:if="{{type==='3'||type==='1'}}" style="border-bottom: 1rpx solid #D1D1D1;">我的需求：{{need_product}}</view>
+    <view class="p" wx:if="{{type==='3'||type==='1'}}" style="border-bottom: 1rpx solid #D1D1D1;">生产产品：{{main_product}}</view>
+    <view class="p" wx:if="{{type==='3'||type==='1'}}" style="border-bottom: 1rpx solid #D1D1D1;">月用量：{{month_consum}}</view>
+    <view class="p" class="registerBox" style="height: auto; padding: 20rpx 0; margin: 0; line-height: 0; text-align: center;">
+      <view class="card" v-on:click="cardcheck">
+        <image src="src"></image>
+      </view>
+    </view>
+  </view>
+  <view class="personInfoList">
+    <view class="supplydemandtitle">
+      最近求购信息
+      <text style="color: #ff4f00; float:right;">查看更多>></text>
+    </view>
+    <view class="supplydemandul">
+      <view class="li" wx:for="{{buylist}}">
+        <view style="color: #999999;">{{item.input_time}}</view>
+        <view>
+          <text style="color: #ec8000;">求购</text> :{{item.contents}}
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="personInfoList">
+    <view class="supplydemandtitle" style="background: #b8d2e3;">
+      最近供给信息
+      <text style="color: #267bd3; float:right;">查看更多>></text>
+    </view>
+    <view class="supplydemandul">
+      <view class="li" wx:for="{{supplylist}}">
+        <view style="color: #999999;">{{item.input_time}}</view>
+        <view>
+          <text style="color: #63769d;">供给</text> :{{item.contents}}
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<modal title="塑料圈通讯录" confirm-text="确定" cancel-text="取消" hidden="{{modalHidden}}" mask bindconfirm="modalConfirm" bindcancel="modalCancel">
+  {{resMsg}}
+</modal>
