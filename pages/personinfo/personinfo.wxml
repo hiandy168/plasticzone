@@ -28,7 +28,7 @@
     <view class="p" wx:if="{{type==='3'||type==='1'}}" style="border-bottom: 1rpx solid #D1D1D1;">月用量：{{month_consum}}</view>
     <view class="p" class="registerBox" style="height: auto; padding: 20rpx 0; margin: 0; line-height: 0; text-align: center;">
       <view class="card" v-on:click="cardcheck">
-        <image src="src"></image>
+        <image src="{{cardImg}}"></image>
       </view>
     </view>
   </view>

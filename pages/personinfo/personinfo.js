@@ -70,6 +70,7 @@ Page({
                   main_product: res.data.data.main_product,
                   month_consum: res.data.data.month_consum,
                   thumb: res.data.data.thumb,
+                  cardImg: res.data.data.thumbcard,
                   buy: res.data.data.buy,
                   sale: res.data.data.sale,
                   is_pass: res.data.data.is_pass,
@@ -118,7 +119,6 @@ Page({
   },
   onLoad: function (options) {
     // 生命周期函数--监听页面加载
-    console.log(options.id);
     this.setData({
       personId: options.id
     });
@@ -146,6 +146,7 @@ Page({
             main_product: res.data.data.main_product,
             month_consum: res.data.data.month_consum,
             thumb: res.data.data.thumb,
+            cardImg: res.data.data.thumbcard,
             buy: res.data.data.buy,
             sale: res.data.data.sale,
             is_pass: res.data.data.is_pass,
@@ -182,7 +183,33 @@ Page({
       success: function (res) {
         _this.setData({
           buylist: res.data.data,
-          supplylist: res.data.data
+        });
+
+      },
+      fail: function (res) {
+        // fail
+      },
+      complete: function (res) {
+        // complete
+      }
+    });
+
+    wx.request({
+      url: app.globalData.apiHost + '/getTaPur',
+      data: {
+        userid: options.id,
+        page: 1,
+        size: 5,
+        type: 2,
+        token: wx.getStorageSync('token'),
+      },
+      method: 'POST',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      success: function (res) {
+        _this.setData({
+          supplylist: res.data.data,
         });
 
       },

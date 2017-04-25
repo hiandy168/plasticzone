@@ -1,6 +1,6 @@
 {
   "pages":[
-    
+    "pages/releasebuy/releasebuy",
     "pages/index/index",
     "pages/personinfo/personinfo",
     "pages/mysupply/mysupply",
