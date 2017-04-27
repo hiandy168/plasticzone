@@ -27,7 +27,7 @@
     <view class="p" wx:if="{{type==='3'||type==='1'}}" style="border-bottom: 1rpx solid #D1D1D1;">生产产品：{{main_product}}</view>
     <view class="p" wx:if="{{type==='3'||type==='1'}}" style="border-bottom: 1rpx solid #D1D1D1;">月用量：{{month_consum}}</view>
     <view class="p" class="registerBox" style="height: auto; padding: 20rpx 0; margin: 0; line-height: 0; text-align: center;">
-      <view class="card" v-on:click="cardcheck">
+      <view class="card">
         <image src="{{cardImg}}"></image>
       </view>
     </view>
@@ -35,7 +35,7 @@
   <view class="personInfoList">
     <view class="supplydemandtitle">
       最近求购信息
-      <text style="color: #ff4f00; float:right;">查看更多>></text>
+      <view data-id="{{user_id}}" bindtap="toReleaseBuy" style="color: #ff4f00; float:right;">查看更多>></view>
     </view>
     <view class="supplydemandul">
       <view class="li" wx:for="{{buylist}}">
@@ -49,7 +49,7 @@
   <view class="personInfoList">
     <view class="supplydemandtitle" style="background: #b8d2e3;">
       最近供给信息
-      <text style="color: #267bd3; float:right;">查看更多>></text>
+      <view data-id="{{user_id}}" bindtap="toReleaseSupply" style="color: #267bd3; float:right;">查看更多>></view>
     </view>
     <view class="supplydemandul">
       <view class="li" wx:for="{{supplylist}}">

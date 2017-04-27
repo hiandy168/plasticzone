@@ -230,9 +230,9 @@ Page({
         sortOrder: _this.data.sortOrder,
         token: wx.getStorageSync('token')
       },
-      method: "GET",
+      method: "POST",
       header: {
-        'content-type': 'application/json'
+        'content-type': 'application/x-www-form-urlencoded'
       },
       success: function (res) {
         console.log(res);
@@ -275,9 +275,9 @@ Page({
         sortOrder: _this.data.sortOrder,
         token: wx.getStorageSync('token')
       },
-      method: "GET",
+      method: "POST",
       header: {
-        'content-type': 'application/json'
+        'content-type': 'application/x-www-form-urlencoded'
       },
       success: function (res) {
         console.log(res);
@@ -305,9 +305,9 @@ Page({
         sortOrder: _this.data.sortOrder,
         token: wx.getStorageSync('token')
       },
-      method: "GET",
+      method: "POST",
       header: {
-        'content-type': 'application/json'
+        'content-type': 'application/x-www-form-urlencoded'
       },
       success: function (res) {
         console.log(res);

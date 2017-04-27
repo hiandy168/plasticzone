@@ -27,7 +27,7 @@ Page({
     supplylist: [],
     modalHidden: true,
     resMsg: "",
-    personId:""
+    personId: ""
   },
   modalConfirm: function (e) {
     var _this = this;
@@ -74,7 +74,8 @@ Page({
                   buy: res.data.data.buy,
                   sale: res.data.data.sale,
                   is_pass: res.data.data.is_pass,
-                  type: res.data.data.type
+                  type: res.data.data.type,
+                  user_id: res.data.data.user_id
                 });
               } else if (res.data.err == 99) {
                 _this.setData({
@@ -117,6 +118,34 @@ Page({
       }
     })
   },
+  toReleaseBuy: function (event) {
+    //console.log(event);
+    console.log(event.currentTarget.dataset.id);
+    this.setData({
+      token: wx.getStorageSync('token')
+    });
+    if (this.data.token) {
+      wx.navigateTo({
+        url: '../../pages/releasebuy/releasebuy?id=' + event.currentTarget.dataset.id
+      })
+    } else {
+
+    }
+  },
+  toReleaseSupply: function (event) {
+    //console.log(event);
+    console.log(event.currentTarget.dataset.id);
+    this.setData({
+      token: wx.getStorageSync('token')
+    });
+    if (this.data.token) {
+      wx.navigateTo({
+        url: '../../pages/releasesupply/releasesupply?id=' + event.currentTarget.dataset.id
+      })
+    } else {
+
+    }
+  },
   onLoad: function (options) {
     // 生命周期函数--监听页面加载
     this.setData({
@@ -150,7 +179,8 @@ Page({
             buy: res.data.data.buy,
             sale: res.data.data.sale,
             is_pass: res.data.data.is_pass,
-            type: res.data.data.type
+            type: res.data.data.type,
+            user_id: res.data.data.user_id
           });
         } else if (res.data.err == 99) {
           _this.setData({

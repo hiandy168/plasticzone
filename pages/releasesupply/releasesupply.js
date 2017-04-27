@@ -55,7 +55,7 @@ Page({
         userid: _this.data.user_id,
         token: wx.getStorageSync('token'),
         size: 5,
-        type: 1,
+        type: 2,
         page: 1
       },
       method: 'POST',

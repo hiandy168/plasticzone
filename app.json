@@ -1,7 +1,9 @@
 {
   "pages":[
-    "pages/releasebuy/releasebuy",
+    
     "pages/index/index",
+    "pages/releasebuy/releasebuy",
+    "pages/releasesupply/releasesupply",
     "pages/personinfo/personinfo",
     "pages/mysupply/mysupply",
     "pages/myzone/myzone",
