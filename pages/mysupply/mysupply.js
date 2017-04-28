@@ -21,9 +21,9 @@ Page({
           token: wx.getStorageSync('token'),
           size: 100
       },
-      method: 'GET', 
+      method: 'POST', 
       header: {
-        'content-type': 'application/json'
+        'content-type': 'application/x-www-form-urlencoded'
       },
       success: function(res){
         if (res.data.err == 0) {

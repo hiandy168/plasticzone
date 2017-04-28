@@ -49,6 +49,34 @@ Page({
       })
     }
   },
+  toMysupply: function () {
+    this.setData({
+      token: wx.getStorageSync('token')
+    });
+    if (this.data.token) {
+      wx.navigateTo({
+        url: '../../pages/mysupply/mysupply'
+      })
+    } else {
+      this.setData({
+        modalHidden: false
+      })
+    }
+  },
+  toMybuy: function () {
+    this.setData({
+      token: wx.getStorageSync('token')
+    });
+    if (this.data.token) {
+      wx.navigateTo({
+        url: '../../pages/mybuy/mybuy'
+      })
+    } else {
+      this.setData({
+        modalHidden: false
+      })
+    }
+  },
   toMyfans: function () {
     this.setData({
       token: wx.getStorageSync('token')
@@ -84,6 +112,20 @@ Page({
     if (this.data.token) {
       wx.navigateTo({
         url: '../../pages/mypay/mypay'
+      })
+    } else {
+      this.setData({
+        modalHidden: false
+      })
+    }
+  },
+  toMymsg: function () {
+    this.setData({
+      token: wx.getStorageSync('token')
+    });
+    if (this.data.token) {
+      wx.navigateTo({
+        url: '../../pages/mymsg/mymsg'
       })
     } else {
       this.setData({
@@ -159,6 +201,19 @@ Page({
       }
     })
   },
+  modalConfirm: function (e) {
+    this.setData({
+      modalHidden: true
+    });
+    wx.navigateTo({
+      url: '../../pages/login/login'
+    })
+  },
+  modalCancel: function (e) {
+    this.setData({
+      modalHidden: true
+    })
+  },
   onLoad: function (options) {
     // 生命周期函数--监听页面加载
 
@@ -191,7 +246,9 @@ Page({
       },
       success: function (res) {
         if (res.data.err == 1) {
-          console.log("1");
+          _this.setData({
+            modalHidden: false
+          })
         } else {
           _this.setData({
             name: res.data.data.name,

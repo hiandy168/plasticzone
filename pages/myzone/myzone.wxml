@@ -48,13 +48,13 @@
   </view>
 </view>
 <view class="myzoneUl">
-  <view class="myzoneLi">
+  <view class="myzoneLi" bindtap="toMysupply">
     <view class="iconZone zone"></view>
     我的供给
     <text>{{supply}}</text>
     <view class="icon2 rightArrow"></view>
   </view>
-  <view class="myzoneLi">
+  <view class="myzoneLi" bindtap="toMybuy">
     <view class="iconZone zone2"></view>
     我的求购
     <text>{{buy}}</text>
@@ -82,16 +82,16 @@
   </view>
 </view>
 <view class="myzoneUl">
-  <view class="myzoneLi">
+  <view class="myzoneLi" bindtap="toMymsg">
     <view class="iconZone zone3"></view>
     我的留言
-    <text>{{msg}}</text>
+    <text>未读留言{{msg}}</text>
     <view class="icon2 rightArrow"></view>
   </view>
   <view class="myzoneLi" bindtap="toMymsg2">
     <view class="iconZone zone9"></view>
     我的消息
-    <text>{{msg2}}</text>
+    <text>未读消息{{msg2}}</text>
     <view class="icon2 rightArrow"></view>
   </view>
 </view>

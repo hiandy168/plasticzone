@@ -76,10 +76,10 @@ page{
     top: -8rpx;
 }
 .myicon.iconSupply2 {
-    background: url(http://static.online.com/myapp/img/iconSupply2.png) no-repeat;
+    background: url(http://statics.myplas.com/myapp/img/iconSupply2.png) no-repeat;
     background-size: 100% 100%;
 }
 .myicon.iconSupply3 {
-    background: url(http://static.online.com/myapp/img/iconSupply3.png) no-repeat;
+    background: url(http://statics.myplas.com/myapp/img/iconSupply3.png) no-repeat;
     background-size: 100% 100%;
 }
