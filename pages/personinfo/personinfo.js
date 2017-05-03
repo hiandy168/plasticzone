@@ -77,11 +77,6 @@ Page({
                   type: res.data.data.type,
                   user_id: res.data.data.user_id
                 });
-              } else if (res.data.err == 99) {
-                _this.setData({
-                  modalHidden: false,
-                  resMsg: res.data.msg
-                })
               }
             },
             fail: function () {
@@ -91,6 +86,16 @@ Page({
               // complete
             }
           });
+        } else if (res.data.err == 99) {
+          _this.setData({
+            modalHidden: false,
+            resMsg: res.data.msg
+          })
+        } else if (res.data.err == 100) {
+          _this.setData({
+            modalHidden: false,
+            resMsg: res.data.msg
+          })
         }
       },
       fail: function (res) {
