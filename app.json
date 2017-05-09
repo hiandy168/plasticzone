@@ -1,6 +1,6 @@
 {
   "pages":[
-    
+    "pages/quickrelease/quickrelease",
     "pages/index/index",
     "pages/releasebuy/releasebuy",
     "pages/releasesupply/releasesupply",
