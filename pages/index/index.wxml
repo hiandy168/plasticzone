@@ -67,7 +67,7 @@
     </view>
   </view>
   <view class="footerli">
-    <view class="releaseicon"></view>
+    <view class="releaseicon" bindtap="toQuickrelease"></view>
   </view>
   <view class="footerli">
     <view class="footerwrap {{isHeadline}}">

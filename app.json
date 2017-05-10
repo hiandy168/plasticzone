@@ -1,7 +1,8 @@
 {
   "pages":[
-    "pages/quickrelease/quickrelease",
+    
     "pages/index/index",
+    "pages/quickrelease/quickrelease",
     "pages/releasebuy/releasebuy",
     "pages/releasesupply/releasesupply",
     "pages/personinfo/personinfo",

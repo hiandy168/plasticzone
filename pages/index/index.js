@@ -100,7 +100,29 @@ Page({
       })
     }
   },
-
+  toQuickrelease: function () {
+    this.setData({
+      token: wx.getStorageSync('token')
+    });
+    if (this.data.token) {
+      wx.navigateTo({
+        url: '../../pages/quickrelease/quickrelease',
+        success: function (res) {
+          // success
+        },
+        fail: function () {
+          // fail
+        },
+        complete: function () {
+          // complete
+        }
+      });
+    } else {
+      this.setData({
+        modalHidden: false
+      })
+    }
+  },
   modalConfirm: function (e) {
     this.setData({
       modalHidden: true
