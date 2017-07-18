@@ -149,17 +149,18 @@ Page({
 
     var _this = this;
     wx.request({
-      url: app.globalData.apiHost + '/getPlasticPerson',
+      url: app.globalData.apiHost + '/friend/getPlasticPerson',
       data: {
         keywords: _this.data.keywords,
         page: _this.data.page,
         size: _this.data.size,
-        sortField: _this.data.sortField,
+        region:0,
         token: wx.getStorageSync('token')
       },
       method: "POST",
       header: {
-        'content-type': 'application/x-www-form-urlencoded/json'
+        'content-type': 'application/x-www-form-urlencoded/json',
+        'X-UA': 'weixin|5.5|3858|3bf198c15c2b3b98bd41832df8445a89|0|MacIntel|MacIntel|MacIntel|Netscape|Mozilla|0|0|0'
       },
       success: function (res) {
         console.log(res);
@@ -187,18 +188,18 @@ Page({
     })
     var _this = this;
     wx.request({
-      url: app.globalData.apiHost + '/getPlasticPerson',
+      url: app.globalData.apiHost + '/friend/getPlasticPerson',
       data: {
         keywords: _this.data.keywords,
         page: _this.data.page,
         size: _this.data.size,
-        sortField: _this.data.sortField,
-        sortOrder: _this.data.sortOrder,
+        region:0,
         token: wx.getStorageSync('token')
       },
       method: "POST",
       header: {
-        'content-type': 'application/x-www-form-urlencoded'
+        'content-type': 'application/x-www-form-urlencoded',
+        'X-UA': 'weixin|5.5|3858|3bf198c15c2b3b98bd41832df8445a89|0|MacIntel|MacIntel|MacIntel|Netscape|Mozilla|0|0|0'
       },
       success: function (res) {
         console.log(res);
@@ -243,18 +244,18 @@ Page({
 
     var _this = this;
     wx.request({
-      url: app.globalData.apiHost + '/getPlasticPerson',
+      url: app.globalData.apiHost + '/friend/getPlasticPerson',
       data: {
         keywords: _this.data.keywords,
         page: 1,
         size: _this.data.size,
-        sortField: _this.data.sortField,
-        sortOrder: _this.data.sortOrder,
+        region:0,
         token: wx.getStorageSync('token')
       },
       method: "POST",
       header: {
-        'content-type': 'application/x-www-form-urlencoded'
+        'content-type': 'application/x-www-form-urlencoded',
+        'X-UA':'weixin|5.5|3858|3bf198c15c2b3b98bd41832df8445a89|0|MacIntel|MacIntel|MacIntel|Netscape|Mozilla|0|0|0'
       },
       success: function (res) {
         console.log(res);
@@ -288,18 +289,18 @@ Page({
     var _this = this;
     this.setData({page: 1});
     wx.request({
-      url: app.globalData.apiHost + '/getPlasticPerson',
+      url: app.globalData.apiHost + '/friend/getPlasticPerson',
       data: {
         keywords: _this.data.keywords,
         page: _this.data.page,
         size: _this.data.size,
-        sortField: _this.data.sortField,
-        sortOrder: _this.data.sortOrder,
+        region:0,
         token: wx.getStorageSync('token')
       },
       method: "POST",
       header: {
-        'content-type': 'application/x-www-form-urlencoded'
+        'content-type': 'application/x-www-form-urlencoded',
+        'X-UA': 'weixin|5.5|3858|3bf198c15c2b3b98bd41832df8445a89|0|MacIntel|MacIntel|MacIntel|Netscape|Mozilla|0|0|0'
       },
       success: function (res) {
         console.log(res);
@@ -318,7 +319,7 @@ Page({
     var _this = this;
     _this.data.page++;
     wx.request({
-      url: app.globalData.apiHost + '/getPlasticPerson',
+      url: app.globalData.apiHost + '/friend/getPlasticPerson',
       data: {
         keywords: _this.data.keywords,
         page: _this.data.page,
