@@ -249,7 +249,6 @@ Page({
         keywords: _this.data.keywords,
         page: 1,
         size: _this.data.size,
-        region:0,
         token: wx.getStorageSync('token')
       },
       method: "POST",
