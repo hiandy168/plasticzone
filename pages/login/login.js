@@ -19,19 +19,25 @@ Page({
   },
   login: function () {
     var _this = this;
+    wx.setStorageSync('userid', "");
+    wx.setStorageSync('token', "");
+    wx.setStorageSync('XUA', "weixin|5.5|" + wx.getStorageSync("userid") + "|" + wx.getStorageSync("token") + "|0|Win32|Win32|Win32|Netscape|Mozilla|0|0|0");
     wx.request({
-      url: app.globalData.apiHost + '/login',
+      url: app.globalData.apiHost + '/user/login',
       data: {
         username: _this.data.mobile,
         password: _this.data.pwd
       },
       method: 'POST',
       header: {
-        "Content-Type": "application/x-www-form-urlencoded"
+        "Content-Type": "application/x-www-form-urlencoded",
+        'X-UA': wx.getStorageSync("XUA")
       },
       success: function (res) {
         if (res.data.err == 0) {
           wx.setStorageSync('token', res.data.dataToken);
+          wx.setStorageSync('userid', res.data.user_id);
+          wx.setStorageSync('XUA', "weixin|5.5|" + wx.getStorageSync("userid") + "|" + wx.getStorageSync("token") + "|0|Win32|Win32|Win32|Netscape|Mozilla|0|0|0");
           wx.navigateBack({
             delta: 5
           })

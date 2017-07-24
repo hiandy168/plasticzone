@@ -224,7 +224,7 @@ Page({
   onLoad: function (options) {
     // 生命周期函数--监听页面加载
     //new app.Footer();
-
+    wx.setStorageSync('XUA', "weixin|5.5|" + wx.getStorageSync("userid") + "|" + wx.getStorageSync("token") + "|0|Win32|Win32|Win32|Netscape|Mozilla|0|0|0");
     var router = getCurrentPages()[0].__route__;
     console.log(router);
     switch (router) {
@@ -254,7 +254,7 @@ Page({
       method: "POST",
       header: {
         'content-type': 'application/x-www-form-urlencoded',
-        'X-UA':'weixin|5.5|3858|3bf198c15c2b3b98bd41832df8445a89|0|MacIntel|MacIntel|MacIntel|Netscape|Mozilla|0|0|0'
+        'X-UA': wx.getStorageSync('XUA')
       },
       success: function (res) {
         console.log(res);

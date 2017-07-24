@@ -236,26 +236,24 @@ Page({
 
     var _this = this;
     wx.request({
-      url: app.globalData.apiHost + '/myZone',
+      url: app.globalData.apiHost + '/myInfo/myZone',
       data: {
-        token: wx.getStorageSync('token')
+        token: '3bf198c15c2b3b98bd41832df8445a89'
       },
       method: 'POST',
       header: {
-        'content-type': 'application/x-www-form-urlencoded'
+        'content-type': 'application/x-www-form-urlencoded',
+        'X-UA': 'weixin|5.5|3858|3bf198c15c2b3b98bd41832df8445a89|0|MacIntel|MacIntel|MacIntel|Netscape|Mozilla|0|0|0'
       },
       success: function (res) {
-        if (res.data.err == 1) {
-          _this.setData({
-            modalHidden: false
-          })
-        } else {
+        console.log(res.data);
+        if (res.data.err == 0) {
           _this.setData({
             name: res.data.data.name,
             c_name: res.data.data.c_name,
             mobile: res.data.data.mobile,
             thumb: res.data.data.thumb,
-            is_pass: res.data.data.is_pass,
+            is_pass: res.data.is_pass,
             buy: res.data.s_in_count,
             supply: res.data.s_out_count,
             points: res.data.points,
@@ -265,6 +263,11 @@ Page({
             fans: res.data.myfans,
             pay: res.data.myconcerns
           });
+
+        } else if (res.data.err == 1) {
+          _this.setData({
+            modalHidden: false
+          })
         }
       },
       fail: function () {

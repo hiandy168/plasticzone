@@ -1,14 +1,16 @@
 {
   "pages":[
-    
     "pages/index/index",
+    "pages/login/login",
+    "pages/myzone/myzone",
+    
     "pages/quickrelease/quickrelease",
     "pages/releasebuy/releasebuy",
     "pages/releasesupply/releasesupply",
     "pages/personinfo/personinfo",
     "pages/mysupply/mysupply",
     "pages/mybuy/mybuy",
-    "pages/myzone/myzone",
+    
     "pages/mypay/mypay",
     "pages/mymsg/mymsg",
     "pages/mymsg2/mymsg2",
@@ -16,7 +18,7 @@
     "pages/myinvite/myinvite",
     "pages/protocol/protocol",
     "pages/help/help",
-    "pages/login/login",
+    
     "pages/headline/headline",
     "pages/headlinedetail/headlinedetail"
   ],

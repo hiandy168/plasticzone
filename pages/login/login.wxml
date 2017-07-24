@@ -6,12 +6,7 @@
     <input class="logininput" bindinput="bindPwdInput" type="password" placeholder="请输入密码" />
   </view>
 </view>
-<view>
-  <label class="checkbox">
-    <checkbox value="1" checked="checked" />
-    <text>记住密码</text>
-  </label>
-</view>
+
 <view class="loginbtn" bindtap="login">登录</view>
 <view class="regpwd">
     <text class="txtleft">注册</text>

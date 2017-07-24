@@ -7,46 +7,33 @@
       <view class="iconV {{is_pass == 1 ? 'v1':'v2'}}"></view>
     </view>
     <view class="myzonetxt">
-      <view class="p">{{c_name}}</view>
       <view class="p">{{name}} {{mobile}}</view>
+      <view class="p">{{c_name}}</view>
       <view class="p">
-      <text style="float: left;">更改用户信息</text>
-      <view class="iconinfo edit"></view>
-      上传名片加V认证
+      <text style="float: left;">更改等级：列兵   排名：1000位</text>
       </view>
     </view>
   </view>
-  <view class="myzonenum">
-    <view class="num">
-      <text>{{supply}}</text>
-      <view>供给</view>
-    </view>
-    <view class="num">
-      <text>{{buy}}</text>
-      <view>求购</view>
-    </view>
-    <view class="num">
-      <text>{{msg}}</text>
-      <view>留言</view>
-    </view>
-    <view class="num">
-      <text>{{invite}}</text>
-      <view>引荐</view>
-    </view>
-    <view class="num">
-      <text>{{fans}}</text>
-      <view>粉丝</view>
-    </view>
-    <view class="num">
-      <text>{{pay}}</text>
-      <view>关注</view>
-    </view>
-    <view class="num">
-      <text>{{points}}</text>
-      <view>积分</view>
-    </view>
+
+  <view class="wxMsg"></view>
+  <view class="wxRight"></view>
+</view>
+
+<view class="wxMy">
+  <view class="wxMyBox" bindtap="toMyfans">
+  <view class="wxNum" style=" color:#ff5000;" >{{fans}}</view>
+  <view class="wxTxt">粉丝数</view>
+  </view>
+  <view class="wxMyBox">
+    <view class="wxNum" bindtap="toMypay" style=" color:#267bd3;" >{{pay}}</view>
+  <view class="wxTxt">关注数</view>
+  </view>
+  <view class="wxMyBox" bindtap="toMyinvite">
+    <view class="wxNum" style=" color:#00b400;" >{{invite}}</view>
+  <view class="wxTxt">引荐数</view>
   </view>
 </view>
+
 <view class="myzoneUl">
   <view class="myzoneLi" bindtap="toMysupply">
     <view class="iconZone zone"></view>
@@ -61,48 +48,30 @@
     <view class="icon2 rightArrow"></view>
   </view>
 </view>
+
 <view class="myzoneUl">
-  <view class="myzoneLi" bindtap="toMyinvite">
-    <view class="iconZone zone4"></view>
-    我的引荐
-    <text>{{invite}}</text>
-    <view class="icon2 rightArrow"></view>
-  </view>
-  <view class="myzoneLi" bindtap="toMyfans">
-    <view class="iconZone zone5"></view>
-    我的粉丝
-    <text>{{fans}}</text>
-    <view class="icon2 rightArrow"></view>
-  </view>
-  <view class="myzoneLi" bindtap="toMypay">
-    <view class="iconZone zone6"></view>
-    我的关注
-    <text>{{pay}}</text>
+  <view class="myzoneLi" bindtap="toMysupply">
+    <view class="iconZone zone"></view>
+    谁看过我
     <view class="icon2 rightArrow"></view>
   </view>
 </view>
+
 <view class="myzoneUl">
-  <view class="myzoneLi" bindtap="toMymsg">
-    <view class="iconZone zone3"></view>
-    我的留言
-    <text>未读留言{{msg}}</text>
+  <view class="myzoneLi" bindtap="toMysupply">
+    <view class="iconZone zone"></view>
+    企业信用额度
+    <text>{{supply}}</text>
     <view class="icon2 rightArrow"></view>
   </view>
-  <view class="myzoneLi" bindtap="toMymsg2">
-    <view class="iconZone zone9"></view>
-    我的消息
-    <text>未读消息{{msg2}}</text>
+  <view class="myzoneLi" bindtap="toMybuy">
+    <view class="iconZone zone2"></view>
+    塑料配资
+    <text>{{buy}}</text>
     <view class="icon2 rightArrow"></view>
   </view>
 </view>
-<view class="myzoneUl">
-  <view class="myzoneLi">
-    <view class="iconZone zone7"></view>
-    我的积分
-    <text>可兑换礼品</text>
-    <view class="icon2 rightArrow"></view>
-  </view>
-</view>
+
 <view class="myzoneUl">
   <view class="myzoneLi" bindtap="toHelp">
     <view class="iconZone zone10"></view>
@@ -131,20 +100,18 @@
     </view>
   </view>
   <view class="footerli">
-    <view class="releaseicon"></view>
-  </view>
-  <view class="footerli">
     <view class="footerwrap {{isHeadline}}">
       <view class="footerico footer3"></view>
-      <text>发现</text>
+      <text>发供求</text>
     </view>
   </view>
   <view class="footerli">
-    <view class="footerwrap {{isMyzone}}">
+    <view class="footerwrap {{isMyzone}}" bindtap="toMyzone">
       <view class="footerico footer4"></view>
       <text>我的</text>
     </view>
   </view>
 </view>
+
 
 <modal title="塑料圈通讯录" confirm-text="确定" cancel-text="取消" hidden="{{modalHidden}}" mask bindconfirm="modalConfirm" bindcancel="modalCancel">您未登录塑料圈，无法查看企业及个人信息</modal>
