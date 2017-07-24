@@ -198,7 +198,7 @@ page{
     border-top: 1rpx solid #d9d9d9;
 }
 .footerli{
-    width: 20%;
+    width: 25%;
     height: 100rpx;
     float: left;
     text-align: center;
@@ -209,6 +209,7 @@ page{
 .footerwrap{
     width: 130rpx;
     height: 130rpx;
+    margin: 0 auto;
 }
 .footerico{
     width: 60rpx;
@@ -219,43 +220,43 @@ page{
     width: 88rpx;
     height: 88rpx;
     margin: 6rpx auto 0 auto;
-    background: url(http://pic.myplas.com/myapp/img/releaseicon.png) no-repeat;
+    background: url(http://statics.myplas.com/myapp/img/releaseicon.png) no-repeat;
     background-size: 100% 100%;
 }
 .footerOn{ color: #ff5000;}
 .footerico.footer1{
-    background: url(http://pic.myplas.com/myapp/img/zone2.png) no-repeat;
+    background: url(http://statics.myplas.com/myapp/img/zone2.png) no-repeat;
     background-size: 100% 100%;
 }
 .footerOn .footer1{
-    background: url(http://pic.myplas.com/myapp/img/zone2On.png) no-repeat;
+    background: url(http://statics.myplas.com/myapp/img/zone2On.png) no-repeat;
     background-size: 100% 100%;
 }
 
 .footerico.footer2{
-    background: url(http://pic.myplas.com/myapp/img/zone.png) no-repeat;
+    background: url(http://statics.myplas.com/myapp/img/zone.png) no-repeat;
     background-size: 100% 100%;
 }
 .footerOn .footer2{
-    background: url(http://pic.myplas.com/myapp/img/zoneOn.png) no-repeat;
+    background: url(http://statics.myplas.com/myapp/img/zoneOn.png) no-repeat;
     background-size: 100% 100%;
 }
 
 .footerico.footer3{
-    background: url(http://pic.myplas.com/myapp/img/zone5.png) no-repeat;
+    background: url(http://statics.myplas.com/myapp/img/zone5.png) no-repeat;
     background-size: 100% 100%;
 }
 .footerOn .footer3{
-    background: url(http://pic.myplas.com/myapp/img/zone5On.png) no-repeat;
+    background: url(http://statics.myplas.com/myapp/img/zone5On.png) no-repeat;
     background-size: 100% 100%;
 }
 
 .footerOn .footer4{
-    background: url(http://pic.myplas.com/myapp/img/zone3On.png) no-repeat;
+    background: url(http://statics.myplas.com/myapp/img/zone3On.png) no-repeat;
     background-size: 100% 100%;
 }
 .footerico.footer4{
-    background: url(http://pic.myplas.com/myapp/img/zone3.png) no-repeat;
+    background: url(http://statics.myplas.com/myapp/img/zone3.png) no-repeat;
     background-size: 100% 100%;
 }
 

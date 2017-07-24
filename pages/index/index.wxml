@@ -67,12 +67,9 @@
     </view>
   </view>
   <view class="footerli">
-    <view class="releaseicon" bindtap="toQuickrelease"></view>
-  </view>
-  <view class="footerli">
     <view class="footerwrap {{isHeadline}}">
       <view class="footerico footer3"></view>
-      <text>发现</text>
+      <text>发供求</text>
     </view>
   </view>
   <view class="footerli">
