@@ -3,10 +3,10 @@
 <view class="search">
   <view class="searchwrap">
     <view class="searchicon"></view>
-    <input class="searchinput" placeholder="请输入公司、姓名、牌号查询" />
+    <input class="searchinput" placeholder="请输入公司、姓名、牌号查询" confirm-type="search" bindconfirm="searchPlastic" />
   </view>
   <view class="filter" bindtap="actionSheetTap">
-    {{sortFieldTxt}}
+    {{cType}}
     <view class="downarrow"></view>
   </view>
 </view>
@@ -37,13 +37,19 @@
         {{item.name}} {{item.sex}}
       </view>
       <view class="p second">
-        <text wx:if="{{item.type==='3'||item.type==='1'}}">产品:{{item.main_product}} 月用量:{{item.month_consum}}</text>
+        <text wx:if="{{item.type==='1'}}">产品:{{item.main_product}} 月用量:{{item.month_consum}}</text>
       </view>
-      <view wx:if="{{item.type==='3'||item.type==='1'}}" class="p third">
+      <view wx:if="{{item.type==='1'}}" class="p third">
         供:{{item.buy_count}} 求:{{item.sale_count}} 需求：{{item.need_product}}
       </view>
-      <view wx:if="{{item.type==='0'||item.type==='2'}}" class="p third">
+      <view wx:if="{{item.type==='2'}}" class="p third">
         供:{{item.buy_count}} 求:{{item.sale_count}} 主营：{{item.need_product}}
+      </view>
+      <view wx:if="{{item.type==='3'||item.type==='5'||item.type==='6'||item.type==='7'||item.type==='8'||item.type==='9'||item.type==='10'}}" class="p third">
+        主营产品：
+      </view>
+      <view wx:if="{{item.type==='4'}}" class="p third">
+        主营产品：{{item.main_product}}
       </view>
     </view>
   </view>
@@ -80,11 +86,17 @@
   </view>
 </view>
 
+<!-- 地区 -->
 
+
+<!-- 分类 -->
 <action-sheet hidden="{{actionSheetHidden}}" bindchange="actionSheetChange">
   <block>
-    <action-sheet-item class="item" bindtap="fnSortField">综合排序</action-sheet-item>
-    <action-sheet-item class="item" bindtap="fnSortOrder">最近注册</action-sheet-item>
+    <action-sheet-item class="item" bindtap="fnAll">所有分类</action-sheet-item>
+    <action-sheet-item class="item" bindtap="fnPlastic">塑料制品厂</action-sheet-item>
+    <action-sheet-item class="item" bindtap="fnMaterial">原料供应商</action-sheet-item>
+    <action-sheet-item class="item" bindtap="fnLogistics">物流服务商</action-sheet-item>
+    <action-sheet-item class="item" bindtap="fnOther">其他</action-sheet-item>
   </block>
   <action-sheet-cancel class="cancel">取消</action-sheet-cancel>
 </action-sheet>

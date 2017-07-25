@@ -13,11 +13,11 @@ Page({
     isHeadline: "",
     isMyzone: "",
     keywords: "",
+    region:0,
+    c_type:0,
     page: 1,
     size: 10,
-    sortField: "input_time",
-    sortOrder: "desc",
-    sortFieldTxt: "最近注册",
+    cType: "所有分类",
     token: "",
     moreHidden:true
   },
@@ -100,29 +100,6 @@ Page({
       })
     }
   },
-  toQuickrelease: function () {
-    this.setData({
-      token: wx.getStorageSync('token')
-    });
-    if (this.data.token) {
-      wx.navigateTo({
-        url: '../../pages/quickrelease/quickrelease',
-        success: function (res) {
-          // success
-        },
-        fail: function () {
-          // fail
-        },
-        complete: function () {
-          // complete
-        }
-      });
-    } else {
-      this.setData({
-        modalHidden: false
-      })
-    }
-  },
   modalConfirm: function (e) {
     this.setData({
       modalHidden: true
@@ -139,77 +116,63 @@ Page({
   toIndex: function () {
 
   },
-  fnSortField: function () {
+  //筛选
+  fnAll: function () {
+    var _this = this;
     this.setData({
-      sortField: "default",
+      c_type:0,
       actionSheetHidden: !this.data.actionSheetHidden,
-      sortFieldTxt: "综合排序",
+      cType: "所有分类",
       page:1
     })
-
-    var _this = this;
-    wx.request({
-      url: app.globalData.apiHost + '/friend/getPlasticPerson',
-      data: {
-        keywords: _this.data.keywords,
-        page: _this.data.page,
-        size: _this.data.size,
-        region:0,
-        token: wx.getStorageSync('token')
-      },
-      method: "POST",
-      header: {
-        'content-type': 'application/x-www-form-urlencoded/json',
-        'X-UA': 'weixin|5.5|3858|3bf198c15c2b3b98bd41832df8445a89|0|MacIntel|MacIntel|MacIntel|Netscape|Mozilla|0|0|0'
-      },
-      success: function (res) {
-        console.log(res);
-        if (res.data.err == 0) {
-          _this.setData({
-            name: res.data.persons
-          });
-        }
-      },
-      fail: function (res) {
-
-      },
-      complete: function () {
-
-      }
-    });
+    this.getPlasticPerson(this.data.keywords, this.data.page, this.data.size, this.data.region, this.data.c_type);
   },
-  fnSortOrder: function () {
+  fnPlastic: function () {
+    var _this = this;
     this.setData({
-      sortField: "input_time",
-      sortOrder: "desc",
+      c_type: 1,
       actionSheetHidden: !this.data.actionSheetHidden,
-      sortFieldTxt: "最近注册",
+      cType: "塑料制品厂",
       page: 1
     })
+    this.getPlasticPerson(this.data.keywords, this.data.page, this.data.size, this.data.region, this.data.c_type);
+  },
+  fnMaterial: function () {
     var _this = this;
-    wx.request({
-      url: app.globalData.apiHost + '/friend/getPlasticPerson',
-      data: {
-        keywords: _this.data.keywords,
-        page: _this.data.page,
-        size: _this.data.size,
-        region:0,
-        token: wx.getStorageSync('token')
-      },
-      method: "POST",
-      header: {
-        'content-type': 'application/x-www-form-urlencoded',
-        'X-UA': 'weixin|5.5|3858|3bf198c15c2b3b98bd41832df8445a89|0|MacIntel|MacIntel|MacIntel|Netscape|Mozilla|0|0|0'
-      },
-      success: function (res) {
-        console.log(res);
-        if (res.data.err == 0) {
-          _this.setData({
-            name: res.data.persons
-          });
-        }
-      }
+    this.setData({
+      c_type: 2,
+      actionSheetHidden: !this.data.actionSheetHidden,
+      cType: "原料供应商",
+      page: 1
+    })
+    this.getPlasticPerson(this.data.keywords, this.data.page, this.data.size, this.data.region, this.data.c_type);
+  },
+  fnLogistics: function () {
+    var _this = this;
+    this.setData({
+      c_type: 4,
+      actionSheetHidden: !this.data.actionSheetHidden,
+      cType: "物流服务商",
+      page: 1
+    })
+    this.getPlasticPerson(this.data.keywords, this.data.page, this.data.size, this.data.region, this.data.c_type);
+  },
+  fnOther: function () {
+    var _this = this;
+    this.setData({
+      c_type: 5,
+      actionSheetHidden: !this.data.actionSheetHidden,
+      cType: "其他",
+      page: 1
+    })
+    this.getPlasticPerson(this.data.keywords, this.data.page, this.data.size, this.data.region, this.data.c_type);
+  },
+  searchPlastic:function(e){
+    this.setData({
+      keywords: e.detail.value,
+      page: 1
     });
+    this.getPlasticPerson(this.data.keywords, this.data.page, this.data.size, this.data.region, this.data.c_type);
   },
   actionSheetTap: function (e) {
     this.setData({
@@ -221,8 +184,64 @@ Page({
       actionSheetHidden: !this.data.actionSheetHidden
     })
   },
+
+  //获取数据
+  getPlasticPerson:function(keywords,page,size,region,c_type){
+    var _this=this;
+    wx.request({
+      url: app.globalData.apiHost + '/friend/getPlasticPerson',
+      data: {
+        keywords: keywords,
+        page: page,
+        size: size,
+        region: region,
+        c_type:c_type,
+        token: wx.getStorageSync('token')
+      },
+      method: "POST",
+      header: {
+        'content-type': 'application/x-www-form-urlencoded',
+        'X-UA': wx.getStorageSync('XUA')
+      },
+      success: function (res) {
+        var persons = res.data.persons;
+        persons.forEach(function (v, i, a) {
+          v.need_product = v.need_product.replace(/<\/?[^>]*>/g, '');
+        });
+        console.log(persons);
+        if (res.data.err == 0) {
+          if(_this.data.page==1){
+            _this.setData({
+              name: persons
+            });
+            wx.stopPullDownRefresh();
+          }else{
+            persons.forEach(function (v, i, a) {
+              v.need_product = v.need_product.replace(/<\/?[^>]*>/g, '');
+            })
+            _this.setData({
+              name: _this.data.name.concat(persons)
+            });   
+          }
+        }else if(res.data.err==1){
+          _this.setData({
+            modalHidden: false
+          })
+        }
+      },
+      fail:function(res){
+
+      },
+      complete: function () {
+        _this.setData({
+          moreHidden: true
+        });
+      }
+    });    
+  },
   onLoad: function (options) {
     // 生命周期函数--监听页面加载
+
     //new app.Footer();
     wx.setStorageSync('XUA', "weixin|5.5|" + wx.getStorageSync("userid") + "|" + wx.getStorageSync("token") + "|0|Win32|Win32|Win32|Netscape|Mozilla|0|0|0");
     var router = getCurrentPages()[0].__route__;
@@ -243,28 +262,7 @@ Page({
     }
 
     var _this = this;
-    wx.request({
-      url: app.globalData.apiHost + '/friend/getPlasticPerson',
-      data: {
-        keywords: _this.data.keywords,
-        page: 1,
-        size: _this.data.size,
-        token: wx.getStorageSync('token')
-      },
-      method: "POST",
-      header: {
-        'content-type': 'application/x-www-form-urlencoded',
-        'X-UA': wx.getStorageSync('XUA')
-      },
-      success: function (res) {
-        console.log(res);
-        if (res.data.err == 0) {
-          _this.setData({
-            name: res.data.persons
-          });
-        }
-      }
-    });
+    this.getPlasticPerson(this.data.keywords, this.data.page, this.data.size, this.data.region, this.data.c_type);
 
   },
   onReady: function () {
@@ -285,68 +283,15 @@ Page({
   },
   onPullDownRefresh: function () {
     // 页面相关事件处理函数--监听用户下拉动作
-    var _this = this;
+    //var _this = this;
     this.setData({page: 1});
-    wx.request({
-      url: app.globalData.apiHost + '/friend/getPlasticPerson',
-      data: {
-        keywords: _this.data.keywords,
-        page: _this.data.page,
-        size: _this.data.size,
-        region:0,
-        token: wx.getStorageSync('token')
-      },
-      method: "POST",
-      header: {
-        'content-type': 'application/x-www-form-urlencoded',
-        'X-UA': 'weixin|5.5|3858|3bf198c15c2b3b98bd41832df8445a89|0|MacIntel|MacIntel|MacIntel|Netscape|Mozilla|0|0|0'
-      },
-      success: function (res) {
-        console.log(res);
-        if (res.data.err == 0) {
-          _this.setData({
-            name: res.data.persons
-          });
-          wx.stopPullDownRefresh();
-        }
-      }
-    });
+    this.getPlasticPerson(this.data.keywords, this.data.page, this.data.size, this.data.region, this.data.c_type);
   },
   onReachBottom: function () {
     // 页面上拉触底事件的处理函数
     this.setData({moreHidden: false});
     var _this = this;
     _this.data.page++;
-    wx.request({
-      url: app.globalData.apiHost + '/friend/getPlasticPerson',
-      data: {
-        keywords: _this.data.keywords,
-        page: _this.data.page,
-        size: _this.data.size,
-        sortField: _this.data.sortField,
-        sortOrder: _this.data.sortOrder,
-        token: wx.getStorageSync('token')
-      },
-      method: "POST",
-      header: {
-        'content-type': 'application/x-www-form-urlencoded'
-      },
-      success: function (res) {
-        console.log(res);
-        if (res.data.err == 0) {
-          _this.setData({
-            name: _this.data.name.concat(res.data.persons)
-          });
-        }
-      },
-      fail:function(){
-
-      },
-      complete:function(){
-        _this.setData({
-          moreHidden: true
-        })
-      }
-    });    
+    this.getPlasticPerson(this.data.keywords, this.data.page, this.data.size, this.data.region, this.data.c_type);   
   }
 })
