@@ -1,6 +1,5 @@
-<image class="img" src="http://pic.myplas.com/myapp/img/h1.jpg"></image>
-<image class="img" src="http://pic.myplas.com/myapp/img/h2.jpg"></image>
-<image class="img" src="http://pic.myplas.com/myapp/img/h3.jpg"></image>
-<image class="img" src="http://pic.myplas.com/myapp/img/h4.jpg"></image>
-<image class="img" src="http://pic.myplas.com/myapp/img/h5.jpg"></image>
+<image class="img" style=" height:750rpx;" src="http://statics.myplas.com/myapp/img/h1.jpg"></image>
+<image class="img" style=" height:567rpx;" src="http://statics.myplas.com/myapp/img/h2.jpg"></image>
+<image class="img" style=" height:750rpx;" src="http://statics.myplas.com/myapp/img/h3.jpg"></image>
+<image class="img" style=" height:820rpx;" src="http://statics.myplas.com/myapp/img/h4.jpg"></image>
 <view class="contact" bindtap="contact">联系客服</view>

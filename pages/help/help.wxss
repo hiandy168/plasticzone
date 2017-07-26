@@ -1,11 +1,9 @@
 page{
     background: #efeff4;
-    padding: 0 0 40rpx 0;
 }
 .img{
     display: block;
     width: 750rpx;
-    height: 624rpx;
 }
 .contact{
     width: auto;

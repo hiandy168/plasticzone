@@ -3,9 +3,9 @@
     
     "pages/index/index",
     "pages/myzone/myzone",
-    
     "pages/login/login",
-    "pages/plasticconfig/plasticconfig",
+
+
     
     "pages/quickrelease/quickrelease",
     "pages/releasebuy/releasebuy",
@@ -14,12 +14,14 @@
     "pages/mysupply/mysupply",
     "pages/mybuy/mybuy",
     
+
+
+    "pages/plasticconfig/plasticconfig",
     "pages/mypay/mypay",
     "pages/myfans/myfans",
     "pages/myinvite/myinvite",
     "pages/protocol/protocol",
     "pages/help/help"
-    
   ],
   "window":{
     "backgroundTextStyle":"light",
