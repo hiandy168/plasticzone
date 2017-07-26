@@ -106,6 +106,20 @@ Page({
       })
     }
   },
+  toPlasticconfig: function () {
+    this.setData({
+      token: wx.getStorageSync('token')
+    });
+    if (this.data.token) {
+      wx.navigateTo({
+        url: '../../pages/plasticconfig/plasticconfig'
+      })
+    } else {
+      this.setData({
+        modalHidden: false
+      })
+    }
+  },
   toMypay: function () {
     this.setData({
       token: wx.getStorageSync('token')
@@ -113,34 +127,6 @@ Page({
     if (this.data.token) {
       wx.navigateTo({
         url: '../../pages/mypay/mypay'
-      })
-    } else {
-      this.setData({
-        modalHidden: false
-      })
-    }
-  },
-  toMymsg: function () {
-    this.setData({
-      token: wx.getStorageSync('token')
-    });
-    if (this.data.token) {
-      wx.navigateTo({
-        url: '../../pages/mymsg/mymsg'
-      })
-    } else {
-      this.setData({
-        modalHidden: false
-      })
-    }
-  },
-  toMymsg2: function () {
-    this.setData({
-      token: wx.getStorageSync('token')
-    });
-    if (this.data.token) {
-      wx.navigateTo({
-        url: '../../pages/mymsg2/mymsg2'
       })
     } else {
       this.setData({
@@ -168,13 +154,14 @@ Page({
   },
   logOut: function () {
     wx.request({
-      url: app.globalData.apiHost + '/logOut',
+      url: app.globalData.apiHost + '/user/logOut',
       data: {
         token: wx.getStorageSync('token')
       },
       method: 'POST',
       header: {
-        'content-type': 'application/x-www-form-urlencoded'
+        'content-type': 'application/x-www-form-urlencoded',
+        'X-UA': wx.getStorageSync('XUA')
       },
       success: function (res) {
         if (res.data.err == 0) {

@@ -64,10 +64,9 @@
     企业信用额度
     <view class="icon2 rightArrow"></view>
   </view>
-  <view class="myzoneLi" bindtap="toMybuy">
+  <view class="myzoneLi" bindtap="toPlasticconfig">
     <view class="iconZone zone2"></view>
     塑料配资
-    <text>{{buy}}</text>
     <view class="icon2 rightArrow"></view>
   </view>
 </view>
