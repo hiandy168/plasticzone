@@ -17,6 +17,11 @@ Page({
       pwd: e.detail.value
     })
   },
+  toProtocol:function(){
+    wx.navigateTo({
+      url: '../protocol/protocol',
+    })
+  },
   login: function () {
     var _this = this;
     wx.setStorageSync('userid', "");
@@ -38,8 +43,8 @@ Page({
           wx.setStorageSync('token', res.data.dataToken);
           wx.setStorageSync('userid', res.data.user_id);
           wx.setStorageSync('XUA', "weixin|5.5|" + wx.getStorageSync("userid") + "|" + wx.getStorageSync("token") + "|0|Win32|Win32|Win32|Netscape|Mozilla|0|0|0");
-          wx.navigateBack({
-            delta: 5
+          wx.redirectTo({
+            url: '../index/index',
           })
         }
       },

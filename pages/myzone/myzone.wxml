@@ -10,7 +10,7 @@
       <view class="p">{{name}} {{mobile}}</view>
       <view class="p">{{c_name}}</view>
       <view class="p">
-      <text style="float: left;">更改等级：列兵   排名：1000位</text>
+      <text style="float: left;">等级：{{memberlevel}}   排名：{{rank}}位</text>
       </view>
     </view>
   </view>
@@ -53,6 +53,7 @@
   <view class="myzoneLi" bindtap="toMysupply">
     <view class="iconZone zone"></view>
     谁看过我
+    <text>{{buy}}</text>
     <view class="icon2 rightArrow"></view>
   </view>
 </view>
@@ -61,7 +62,6 @@
   <view class="myzoneLi" bindtap="toMysupply">
     <view class="iconZone zone"></view>
     企业信用额度
-    <text>{{supply}}</text>
     <view class="icon2 rightArrow"></view>
   </view>
   <view class="myzoneLi" bindtap="toMybuy">

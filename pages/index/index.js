@@ -185,7 +185,7 @@ Page({
     })
   },
 
-  //获取数据
+  //获取通讯录数据
   getPlasticPerson:function(keywords,page,size,region,c_type){
     var _this=this;
     wx.request({

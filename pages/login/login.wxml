@@ -1,14 +1,10 @@
 <view class="loginwrap">
+  <view class="loginPic"></view>
   <view class="loginbox">
-    <input class="logininput" bindinput="bindMobileInput" type="tel" placeholder="请输入手机号码" />
-  </view>
-  <view class="loginbox">
+    <input class="logininput" bindinput="bindMobileInput" style=" border-bottom:1rpx solid #efeff4" type="tel" placeholder="请输入手机号" />
     <input class="logininput" bindinput="bindPwdInput" type="password" placeholder="请输入密码" />
   </view>
 </view>
 
 <view class="loginbtn" bindtap="login">登录</view>
-<view class="regpwd">
-    <text class="txtleft">注册</text>
-    <text class="txtright">忘记密码</text>
-</view>
+<view class="loginprotocol" bindtap="toProtocol">《我的塑料网用户服务协议》</view>

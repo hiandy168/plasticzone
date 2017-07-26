@@ -2,28 +2,22 @@ page{
     background: #efeff4;
 }
 .loginwrap{
-    margin: 90rpx 40rpx 40rpx 40rpx;
+    margin: 50rpx 0 0 0;
 }
+.loginPic{ width: 150rpx; height: 150rpx; margin: 0 auto 50rpx auto; background: url(http://statics.myplas.com/myapp/img/avator.png) no-repeat; background-size: 100% 100%;}
 .loginbox{
     width: 100%;
-    height: 110rpx;
-    line-height: 110rpx;
-    border-radius: 10rpx;
-    margin: 0 0 20rpx 0;
     background: #FFFFFF;
+    padding: 0 40rpx;
+    box-sizing: border-box;
 }
 .logininput{
     font-size: 34rpx;
     color: #bbbbbb;
     height: 110rpx;
     line-height: 110rpx;
-    margin: 16rpx 20rpx 0 20rpx;
 }
-.checkbox{
-    padding: 0 40rpx;
-    font-size: 34rpx;
-    color: #999999;
-}
+
 .loginbtn{
     width: auto;
     height: 86rpx;
@@ -35,15 +29,4 @@ page{
     border-radius: 10rpx;
     margin: 80rpx 40rpx 0 40rpx;
 }
-.regpwd{
-    width: auto;
-    margin: 20rpx 40rpx 0 40rpx;
-    color: #267bd3;
-    font-size: 36rpx;
-}
-.txtleft{
-    float: left;
-}
-.txtright{
-    float: right;
-}
+.loginprotocol{ padding: 40rpx; font-size: 28rpx; text-align: center; color: #999999;}

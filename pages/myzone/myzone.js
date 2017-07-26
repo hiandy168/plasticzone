@@ -21,7 +21,8 @@ Page({
     isRelease: "",
     isIndex: "",
     isHeadline: "",
-    isMyzone: ""
+    isMyzone: "",
+    memberlevel:""
   },
   toRelease: function () {
     this.setData({
@@ -177,7 +178,8 @@ Page({
       },
       success: function (res) {
         if (res.data.err == 0) {
-          wx.setStorageSync('token', '')
+          wx.setStorageSync('token', '');
+          wx.setStorageSync('XUA', '');
           wx.redirectTo({
             url: '../../pages/index/index',
             success: function (res) {
@@ -214,36 +216,18 @@ Page({
       modalHidden: true
     })
   },
-  onLoad: function (options) {
-    // 生命周期函数--监听页面加载
-
-    var router = getCurrentPages()[0].__route__;
-    console.log(router);
-    switch (router) {
-      case "pages/release/release":
-        this.setData({ isRelease: "footerOn" });
-        break;
-      case "pages/index/index":
-        this.setData({ isIndex: "footerOn" });
-        break;
-      case "pages/index/index":
-        this.setData({ isIndex: "footerOn" });
-        break;
-      case "pages/myzone/myzone":
-        this.setData({ isMyzone: "footerOn" });
-        break;
-    }
-
+  //个人信息数据
+  getMyzone:function(){
     var _this = this;
     wx.request({
       url: app.globalData.apiHost + '/myInfo/myZone',
       data: {
-        token: '3bf198c15c2b3b98bd41832df8445a89'
+        token: wx.getStorageSync('token')
       },
       method: 'POST',
       header: {
         'content-type': 'application/x-www-form-urlencoded',
-        'X-UA': 'weixin|5.5|3858|3bf198c15c2b3b98bd41832df8445a89|0|MacIntel|MacIntel|MacIntel|Netscape|Mozilla|0|0|0'
+        'X-UA': wx.getStorageSync('XUA')
       },
       success: function (res) {
         console.log(res.data);
@@ -261,7 +245,9 @@ Page({
             msg2: res.data.message,
             invite: res.data.introduction,
             fans: res.data.myfans,
-            pay: res.data.myconcerns
+            pay: res.data.myconcerns,
+            memberlevel: res.data.data.memberlevel,
+            rank: res.data.data.rank
           });
 
         } else if (res.data.err == 1) {
@@ -276,7 +262,30 @@ Page({
       complete: function () {
         // complete
       }
-    })
+    });
+  },
+  onLoad: function (options) {
+    // 生命周期函数--监听页面加载
+    var _this = this;
+    var router = getCurrentPages()[0].__route__;
+    console.log(router);
+    switch (router) {
+      case "pages/release/release":
+        this.setData({ isRelease: "footerOn" });
+        break;
+      case "pages/index/index":
+        this.setData({ isIndex: "footerOn" });
+        break;
+      case "pages/index/index":
+        this.setData({ isIndex: "footerOn" });
+        break;
+      case "pages/myzone/myzone":
+        this.setData({ isMyzone: "footerOn" });
+        break;
+    }
+    this.getMyzone();
+    
+
 
   },
   onReady: function () {
