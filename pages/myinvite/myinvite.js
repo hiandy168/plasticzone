@@ -4,30 +4,45 @@
 var app = getApp();
 Page({
   data:{
+    page:1,
     name: []
   },
-  onLoad:function(options){
-    // 生命周期函数--监听页面加载
+  //获取我的引荐数据
+  getMyinvite: function (page) {
     var _this = this;
     wx.request({
-      url: app.globalData.apiHost + '/getMyIntroduction',
+      url: app.globalData.apiHost + '/myInfo/getMyIntroduction',
       data: {
-        page: 1,
-        size: 100,
+        page: page,
+        size: 10,
         token: wx.getStorageSync('token')
       },
       method: "POST",
       header: {
-        'content-type': 'application/x-www-form-urlencoded'
+        'content-type': 'application/x-www-form-urlencoded',
+        'X-UA': wx.getStorageSync('XUA')
       },
       success: function (res) {
+        console.log(res);
         if (res.data.err == 0) {
-          _this.setData({
-            name: res.data.data
-          });
+          if (_this.data.page == 1) {
+            _this.setData({
+              name: res.data.data
+            });
+          } else {
+            _this.setData({
+              name: _this.data.name.concat(res.data.data)
+            });
+          }
+
         }
       }
     });
+  },
+  onLoad:function(options){
+    // 生命周期函数--监听页面加载
+    var _this = this;
+    this.getMyinvite(this.data.page);
 
   },
   onReady:function(){
@@ -52,5 +67,8 @@ Page({
   },
   onReachBottom: function() {
     // 页面上拉触底事件的处理函数
+    var _this = this;
+    _this.data.page++;
+    this.getMyinvite(this.data.page);
   }
 })

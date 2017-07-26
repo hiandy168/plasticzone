@@ -24,8 +24,8 @@
   <view class="wxNum" style=" color:#ff5000;" >{{fans}}</view>
   <view class="wxTxt">粉丝数</view>
   </view>
-  <view class="wxMyBox">
-    <view class="wxNum" bindtap="toMypay" style=" color:#267bd3;" >{{pay}}</view>
+  <view class="wxMyBox" bindtap="toMypay">
+    <view class="wxNum" style=" color:#267bd3;" >{{pay}}</view>
   <view class="wxTxt">关注数</view>
   </view>
   <view class="wxMyBox" bindtap="toMyinvite">
