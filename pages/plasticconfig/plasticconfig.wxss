@@ -1,0 +1,46 @@
+/* pages/plasticconfig/plasticconfig.wxss */
+page{
+  background: #efeff4;
+}
+.configWrap {
+  padding: 30rpx 24rpx;
+}
+
+.configUl .li {
+  width: auto;
+  height: auto;
+  font-size: 24rpx;
+  color: #333333;
+  padding: 100rpx 20rpx 20rpx 20rpx;
+  position: relative;
+  margin: 0 0 30rpx 20rpx;
+  background: #fff;
+  line-height: 45rpx;
+}
+
+.configIco {
+  position: absolute;
+  font-size: 26rpx;
+  color: #ffffff;
+  line-height: 66rpx;
+  padding: 0 0 0 10rpx;
+  top: 20rpx;
+  left: -20rpx;
+  width: 260rpx;
+  height: 80rpx;
+}
+
+.configIco.config1 {
+  background: url(http://statics.myplas.com/myapp/img/config1.png) no-repeat;
+  background-size: 100% 100%;
+}
+
+.configIco.config2 {
+  background: url(http://statics.myplas.com/myapp/img/config2.png) no-repeat;
+  background-size: 100% 100%;
+}
+
+.configIco.config3 {
+  background: url(http://statics.myplas.com/myapp/img/config3.png) no-repeat;
+  background-size: 100% 100%;
+}

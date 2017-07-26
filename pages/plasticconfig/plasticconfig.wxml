@@ -1,0 +1,14 @@
+	<view class="configWrap">
+
+		<view class="configUl">
+
+			<view class="li" wx:for="{{configLi}}">
+				<view class="configIco {{index%3==0?'config1':''}} {{index%3==1?'config2':''}} {{index%3==2?'config3':''}}">
+        Q:<text>{{item.q}}</text>
+        </view>
+				A:<text>{{item.a}}</text>
+			</view>
+
+		</view>
+
+	</view>

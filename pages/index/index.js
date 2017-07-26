@@ -104,7 +104,7 @@ Page({
     this.setData({
       modalHidden: true
     });
-    wx.navigateTo({
+    wx.redirectTo({
       url: '../../pages/login/login'
     })
   },

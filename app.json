@@ -1,10 +1,11 @@
 {
   "pages":[
+    
     "pages/index/index",
     "pages/myzone/myzone",
     
     "pages/login/login",
-    
+    "pages/plasticconfig/plasticconfig",
     
     "pages/quickrelease/quickrelease",
     "pages/releasebuy/releasebuy",
@@ -19,10 +20,8 @@
     "pages/myfans/myfans",
     "pages/myinvite/myinvite",
     "pages/protocol/protocol",
-    "pages/help/help",
+    "pages/help/help"
     
-    "pages/headline/headline",
-    "pages/headlinedetail/headlinedetail"
   ],
   "window":{
     "backgroundTextStyle":"light",

@@ -1,7 +1,7 @@
 <view class="loginwrap">
   <view class="loginPic"></view>
   <view class="loginbox">
-    <input class="logininput" bindinput="bindMobileInput" style=" border-bottom:1rpx solid #efeff4" type="tel" placeholder="请输入手机号" />
+    <input class="logininput" bindinput="bindMobileInput" style=" border-bottom:1rpx solid #efeff4" type="number" placeholder="请输入手机号" />
     <input class="logininput" bindinput="bindPwdInput" type="password" placeholder="请输入密码" />
   </view>
 </view>
