@@ -1,0 +1,152 @@
+/* lookme.wxss */
+
+page {
+  background: #efeff4;
+  padding: 166rpx 0 0 0;
+}
+
+.iconV{ width: 30rpx; height: 30rpx; position: absolute; border: 1rpx solid #EEEEEE; border-radius: 50%; right: -14rpx; bottom: -9rpx;}
+.iconV.v1{ background: url(http://statics.myplas.com/myapp/img/v1.png) no-repeat; background-size: 100% 100%;}
+.iconV.v2{ background: url(http://statics.myplas.com/myapp/img/v2.png) no-repeat; background-size: 100% 100%;}
+
+.lookmeHead {
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  background: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.lookmeHead view {
+  width: 180rpx;
+  font-size: 28rpx;
+  position: relative;
+  display: inline-block;
+  color: #999;
+  text-align: center;
+}
+
+.lookmeHead view.on {
+  color: #333;
+}
+
+.lookmeHead view.on:after {
+  bottom: 10rpx;
+  left: 50%;
+  margin: 0 0 0 -24rpx;
+  content: "";
+  display: block;
+  position: absolute;
+  width: 48rpx;
+  height: 6rpx;
+  background: #fe6d1a;
+  border-radius: 4rpx;
+}
+
+.lookmeSub {
+  width: 100%;
+  height: 66rpx;
+  border-top: 1rpx solid #d6d7dc;
+  border-bottom: 1rpx solid #d6d7dc;
+  padding: 0 20rpx;
+  font-size: 28rpx;
+  color: #666;
+  line-height: 66rpx;
+  background: #f2f2f2;
+  position: fixed;
+  top: 100rpx;
+  left: 0;
+  z-index: 1;
+  box-sizing: border-box;
+}
+
+.lookmeUl {
+
+}
+
+.lookmeUl li {
+
+}
+
+.lookmeTime {
+  
+  padding: 0 20rpx;
+  height: 60rpx;
+  line-height: 70rpx;
+  font-size: 24rpx;
+  color: #666;
+}
+
+.lookmeWrap {
+  padding: 0 0 0 10px;
+  background: #fff;
+  border-top: 1rpx solid #d6d7dc;
+  border-bottom: 1rpx solid #d6d7dc;
+}
+
+.lookmeBox {
+  width: 100%;
+  height: 150rpx;
+  border-bottom: 1rpx solid #d6d7dc;
+}
+
+.lookmeBox:last-of-type {
+  border-bottom: none;
+}
+
+.lookmeAvator {
+  width: 110rpx;
+  height: 110rpx;
+  float: left;
+  margin: 20rpx 0 0 0;
+  position: relative;
+}
+
+.lookmeAvatorWrap {
+  width: 110rpx;
+  height: 110rpx;
+  border-radius: 12rpx;
+  border: 2rpx solid #f88f5f;
+  overflow: hidden;
+  
+}
+
+.lookmeAvatorWrap image {
+  width: 110rpx;
+  height: 110rpx;
+}
+
+.lookmeInfo {
+  margin: 0 0 0 140rpx;
+  padding: 40rpx 20rpx 0 0;
+}
+
+.lookmeInfo .p {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 24rpx;
+  line-height: 40rpx;
+}
+
+.lookmeTips {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  color: #999;
+  font-size: 24rpx;
+}
+
+.lookmePic {
+  margin: 40rpx 0 0 0;
+  width: 354rpx;
+  height: 250rpx;
+  display: inline-block;
+  background: url(../img/lookmePic.png) no-repeat;
+  background-size: 100% 100%;
+}

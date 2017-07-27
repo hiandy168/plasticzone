@@ -1,0 +1,42 @@
+<!--lookme.wxml-->
+<view class="lookmeHead">
+  <view class="{{mode==0?'on':''}}" data-id="0" bindtap="lookSwitch">谁看过我</view>
+  <view class="{{mode==1?'on':''}}" data-id="1" bindtap="lookSwitch">我看过谁</view>
+</view>
+<view wx:if="{{mode==0}}" class="lookmeSub">看过我的人总数：{{totals}}   今日看我：{{today}}</view>
+<view wx:if="{{mode==1}}" class="lookmeSub">我看的人总数：{{totals}}   今日查看：{{today}}</view>
+
+<view v-if="lookmeShow">
+  <view class="lookmeUl">
+
+    <view class="li" wx:for="{{history}}">
+
+      <view class="lookmeTime">{{item.time}}</view>
+      <view class="lookmeWrap">
+        <view class="lookmeBox" wx:for="{{item.person}}" wx:for-item="person" >
+
+          <view class="lookmeAvator">
+            <view class="lookmeAvatorWrap">
+              <image src="{{person.thumb}}"></image>
+            </view>
+            <i class="iconV {{person.isvip == 1 ? 'v1':'v2'}}"></i>
+          </view>
+
+          <view class="lookmeInfo">
+            <view class="p">{{person.company}}  {{person.name}}</view>
+            <view class="p" style="color: #999999;">{{person.date}}</view>
+          </view>
+
+        </view>
+      </view>
+
+    </view>
+
+  </view>
+</view>
+
+
+<view v-else class="lookmeTips">
+  <view class="lookmePic"></view>
+  {{lookmeMsg}}
+</view>
