@@ -5,8 +5,6 @@ var app = getApp();
 
 Page({
   data: {
-    modalHidden: true,
-    actionSheetHidden: true,
     name: [],
     isRelease: "",
     isIndex: "",
@@ -28,9 +26,7 @@ Page({
     if (this.data.token) {
 
     } else {
-      this.setData({
-        modalHidden: false
-      })
+
     }
   },
   toPersonInfo:function(event){
@@ -44,9 +40,7 @@ Page({
           url: '../../pages/personinfo/personinfo?id='+event.currentTarget.dataset.id
         })
     } else {
-      this.setData({
-        modalHidden: false
-      })
+
     }    
   },
   toMyfans: function () {
@@ -58,9 +52,7 @@ Page({
           url: '../../pages/myfans/myfans'
         })
     } else {
-      this.setData({
-        modalHidden: false
-      })
+
     }
   },
   toMypay: function () {
@@ -72,9 +64,7 @@ Page({
           url: '../../pages/mypay/mypay'
         })
     } else {
-      this.setData({
-        modalHidden: false
-      })
+
     }
   },
   toMyzone: function () {
@@ -95,67 +85,11 @@ Page({
           }
         });
     } else {
-      this.setData({
-        modalHidden: false
-      })
+
     }
-  },
-  modalConfirm: function (e) {
-    this.setData({
-      modalHidden: true
-    });
-    wx.redirectTo({
-      url: '../../pages/login/login'
-    })
-  },
-  modalCancel: function (e) {
-    this.setData({
-      modalHidden: true
-    })
   },
   toIndex: function () {
 
-  },
-  //筛选
-  fnAll: function () {
-    var _this = this;
-    this.setData({
-      c_type:0,
-      actionSheetHidden: !this.data.actionSheetHidden,
-      cType: "所有分类",
-      page:1
-    })
-    this.getPlasticPerson(this.data.keywords, this.data.page, this.data.size, this.data.region, this.data.c_type);
-  },
-  fnPlastic: function () {
-    var _this = this;
-    this.setData({
-      c_type: 1,
-      actionSheetHidden: !this.data.actionSheetHidden,
-      cType: "塑料制品厂",
-      page: 1
-    })
-    this.getPlasticPerson(this.data.keywords, this.data.page, this.data.size, this.data.region, this.data.c_type);
-  },
-  fnMaterial: function () {
-    var _this = this;
-    this.setData({
-      c_type: 2,
-      actionSheetHidden: !this.data.actionSheetHidden,
-      cType: "原料供应商",
-      page: 1
-    })
-    this.getPlasticPerson(this.data.keywords, this.data.page, this.data.size, this.data.region, this.data.c_type);
-  },
-  fnLogistics: function () {
-    var _this = this;
-    this.setData({
-      c_type: 4,
-      actionSheetHidden: !this.data.actionSheetHidden,
-      cType: "物流服务商",
-      page: 1
-    })
-    this.getPlasticPerson(this.data.keywords, this.data.page, this.data.size, this.data.region, this.data.c_type);
   },
   fnOther: function () {
     var _this = this;
@@ -175,13 +109,64 @@ Page({
     this.getPlasticPerson(this.data.keywords, this.data.page, this.data.size, this.data.region, this.data.c_type);
   },
   actionSheetTap: function (e) {
-    this.setData({
-      actionSheetHidden: !this.data.actionSheetHidden
-    })
-  },
-  actionSheetChange: function (e) {
-    this.setData({
-      actionSheetHidden: !this.data.actionSheetHidden
+    //筛选
+    var _this=this;
+    wx.showActionSheet({
+      itemList: ['所有分类', '塑料制品厂', '原料供应商', '物流服务商','其他'],
+      success: function (res) {
+        console.log(res.tapIndex)
+        switch (res.tapIndex) {
+          case 0:
+            _this.setData({
+              c_type: 0,
+              cType: "所有分类",
+              page: 1
+            })
+            _this.getPlasticPerson(_this.data.keywords, _this.data.page, _this.data.size, _this.data.region, _this.data.c_type);
+            
+            break;
+          case 1:
+            _this.setData({
+              c_type: 1,
+              cType: "塑料制品厂",
+              page: 1
+            })
+            _this.getPlasticPerson(_this.data.keywords, _this.data.page, _this.data.size, _this.data.region, _this.data.c_type);
+            
+            break;
+          case 2:
+            _this.setData({
+              c_type: 2,
+              cType: "原料供应商",
+              page: 1
+            })
+            _this.getPlasticPerson(_this.data.keywords, _this.data.page, _this.data.size, _this.data.region, _this.data.c_type);
+
+            break;
+            case 3:
+              _this.setData({
+                c_type: 4,
+                cType: "物流服务商",
+                page: 1
+              })
+              _this.getPlasticPerson(_this.data.keywords, _this.data.page, _this.data.size, _this.data.region, _this.data.c_type);
+
+            break;
+            case 4:
+              _this.setData({
+                c_type: 5,
+                cType: "其他",
+                page: 1
+              })
+              _this.getPlasticPerson(_this.data.keywords, _this.data.page, _this.data.size, _this.data.region, _this.data.c_type);
+
+            break;
+          default:;
+        }
+      },
+      fail: function (res) {
+        console.log(res.errMsg)
+      }
     })
   },
 
@@ -224,8 +209,16 @@ Page({
             });   
           }
         }else if(res.data.err==1){
-          _this.setData({
-            modalHidden: false
+          wx.showModal({
+            title: '提示',
+            content: '这是一个模态弹窗',
+            success: function (res) {
+              if (res.confirm) {
+                console.log('用户点击确定')
+              } else if (res.cancel) {
+                console.log('用户点击取消')
+              }
+            }
           })
         }
       },
@@ -233,9 +226,7 @@ Page({
 
       },
       complete: function () {
-        _this.setData({
-          moreHidden: true
-        });
+
       }
     });    
   },

@@ -86,19 +86,3 @@
   </view>
 </view>
 
-<!-- 地区 -->
-
-
-<!-- 分类 -->
-<action-sheet hidden="{{actionSheetHidden}}" bindchange="actionSheetChange">
-  <block>
-    <action-sheet-item class="item" bindtap="fnAll">所有分类</action-sheet-item>
-    <action-sheet-item class="item" bindtap="fnPlastic">塑料制品厂</action-sheet-item>
-    <action-sheet-item class="item" bindtap="fnMaterial">原料供应商</action-sheet-item>
-    <action-sheet-item class="item" bindtap="fnLogistics">物流服务商</action-sheet-item>
-    <action-sheet-item class="item" bindtap="fnOther">其他</action-sheet-item>
-  </block>
-  <action-sheet-cancel class="cancel">取消</action-sheet-cancel>
-</action-sheet>
-
-<modal title="塑料圈通讯录" confirm-text="确定" cancel-text="取消" hidden="{{modalHidden}}" mask bindconfirm="modalConfirm" bindcancel="modalCancel">您未登录塑料圈，无法查看企业及个人信息</modal>

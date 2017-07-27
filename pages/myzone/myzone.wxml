@@ -50,7 +50,7 @@
 </view>
 
 <view class="myzoneUl">
-  <view class="myzoneLi" bindtap="toMysupply">
+  <view class="myzoneLi" bindtap="toLookme">
     <view class="iconZone zone"></view>
     谁看过我
     <text>{{buy}}</text>
@@ -112,5 +112,3 @@
   </view>
 </view>
 
-
-<modal title="塑料圈通讯录" confirm-text="确定" cancel-text="取消" hidden="{{modalHidden}}" mask bindconfirm="modalConfirm" bindcancel="modalCancel">您未登录塑料圈，无法查看企业及个人信息</modal>

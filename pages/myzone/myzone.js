@@ -31,9 +31,7 @@ Page({
     if (this.data.token) {
 
     } else {
-      this.setData({
-        modalHidden: false
-      })
+
     }
   },
   toMyinvite: function () {
@@ -45,9 +43,7 @@ Page({
         url: '../../pages/myinvite/myinvite'
       })
     } else {
-      this.setData({
-        modalHidden: false
-      })
+
     }
   },
   toMysupply: function () {
@@ -59,9 +55,7 @@ Page({
         url: '../../pages/mysupply/mysupply'
       })
     } else {
-      this.setData({
-        modalHidden: false
-      })
+
     }
   },
   toMybuy: function () {
@@ -73,9 +67,7 @@ Page({
         url: '../../pages/mybuy/mybuy'
       })
     } else {
-      this.setData({
-        modalHidden: false
-      })
+
     }
   },
   toMyfans: function () {
@@ -87,9 +79,19 @@ Page({
         url: '../../pages/myfans/myfans'
       })
     } else {
-      this.setData({
-        modalHidden: false
+
+    }
+  },
+  toLookme: function () {
+    this.setData({
+      token: wx.getStorageSync('token')
+    });
+    if (this.data.token) {
+      wx.navigateTo({
+        url: '../../pages/lookme/lookme'
       })
+    } else {
+
     }
   },
   toHelp: function () {
@@ -101,9 +103,7 @@ Page({
         url: '../../pages/help/help'
       })
     } else {
-      this.setData({
-        modalHidden: false
-      })
+
     }
   },
   toPlasticconfig: function () {
@@ -115,9 +115,7 @@ Page({
         url: '../../pages/plasticconfig/plasticconfig'
       })
     } else {
-      this.setData({
-        modalHidden: false
-      })
+
     }
   },
   toMypay: function () {
@@ -129,9 +127,7 @@ Page({
         url: '../../pages/mypay/mypay'
       })
     } else {
-      this.setData({
-        modalHidden: false
-      })
+
     }
   },
   toIndex: function () {
@@ -153,24 +149,39 @@ Page({
     }
   },
   logOut: function () {
-    wx.request({
-      url: app.globalData.apiHost + '/user/logOut',
-      data: {
-        token: wx.getStorageSync('token')
-      },
-      method: 'POST',
-      header: {
-        'content-type': 'application/x-www-form-urlencoded',
-        'X-UA': wx.getStorageSync('XUA')
-      },
+    wx.showModal({
+      title: '塑料圈通讯录',
+      content: '是否退出登录？',
       success: function (res) {
-        if (res.data.err == 0) {
-          wx.setStorageSync('token', '');
-          wx.setStorageSync('XUA', '');
-          wx.redirectTo({
-            url: '../../pages/index/index',
+        if (res.confirm) {
+          wx.request({
+            url: app.globalData.apiHost + '/user/logOut',
+            data: {
+              token: wx.getStorageSync('token')
+            },
+            method: 'POST',
+            header: {
+              'content-type': 'application/x-www-form-urlencoded',
+              'X-UA': wx.getStorageSync('XUA')
+            },
             success: function (res) {
-              // success
+              if (res.data.err == 0) {
+                wx.setStorageSync('token', '');
+                wx.setStorageSync('XUA', '');
+                wx.redirectTo({
+                  url: '../../pages/index/index',
+                  success: function (res) {
+                    // success
+                  },
+                  fail: function () {
+                    // fail
+                  },
+                  complete: function () {
+                    // complete
+                  }
+                })
+
+              }
             },
             fail: function () {
               // fail
@@ -179,30 +190,14 @@ Page({
               // complete
             }
           })
-
+        } else if (res.cancel) {
+          console.log('用户点击取消')
         }
-      },
-      fail: function () {
-        // fail
-      },
-      complete: function () {
-        // complete
       }
     })
+
   },
-  modalConfirm: function (e) {
-    this.setData({
-      modalHidden: true
-    });
-    wx.navigateTo({
-      url: '../../pages/login/login'
-    })
-  },
-  modalCancel: function (e) {
-    this.setData({
-      modalHidden: true
-    })
-  },
+
   //个人信息数据
   getMyzone:function(){
     var _this = this;
@@ -238,8 +233,16 @@ Page({
           });
 
         } else if (res.data.err == 1) {
-          _this.setData({
-            modalHidden: false
+          wx.showModal({
+            title: '提示',
+            content: '这是一个模态弹窗',
+            success: function (res) {
+              if (res.confirm) {
+                console.log('用户点击确定')
+              } else if (res.cancel) {
+                console.log('用户点击取消')
+              }
+            }
           })
         }
       },
