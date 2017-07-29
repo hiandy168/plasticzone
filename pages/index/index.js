@@ -1,5 +1,5 @@
 //index.js
-
+var common=require('../../common/common.js');
 //获取应用实例
 var app = getApp();
 
@@ -44,16 +44,15 @@ Page({
     }    
   },
   toMyfans: function () {
-    this.setData({
-      token: wx.getStorageSync('token')
-    });
-    if (this.data.token) {
+    common.isLogin(function(status){
+      if (status){
         wx.navigateTo({
           url: '../../pages/myfans/myfans'
         })
-    } else {
+      }else{
 
-    }
+      }
+    })
   },
   toMypay: function () {
     this.setData({
@@ -64,7 +63,17 @@ Page({
           url: '../../pages/mypay/mypay'
         })
     } else {
-
+      wx.showModal({
+        title: '提示',
+        content: '这是一个模态弹窗',
+        success: function (res) {
+          if (res.confirm) {
+            console.log('用户点击确定')
+          } else if (res.cancel) {
+            console.log('用户点击取消')
+          }
+        }
+      })
     }
   },
   toMyzone: function () {
