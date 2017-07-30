@@ -21,9 +21,12 @@ function isLogin(callback) {
           content: '您未登录塑料圈,无法查看企业及个人信息',
           success: function (res) {
             if (res.confirm) {
-              console.log('用户点击确定')
+              wx.redirectTo({
+                url: '../../pages/login/login'
+              })
+
             } else if (res.cancel) {
-              console.log('用户点击取消')
+              
             }
           }
         })

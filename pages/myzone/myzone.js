@@ -1,5 +1,5 @@
 //myzone.js
-
+var common = require('../../common/common.js');
 //获取应用实例
 var app = getApp();
 Page({
@@ -35,118 +35,103 @@ Page({
     }
   },
   toMyinvite: function () {
-    this.setData({
-      token: wx.getStorageSync('token')
-    });
-    if (this.data.token) {
-      wx.navigateTo({
-        url: '../../pages/myinvite/myinvite'
-      })
-    } else {
+    common.isLogin(function (status) {
+      if (status) {
+        wx.navigateTo({
+          url: '../../pages/myinvite/myinvite'
+        })
+      } else {
 
-    }
+      }
+    })
   },
   toMysupply: function () {
-    this.setData({
-      token: wx.getStorageSync('token')
-    });
-    if (this.data.token) {
-      wx.navigateTo({
-        url: '../../pages/mysupply/mysupply'
-      })
-    } else {
+    common.isLogin(function (status) {
+      if (status) {
+        wx.navigateTo({
+          url: '../../pages/mysupply/mysupply'
+        })
+      } else {
 
-    }
+      }
+    })
   },
   toMybuy: function () {
-    this.setData({
-      token: wx.getStorageSync('token')
-    });
-    if (this.data.token) {
-      wx.navigateTo({
-        url: '../../pages/mybuy/mybuy'
-      })
-    } else {
+    common.isLogin(function (status) {
+      if (status) {
+        wx.navigateTo({
+          url: '../../pages/mybuy/mybuy'
+        })
+      } else {
 
-    }
+      }
+    })
   },
   toMyfans: function () {
-    this.setData({
-      token: wx.getStorageSync('token')
-    });
-    if (this.data.token) {
-      wx.navigateTo({
-        url: '../../pages/myfans/myfans'
-      })
-    } else {
+    common.isLogin(function (status) {
+      if (status) {
+        wx.navigateTo({
+          url: '../../pages/myfans/myfans'
+        })
+      } else {
 
-    }
+      }
+    })
   },
   toLookme: function () {
-    this.setData({
-      token: wx.getStorageSync('token')
-    });
-    if (this.data.token) {
-      wx.navigateTo({
-        url: '../../pages/lookme/lookme'
-      })
-    } else {
+    common.isLogin(function (status) {
+      if (status) {
+        wx.navigateTo({
+          url: '../../pages/lookme/lookme'
+        })
+      } else {
 
-    }
+      }
+    })
   },
   toHelp: function () {
-    this.setData({
-      token: wx.getStorageSync('token')
-    });
-    if (this.data.token) {
-      wx.navigateTo({
-        url: '../../pages/help/help'
-      })
-    } else {
+    common.isLogin(function (status) {
+      if (status) {
+        wx.navigateTo({
+          url: '../../pages/help/help'
+        })
+      } else {
 
-    }
+      }
+    })
   },
   toPlasticconfig: function () {
-    this.setData({
-      token: wx.getStorageSync('token')
-    });
-    if (this.data.token) {
-      wx.navigateTo({
-        url: '../../pages/plasticconfig/plasticconfig'
-      })
-    } else {
+    common.isLogin(function (status) {
+      if (status) {
+        wx.navigateTo({
+          url: '../../pages/plasticconfig/plasticconfig'
+        })
+      } else {
 
-    }
+      }
+    })
   },
   toMypay: function () {
-    this.setData({
-      token: wx.getStorageSync('token')
-    });
-    if (this.data.token) {
-      wx.navigateTo({
-        url: '../../pages/mypay/mypay'
-      })
-    } else {
+    common.isLogin(function (status) {
+      if (status) {
+        wx.navigateTo({
+          url: '../../pages/mypay/mypay'
+        })
+      } else {
 
-    }
+      }
+    })
   },
   toIndex: function () {
-    if (wx.getStorageSync('token')) {
-      wx.redirectTo({
-        url: '../../pages/index/index',
-        success: function (res) {
-          // success
-        },
-        fail: function () {
-          // fail
-        },
-        complete: function () {
-          // complete
-        }
-      })
-    } else {
+    common.isLogin(function (status) {
+      if (status) {
+        wx.navigateTo({
+          url: '../../pages/index/index',
+        })
+      } else {
 
-    }
+      }
+    })
   },
   logOut: function () {
     wx.showModal({

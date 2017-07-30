@@ -30,18 +30,16 @@ Page({
     }
   },
   toPersonInfo:function(event){
-    //console.log(event);
     console.log(event.currentTarget.dataset.id);
-    this.setData({
-      token: wx.getStorageSync('token')
-    });
-    if (this.data.token) {
+    common.isLogin(function (status) {
+      if (status) {
         wx.navigateTo({
-          url: '../../pages/personinfo/personinfo?id='+event.currentTarget.dataset.id
+          url: '../../pages/personinfo/personinfo?id=' + event.currentTarget.dataset.id
         })
-    } else {
+      } else {
 
-    }    
+      }
+    }) 
   },
   toMyfans: function () {
     common.isLogin(function(status){
@@ -55,47 +53,26 @@ Page({
     })
   },
   toMypay: function () {
-    this.setData({
-      token: wx.getStorageSync('token')
-    });
-    if (this.data.token) {
+    common.isLogin(function (status) {
+      if (status) {
         wx.navigateTo({
           url: '../../pages/mypay/mypay'
         })
-    } else {
-      wx.showModal({
-        title: '提示',
-        content: '这是一个模态弹窗',
-        success: function (res) {
-          if (res.confirm) {
-            console.log('用户点击确定')
-          } else if (res.cancel) {
-            console.log('用户点击取消')
-          }
-        }
-      })
-    }
+      } else {
+
+      }
+    })
   },
   toMyzone: function () {
-    this.setData({
-      token: wx.getStorageSync('token')
-    });
-    if (this.data.token) {
-        wx.redirectTo({
+    common.isLogin(function (status) {
+      if (status) {
+        wx.navigateTo({
           url: '../../pages/myzone/myzone',
-          success: function(res){
-            // success
-          },
-          fail: function() {
-            // fail
-          },
-          complete: function() {
-            // complete
-          }
-        });
-    } else {
+        })
+      } else {
 
-    }
+      }
+    })
   },
   toIndex: function () {
 
