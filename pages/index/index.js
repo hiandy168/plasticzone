@@ -66,7 +66,7 @@ Page({
   toMyzone: function () {
     common.isLogin(function (status) {
       if (status) {
-        wx.navigateTo({
+        wx.redirectTo({
           url: '../../pages/myzone/myzone',
         })
       } else {
@@ -176,11 +176,10 @@ Page({
       },
       success: function (res) {
         var persons = res.data.persons;
-        persons.forEach(function (v, i, a) {
-          v.need_product = v.need_product.replace(/<\/?[^>]*>/g, '');
-        });
-        console.log(persons);
         if (res.data.err == 0) {
+          persons.forEach(function (v, i, a) {
+            v.need_product = v.need_product.replace(/<\/?[^>]*>/g, '');
+          });
           if(_this.data.page==1){
             _this.setData({
               name: persons
@@ -196,13 +195,16 @@ Page({
           }
         }else if(res.data.err==1){
           wx.showModal({
-            title: '提示',
-            content: '这是一个模态弹窗',
+            title: '塑料圈通讯录',
+            content: '您未登录塑料圈,无法查看企业及个人信息',
             success: function (res) {
               if (res.confirm) {
-                console.log('用户点击确定')
+                wx.redirectTo({
+                  url: '../../pages/login/login'
+                })
+
               } else if (res.cancel) {
-                console.log('用户点击取消')
+
               }
             }
           })
