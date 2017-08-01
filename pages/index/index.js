@@ -74,6 +74,17 @@ Page({
       }
     })
   },
+  toQuickRelease: function () {
+    common.isLogin(function (status) {
+      if (status) {
+        wx.navigateTo({
+          url: '../../pages/quickrelease/quickrelease',
+        })
+      } else {
+
+      }
+    })
+  },
   toIndex: function () {
 
   },
