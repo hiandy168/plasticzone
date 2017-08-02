@@ -1,72 +1,7 @@
 page{
     background: #efeff4;
 }
-.toReleaseWrap {
-    width: 100%;
-    height: 960rpx;
-    padding: 0 20rpx;
-    position: fixed;
-    left: 0;
-    box-sizing: border-box;
-    bottom: 100rpx;
-}
-.toReleaseUl {
-    width: 100%;
-    height: 720rpx;
-}
-.toReleaseli {
-    width: 50%;
-    height: 720rpx;
-    float: left;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-.toReleaseli .li {
-    width: 100%;
-    padding: 20rpx;
-    height: auto;
-    box-sizing: border-box;
-    border-bottom: 1rpx solid #d9d9d9;
-    font-size: 26rpx;
-    color: #333333;
-    word-break: break-word;
-}
-.toReleaseli .p {
-    font-size: 26rpx;
-    color: #333333;
-    height: 60rpx;
-    line-height: 30rpx;
-    margin: 0;
-    overflow: hidden;
-}
-.toReleaselink {
-    width: 100%;
-    overflow: hidden;
-    margin: 30rpx 0 0 0;
-}
-.toReleaselink .li {
-    float: left;
-    width: 50%;
-    text-align: center;
-    font-size: 26rpx;
-    color: #666666;
-}
-.toReleasebuy {
-    width: 140rpx;
-    height: 140rpx;
-    display: inline-block;
-    background: url(http://statics.myplas.com/myapp/img/toReleasebuy.png) no-repeat;
-    background-size: 100% 100%;
-}
-.toReleasesupply {
-    width: 140rpx;
-    height: 140rpx;
-    display: inline-block;
-    background: url(http://statics.myplas.com/myapp/img/toReleasesupply.png) no-repeat;
-    background-size: 100% 100%;
-}
+
 .toReleasefooter {
     width: 100%;
     height: 100rpx;

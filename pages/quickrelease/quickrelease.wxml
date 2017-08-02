@@ -1,36 +1,4 @@
-<view class="toReleaseWrap">
-  <view class="toReleaseUl">
-    <view class="toReleaseli" style="padding: 0 20rpx 0 0; border-right: 2rpx solid rgb(217, 217, 217);">
-      <view class="li" wx:for="{{buy}}">
-        <view>
-          <text style="color: rgb(153, 153, 153);">{{item.input_time}}</text>
-          <text style="float: right; color: rgb(255, 80, 0);">重发</text>
-        </view>
-        <view class="p">{{item.content}}</view>
-      </view>
-    </view>
-    <view class="toReleaseli" style="padding: 0 0 0 20rpx; border-left: 2rpx solid rgb(255, 255, 255);">
-      <view class="li" wx:for="{{supply}}">
-        <view>
-          <text style="color: rgb(153, 153, 153);">{{item.input_time}}</text>
-          <text style="float: right; color: rgb(255, 80, 0);">重发</text>
-        </view>
-        <view class="p">{{item.content}}</view>
-      </view>
-    </view>
-  </view>
-  <view class="toReleaselink">
-    <view class="li">
-      <view class="toReleasebuy"></view>
-      <view>发布求购</view>
-    </view>
-    <view class="li">
-      <view class="toReleasesupply"></view>
-      <view>发布供给</view>
-    </view>
-  </view>
 
-</view>
 
 <view class="toReleasefooter">
   <view class="toReleaseclose" bindtap="toBack"></view>

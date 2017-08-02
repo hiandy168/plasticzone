@@ -4,8 +4,7 @@
 var app = getApp();
 Page({
   data: {
-    buy: [],
-    supply: []
+
   },
   toBack:function(){
     wx.navigateBack({
@@ -15,76 +14,6 @@ Page({
   onLoad: function (options) {
     // 生命周期函数--监听页面加载
     var _this = this;
-    wx.request({
-      url: app.globalData.apiHost + '/supplyDemandList',
-      data: {
-        page: 1,
-        size: 5,
-        type: 1,
-        token: wx.getStorageSync('token')
-      },
-      method: 'POST',
-      header: {
-        'content-type': 'application/x-www-form-urlencoded'
-      },
-      success: function (res) {
-        if (res.data.err == 0) {
-          _this.setData({
-            buy: res.data.data
-          });
-        } else if (res.data.err == 1) {
-          _this.setData({
-            buy: []
-          });
-        } else if (res.data.err == 2) {
-          _this.setData({
-            buy: []
-          });
-        }
-
-      },
-      fail: function () {
-
-      },
-      complete: function () {
-
-      }
-    });
-    wx.request({
-      url: app.globalData.apiHost + '/supplyDemandList',
-      data: {
-        page: 1,
-        size: 5,
-        type: 2,
-        token: wx.getStorageSync('token')
-      },
-      method: 'POST',
-      header: {
-        'content-type': 'application/x-www-form-urlencoded'
-      },
-      success: function (res) {
-        if (res.data.err == 0) {
-          _this.setData({
-            supply: res.data.data
-          });
-        } else if (res.data.err == 1) {
-          _this.setData({
-            supply: []
-          });
-        } else if (res.data.err == 2) {
-          _this.setData({
-            supply: []
-          });
-        }
-
-      },
-      fail: function () {
-
-      },
-      complete: function () {
-
-      }
-    })
 
   },
   onReady: function () {

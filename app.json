@@ -1,9 +1,10 @@
 {
   "pages": [
+    "pages/quickrelease/quickrelease",
     "pages/index/index",
     "pages/myzone/myzone",
     "pages/login/login",
-    "pages/quickrelease/quickrelease",
+    
     "pages/releasebuy/releasebuy",
     "pages/releasesupply/releasesupply",
     "pages/personinfo/personinfo",
