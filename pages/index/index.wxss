@@ -68,7 +68,7 @@ page{
   width: 80rpx;
   height: 80rpx;
   float: left;
-  border: 1rpx solid #ff9566;
+  border: 2rpx solid #ff9566;
   border-radius: 6rpx;
 }
 .fanstxt{ float: left; height: 80rpx; line-height: 80rpx; margin: 0 0 0 10rpx;}
