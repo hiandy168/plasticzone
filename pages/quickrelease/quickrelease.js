@@ -4,12 +4,17 @@
 var app = getApp();
 Page({
   data: {
-
+    mode:0
   },
   toBack:function(){
     wx.navigateBack({
       delta: 1
     })
+  },
+  lookSwitch: function (event) {
+    this.setData({
+      mode: event.currentTarget.dataset.id
+    });
   },
   onLoad: function (options) {
     // 生命周期函数--监听页面加载
