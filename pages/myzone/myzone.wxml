@@ -76,7 +76,6 @@
     退出登录
   </view>
 </view>
-
 <view class="footer">
   <view class="footerli">
     <view class="footerwrap {{isRelease}}" bindtap="toRelease">
@@ -91,7 +90,7 @@
     </view>
   </view>
   <view class="footerli">
-    <view class="footerwrap {{isHeadline}}">
+    <view class="footerwrap" bindtap="toQuickRelease">
       <view class="footerico footer3"></view>
       <text>发供求</text>
     </view>

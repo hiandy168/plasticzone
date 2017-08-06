@@ -73,7 +73,7 @@
     </view>
   </view>
   <view class="footerli">
-    <view class="footerwrap {{isQuickRelease}}" bindtap="toQuickRelease">
+    <view class="footerwrap" bindtap="toQuickRelease">
       <view class="footerico footer3"></view>
       <text>发供求</text>
     </view>

@@ -14,16 +14,17 @@ Page({
     // 生命周期函数--监听页面加载
     var _this = this;
     wx.request({
-      url: app.globalData.apiHost+'/getMyMsg',
+      url: app.globalData.apiHost + '/releaseMsg/getMyMsg',
       data: {
-          type: 1,
-			    page: _this.data.page,
-          token: wx.getStorageSync('token'),
-          size: 100
+        type: 1,
+        page: _this.data.page,
+        token: wx.getStorageSync('token'),
+        size: 100
       },
       method: 'POST', 
       header: {
-        'content-type': 'application/x-www-form-urlencoded'
+        'content-type': 'application/x-www-form-urlencoded',
+        'X-UA': wx.getStorageSync('XUA')
       },
       success: function(res){
         if (res.data.err == 0) {

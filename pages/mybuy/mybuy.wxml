@@ -3,7 +3,6 @@
         <view class="supplytitle">
             <view class="supplytitleH3">
             {{item.input_time}}
-            <text>删除</text>
             </view>
             <view class="supplytitleP">
             我的供给:{{item.contents}}

@@ -34,6 +34,17 @@ Page({
 
     }
   },
+  toQuickRelease: function () {
+    common.isLogin(function (status) {
+      if (status) {
+        wx.navigateTo({
+          url: '../../pages/quickrelease/quickrelease',
+        })
+      } else {
+
+      }
+    })
+  },
   toMyinvite: function () {
     common.isLogin(function (status) {
       if (status) {
@@ -125,7 +136,7 @@ Page({
   toIndex: function () {
     common.isLogin(function (status) {
       if (status) {
-        wx.navigateTo({
+        wx.redirectTo({
           url: '../../pages/index/index',
         })
       } else {
