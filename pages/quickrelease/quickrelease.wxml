@@ -3,6 +3,66 @@
   <view class="{{mode==1?'on':''}}" data-id="1" bindtap="lookSwitch">发布供给</view>
 </view>
 
+<view wx:if="{{mode==0?true:false}}" class="releaseWrap2">
+  <view class="p">
+    <text>牌号</text>
+    <view style="width:auto; overflow:hidden;">
+      <input type="text" bindinput="modelInput" />
+    </view>
+  </view>
+  <view class="p">
+    <text>厂家</text>
+    <view style="width:auto; overflow:hidden;">
+      <input type="text" bindinput="fnameInput" />
+    </view>
+  </view>
+  <view class="p">
+    <text>价格</text>
+    <view style="width:auto; overflow:hidden;">
+      <input type="number" bindinput="priceInput" />
+    </view>
+  </view>
+  <view class="p">
+    <text>交货地</text>
+    <view style="width:auto; overflow:hidden;">
+      <input type="text" bindinput="storehouseInput" />
+    </view>
+  </view>
+  <view class="tips">填写准确供求，参与系统比价；</view>
+  <view bindtap="releaseBuy" class="release">发布求购</view>
+</view>
+
+
+<view wx:if="{{mode==1?true:false}}" class="releaseWrap2">
+  <view class="p">
+    <text>牌号</text>
+    <view style="width:auto; overflow:hidden;">
+      <input type="text" bindinput="modelInput" />
+    </view>
+  </view>
+  <view class="p">
+    <text>厂家</text>
+    <view style="width:auto; overflow:hidden;">
+      <input type="text" bindinput="fnameInput" />
+    </view>
+  </view>
+  <view class="p">
+    <text>价格</text>
+    <view style="width:auto; overflow:hidden;">
+      <input type="number" bindinput="priceInput" />
+    </view>
+  </view>
+  <view class="p">
+    <text>交货地</text>
+    <view style="width:auto; overflow:hidden;">
+      <input type="text" bindinput="storehouseInput" />
+    </view>
+  </view>
+  <view class="tips">填写准确供求，参与系统比价；</view>
+  <view class="release">发布供给</view>
+</view>
+
+
 <view class="toReleasefooter">
   <view class="toReleaseclose" bindtap="toBack"></view>
 </view>

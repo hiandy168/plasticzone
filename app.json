@@ -1,13 +1,14 @@
 {
   "pages": [
-    "pages/quickrelease/quickrelease",
+    
+    
     "pages/index/index",
+    "pages/personinfo/personinfo",
+    "pages/quickrelease/quickrelease",
+    
     "pages/myzone/myzone",
     "pages/login/login",
     
-    "pages/releasebuy/releasebuy",
-    "pages/releasesupply/releasesupply",
-    "pages/personinfo/personinfo",
     "pages/mysupply/mysupply",
     "pages/mybuy/mybuy",
     "pages/plasticconfig/plasticconfig",

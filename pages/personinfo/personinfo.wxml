@@ -32,36 +32,4 @@
       </view>
     </view>
   </view>
-  <view class="personInfoList">
-    <view class="supplydemandtitle">
-      最近求购信息
-      <view data-id="{{user_id}}" bindtap="toReleaseBuy" style="color: #ff4f00; float:right;">查看更多>></view>
-    </view>
-    <view class="supplydemandul">
-      <view class="li" wx:for="{{buylist}}">
-        <view style="color: #999999;">{{item.input_time}}</view>
-        <view>
-          <text style="color: #ec8000;">求购</text> :{{item.contents}}
-        </view>
-      </view>
-    </view>
-  </view>
-  <view class="personInfoList">
-    <view class="supplydemandtitle" style="background: #b8d2e3;">
-      最近供给信息
-      <view data-id="{{user_id}}" bindtap="toReleaseSupply" style="color: #267bd3; float:right;">查看更多>></view>
-    </view>
-    <view class="supplydemandul">
-      <view class="li" wx:for="{{supplylist}}">
-        <view style="color: #999999;">{{item.input_time}}</view>
-        <view>
-          <text style="color: #63769d;">供给</text> :{{item.contents}}
-        </view>
-      </view>
-    </view>
-  </view>
 </view>
-
-<modal title="塑料圈通讯录" confirm-text="确定" cancel-text="取消" hidden="{{modalHidden}}" mask bindconfirm="modalConfirm" bindcancel="modalCancel">
-  {{resMsg}}
-</modal>

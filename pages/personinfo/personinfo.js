@@ -123,34 +123,6 @@ Page({
       }
     })
   },
-  toReleaseBuy: function (event) {
-    //console.log(event);
-    console.log(event.currentTarget.dataset.id);
-    this.setData({
-      token: wx.getStorageSync('token')
-    });
-    if (this.data.token) {
-      wx.navigateTo({
-        url: '../../pages/releasebuy/releasebuy?id=' + event.currentTarget.dataset.id
-      })
-    } else {
-
-    }
-  },
-  toReleaseSupply: function (event) {
-    //console.log(event);
-    console.log(event.currentTarget.dataset.id);
-    this.setData({
-      token: wx.getStorageSync('token')
-    });
-    if (this.data.token) {
-      wx.navigateTo({
-        url: '../../pages/releasesupply/releasesupply?id=' + event.currentTarget.dataset.id
-      })
-    } else {
-
-    }
-  },
   onLoad: function (options) {
     // 生命周期函数--监听页面加载
     this.setData({
@@ -158,14 +130,15 @@ Page({
     });
     var _this = this;
     wx.request({
-      url: app.globalData.apiHost + '/getZoneFriend',
+      url: app.globalData.apiHost + '/friend/getZoneFriend',
       data: {
         token: wx.getStorageSync('token'),
-        userid: options.id
+        user_id: options.id
       },
       method: 'POST',
       header: {
-        'content-type': 'application/x-www-form-urlencoded'
+        'content-type': 'application/x-www-form-urlencoded',
+        'X-UA': wx.getStorageSync('XUA')
       },
       success: function (res) {
         if (res.data.err == 0) {
@@ -188,10 +161,7 @@ Page({
             user_id: res.data.data.user_id
           });
         } else if (res.data.err == 99) {
-          _this.setData({
-            modalHidden: false,
-            resMsg: res.data.msg
-          })
+
         }
       },
       fail: function () {
@@ -201,60 +171,6 @@ Page({
         // complete
       }
     });
-
-    wx.request({
-      url: app.globalData.apiHost + '/getTaPur',
-      data: {
-        userid: options.id,
-        page: 1,
-        size: 5,
-        type: 1,
-        token: wx.getStorageSync('token'),
-      },
-      method: 'POST',
-      header: {
-        'content-type': 'application/x-www-form-urlencoded'
-      },
-      success: function (res) {
-        _this.setData({
-          buylist: res.data.data,
-        });
-
-      },
-      fail: function (res) {
-        // fail
-      },
-      complete: function (res) {
-        // complete
-      }
-    });
-
-    wx.request({
-      url: app.globalData.apiHost + '/getTaPur',
-      data: {
-        userid: options.id,
-        page: 1,
-        size: 5,
-        type: 2,
-        token: wx.getStorageSync('token'),
-      },
-      method: 'POST',
-      header: {
-        'content-type': 'application/x-www-form-urlencoded'
-      },
-      success: function (res) {
-        _this.setData({
-          supplylist: res.data.data,
-        });
-
-      },
-      fail: function (res) {
-        // fail
-      },
-      complete: function (res) {
-        // complete
-      }
-    })
 
   },
   onReady: function () {

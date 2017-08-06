@@ -1,16 +1,13 @@
-page{
-    background: #efeff4;
+page {
+  background: #efeff4;
 }
+
 .lookmeHead {
   width: 100%;
   height: 100rpx;
   line-height: 100rpx;
   text-align: center;
   background: #fff;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1;
 }
 
 .lookmeHead view {
@@ -39,21 +36,76 @@ page{
   border-radius: 4rpx;
 }
 
-.toReleasefooter {
-    width: 100%;
-    height: 100rpx;
-    text-align: center;
-    border-top: 1rpx solid #d9d9d9;
-    background: #FFFFFF;
-    position: fixed;
-    left: 0;
-    bottom: 0;
+.releaseWrap2 {
+  margin: 40rpx 0 0 0;
+  overflow: hidden;
 }
+
+.releaseWrap2 .p {
+  width: 100%;
+  float: left;
+  height: 80rpx;
+  line-height: 80rpx;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+  font-size: 28rpx;
+  margin: 0 0 40rpx 0;
+}
+
+.releaseWrap2 text {
+  float: left;
+  text-align: right;
+  width: 50px;
+  margin: 0 10rpx 0 0;
+}
+
+.releaseWrap2 input {
+  float: left;
+  width: 100%;
+  background: #fff;
+  padding: 10rpx;
+  border: 2rpx solid #d9d9d9;
+  border-radius: 10rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  box-sizing: border-box;
+}
+
+.tips {
+  padding: 0 30rpx;
+  font-size: 26rpx;
+  color: #999;
+}
+
+.release {
+  width: auto;
+  height: 80rpx;
+  padding: 0;
+  text-align: center;
+  font-size: 36rpx;
+  line-height: 80rpx;
+  background: #ff5000;
+  color: #fff;
+  margin: 40rpx 20rpx 0 20rpx;
+  border-radius: 10rpx;
+}
+
+.toReleasefooter {
+  width: 100%;
+  height: 100rpx;
+  text-align: center;
+  border-top: 1rpx solid #d9d9d9;
+  background: #fff;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}
+
 .toReleaseclose {
-    width: 34rpx;
-    height: 34rpx;
-    margin: 30rpx 0 0 0;
-    display: inline-block;
-    background: url(http://statics.myplas.com/myapp/img/toreleaseclose.png) no-repeat;
-    background-size: 100% 100%;
+  width: 34rpx;
+  height: 34rpx;
+  margin: 30rpx 0 0 0;
+  display: inline-block;
+  background: url(http://statics.myplas.com/myapp/img/toreleaseclose.png) no-repeat;
+  background-size: 100% 100%;
 }
