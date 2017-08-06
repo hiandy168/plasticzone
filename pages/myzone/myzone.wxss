@@ -7,10 +7,10 @@ page {
   width: 100%;
   height: 264rpx;
   position: relative;
-  background: linear-gradient(to right, #f75f5b , #feae50); /* 标准的语法（必须放在最后） */
+  background: linear-gradient(to right, #f75f5b, #feae50); /* 标准的语法（必须放在最后） */
 }
 
-.wxMsg{
+.wxMsg {
   width: 50rpx;
   height: 50rpx;
   background: url(http://pic.myplas.com/myapp/img/wxMsg.png) no-repeat;
@@ -19,21 +19,47 @@ page {
   top: 20rpx;
   right: 40rpx;
 }
-.wxRight{
+
+.wxRight {
   width: 50rpx;
   height: 50rpx;
   background: url(http://pic.myplas.com/myapp/img/wxRight.png) no-repeat;
   background-size: 100% 100%;
   position: absolute;
   top: 120rpx;
-  right: 10rpx;  
+  right: 10rpx;
 }
 
-.wxMy{ width: 100%; overflow: hidden; text-align: center; background: #ffffff; border-bottom: 1rpx solid #d6d7dc;}
-.wxMy .wxMyBox{ float:left; width: 33.33333%; height: 80px; line-height: 25px; padding: 15px 0 0 0; box-sizing: border-box; border-right: 1rpx solid #d6d7dc;}
-.wxMy .wxMyBox:last-of-type{ border-right: none;}
-.wxNum{ font-size: 20px;}
-.wxTxt{ font-size: 12px; color: #666666;}
+.wxMy {
+  width: 100%;
+  overflow: hidden;
+  text-align: center;
+  background: #fff;
+  border-bottom: 1rpx solid #d6d7dc;
+}
+
+.wxMy .wxMyBox {
+  float: left;
+  width: 33.33333%;
+  height: 80px;
+  line-height: 25px;
+  padding: 15px 0 0 0;
+  box-sizing: border-box;
+  border-right: 1rpx solid #d6d7dc;
+}
+
+.wxMy .wxMyBox:last-of-type {
+  border-right: none;
+}
+
+.wxNum {
+  font-size: 20px;
+}
+
+.wxTxt {
+  font-size: 12px;
+  color: #666;
+}
 
 .myzoneInfo {
   padding: 88rpx 0 0 50rpx;
@@ -54,7 +80,7 @@ page {
   background: url(http://statics.myplas.com/upload/16/09/02/logos.jpg) no-repeat;
   background-size: 100% 100%;
   float: left;
-  border: 2rpx solid #ffffff;
+  border: 2rpx solid #fff;
   overflow: hidden;
 }
 
@@ -101,12 +127,10 @@ page {
 .p {
   margin: 0;
   font-size: 26rpx;
-  color: #ffffff;
+  color: #fff;
   height: 38rpx;
   line-height: 38rpx;
 }
-
-
 
 .myzoneUl {
   margin: 20rpx 0 0 0;
@@ -136,12 +160,12 @@ page {
 }
 
 .iconZone.zone {
-  background: url(http://statics.myplas.com/myapp/img/myZone.jpg) no-repeat;
+  background: url(http://statics.myplas.com/myapp/img/myZone.png) no-repeat;
   background-size: 100% 100%;
 }
 
 .iconZone.zone2 {
-  background: url(http://statics.myplas.com/myapp/img/myZone3.jpg) no-repeat;
+  background: url(http://statics.myplas.com/myapp/img/myZone3.png) no-repeat;
   background-size: 100% 100%;
 }
 
@@ -150,33 +174,18 @@ page {
   background-size: 100% 100%;
 }
 
-.iconZone.zone4 {
-  background: url(http://statics.myplas.com/myapp/img/myZone5.jpg) no-repeat;
-  background-size: 100% 100%;
-}
-
-.iconZone.zone5 {
-  background: url(http://statics.myplas.com/myapp/img/myZone6.jpg) no-repeat;
-  background-size: 100% 100%;
-}
-
-.iconZone.zone6 {
-  background: url(http://statics.myplas.com/myapp/img/myZone7.jpg) no-repeat;
-  background-size: 100% 100%;
-}
-
-.iconZone.zone7 {
-  background: url(http://statics.myplas.com/myapp/img/myZone2.png) no-repeat;
-  background-size: 100% 100%;
-}
-
-.iconZone.zone9 {
-  background: url(http://statics.myplas.com/myapp/img/myZone9.png) no-repeat;
-  background-size: 100% 100%;
-}
-
 .iconZone.zone10 {
   background: url(http://statics.myplas.com/myapp/img/myZone10.png) no-repeat;
+  background-size: 100% 100%;
+}
+
+.iconZone.zone12 {
+  background: url(http://statics.myplas.com/myapp/img/myZone12.png) no-repeat;
+  background-size: 100% 100%;
+}
+
+.iconZone.zone13 {
+  background: url(http://statics.myplas.com/myapp/img/myZone13.png) no-repeat;
   background-size: 100% 100%;
 }
 
@@ -201,76 +210,88 @@ page {
 }
 
 /* 底部导航 */
-.footer{
-    width: 100%;
-    height: 120rpx;
-    background: #ffffff;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    font-size: 26rpx;
-    border-top: 1rpx solid #d9d9d9;
-}
-.footerli{
-    width: 25%;
-    height: 100rpx;
-    float: left;
-    text-align: center;
-    font-size: 26rpx;
-    color: #7a7e83;
-    margin: 12rpx 0 0 0;
-}
-.footerwrap{
-    width: 130rpx;
-    height: 130rpx;
-    margin: 0 auto;
-}
-.footerico{
-    width: 60rpx;
-    height: 60rpx;
-    margin: 0 auto;
-}
-.releaseicon{
-    width: 88rpx;
-    height: 88rpx;
-    margin: 6rpx auto 0 auto;
-    background: url(http://statics.myplas.com/myapp/img/releaseicon.png) no-repeat;
-    background-size: 100% 100%;
-}
-.footerOn{ color: #ff5000;}
-.footerico.footer1{
-    background: url(http://statics.myplas.com/myapp/img/zone2.png) no-repeat;
-    background-size: 100% 100%;
-}
-.footerOn .footer1{
-    background: url(http://statics.myplas.com/myapp/img/zone2On.png) no-repeat;
-    background-size: 100% 100%;
+
+.footer {
+  width: 100%;
+  height: 120rpx;
+  background: #fff;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  font-size: 26rpx;
+  border-top: 1rpx solid #d9d9d9;
 }
 
-.footerico.footer2{
-    background: url(http://statics.myplas.com/myapp/img/zone.png) no-repeat;
-    background-size: 100% 100%;
-}
-.footerOn .footer2{
-    background: url(http://statics.myplas.com/myapp/img/zoneOn.png) no-repeat;
-    background-size: 100% 100%;
-}
-
-.footerico.footer3{
-    background: url(http://statics.myplas.com/myapp/img/zone5.png) no-repeat;
-    background-size: 100% 100%;
-}
-.footerOn .footer3{
-    background: url(http://statics.myplas.com/myapp/img/zone5On.png) no-repeat;
-    background-size: 100% 100%;
+.footerli {
+  width: 25%;
+  height: 100rpx;
+  float: left;
+  text-align: center;
+  font-size: 26rpx;
+  color: #7a7e83;
+  margin: 12rpx 0 0 0;
 }
 
-.footerico.footer4{
-    background: url(http://statics.myplas.com/myapp/img/zone3.png) no-repeat;
-    background-size: 100% 100%;
-}
-.footerOn .footer4{
-    background: url(http://statics.myplas.com/myapp/img/zone3On.png) no-repeat;
-    background-size: 100% 100%;
+.footerwrap {
+  width: 130rpx;
+  height: 130rpx;
+  margin: 0 auto;
 }
 
+.footerico {
+  width: 60rpx;
+  height: 60rpx;
+  margin: 0 auto;
+}
+
+.releaseicon {
+  width: 88rpx;
+  height: 88rpx;
+  margin: 6rpx auto 0 auto;
+  background: url(http://statics.myplas.com/myapp/img/releaseicon.png) no-repeat;
+  background-size: 100% 100%;
+}
+
+.footerOn {
+  color: #ff5000;
+}
+
+.footerico.footer1 {
+  background: url(http://statics.myplas.com/myapp/img/zone2.png) no-repeat;
+  background-size: 100% 100%;
+}
+
+.footerOn .footer1 {
+  background: url(http://statics.myplas.com/myapp/img/zone2On.png) no-repeat;
+  background-size: 100% 100%;
+}
+
+.footerico.footer2 {
+  background: url(http://statics.myplas.com/myapp/img/zone.png) no-repeat;
+  background-size: 100% 100%;
+}
+
+.footerOn .footer2 {
+  background: url(http://statics.myplas.com/myapp/img/zoneOn.png) no-repeat;
+  background-size: 100% 100%;
+}
+
+.footerico.footer3 {
+  background: url(http://statics.myplas.com/myapp/img/zone5.png) no-repeat;
+  background-size: 100% 100%;
+}
+
+.footerOn .footer3 {
+  background: url(http://statics.myplas.com/myapp/img/zone5On.png) no-repeat;
+  background-size: 100% 100%;
+}
+
+.footerico.footer4 {
+  background: url(http://statics.myplas.com/myapp/img/zone3.png) no-repeat;
+  background-size: 100% 100%;
+}
+
+.footerOn .footer4 {
+  background: url(http://statics.myplas.com/myapp/img/zone3On.png) no-repeat;
+  background-size: 100% 100%;
+}

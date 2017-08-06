@@ -51,21 +51,13 @@
 
 <view class="myzoneUl">
   <view class="myzoneLi" bindtap="toLookme">
-    <view class="iconZone zone"></view>
+    <view class="iconZone zone13"></view>
     谁看过我
     <text>{{buy}}</text>
     <view class="icon2 rightArrow"></view>
   </view>
-</view>
-
-<view class="myzoneUl">
-  <view class="myzoneLi" bindtap="toMysupply">
-    <view class="iconZone zone"></view>
-    企业信用额度
-    <view class="icon2 rightArrow"></view>
-  </view>
-  <view class="myzoneLi" bindtap="toPlasticconfig">
-    <view class="iconZone zone2"></view>
+    <view class="myzoneLi" bindtap="toPlasticconfig">
+    <view class="iconZone zone12"></view>
     塑料配资
     <view class="icon2 rightArrow"></view>
   </view>

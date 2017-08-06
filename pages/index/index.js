@@ -33,9 +33,82 @@ Page({
     console.log(event.currentTarget.dataset.id);
     common.isLogin(function (status) {
       if (status) {
-        wx.navigateTo({
-          url: '../../pages/personinfo/personinfo?id=' + event.currentTarget.dataset.id
-        })
+        wx.request({
+          url: app.globalData.apiHost + '/friend/getZoneFriend',
+          data: {
+            user_id: event.currentTarget.dataset.id,
+            showType:1,
+            token: wx.getStorageSync('token')
+          },
+          method: "POST",
+          header: {
+            'content-type': 'application/x-www-form-urlencoded',
+            'X-UA': wx.getStorageSync('XUA')
+          },
+          success: function (res) {
+            if (res.data.err == 0) {
+              wx.navigateTo({
+                url: '../../pages/personinfo/personinfo?id=' + event.currentTarget.dataset.id
+              });
+            }else if(res.data.err==99){
+              console.log("lala");
+              wx.showModal({
+                title: '塑料圈通讯录',
+                content: res.data.msg,
+                success: function (res) {
+                  if (res.confirm) {
+                    wx.request({
+                      url: app.globalData.apiHost + '/friend/getZoneFriend',
+                      data: {
+                        user_id: event.currentTarget.dataset.id,
+                        showType: 5,
+                        token: wx.getStorageSync('token')
+                      },
+                      method: "POST",
+                      header: {
+                        'content-type': 'application/x-www-form-urlencoded',
+                        'X-UA': wx.getStorageSync('XUA')
+                      },
+                      success: function (res) {
+                        if (res.data.err == 0) {
+                          wx.navigateTo({
+                            url: '../../pages/personinfo/personinfo?id=' + event.currentTarget.dataset.id
+                          });
+                        } else{
+                          wx.showModal({
+                            title: '塑料圈通讯录',
+                            content: res.data.msg,
+                            showCancel:false,
+                            success: function (res) {
+                              if (res.confirm) {
+
+                              }
+                            }
+                          });
+                        }
+                      },
+                      fail: function (res) {
+
+                      },
+                      complete: function () {
+
+                      }
+                    });
+                  } else if (res.cancel) {
+
+                  }
+                }
+              });
+            }
+          },
+          fail: function (res) {
+
+          },
+          complete: function () {
+
+          }
+        }); 
+
       } else {
 
       }
@@ -218,7 +291,14 @@ Page({
 
               }
             }
-          })
+          });
+        } else if (res.data.err == 3){
+          wx.showToast({
+            title: res.data.msg,
+            icon: 'success',
+            duration: 2000
+          });
+          _this.setData({ moreHidden: true });
         }
       },
       fail:function(res){
