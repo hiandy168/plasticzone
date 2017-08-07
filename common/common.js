@@ -1,6 +1,7 @@
 var app = getApp();
+
+//判断登录
 function isLogin(callback) {
-  
   wx.request({
     url: app.globalData.apiHost + '/user/validUserToken',
     data: {
@@ -33,12 +34,6 @@ function isLogin(callback) {
         var status = false;
         callback(status);
       }
-      
-      // if (res.data.err == 0) {
-      //   status = true;
-      // } else {
-      //   status = false;
-      // }
     },
     fail: function (res) {
 
@@ -47,8 +42,16 @@ function isLogin(callback) {
 
     }
   });
-
 }
+
+//判断手机号
+function verifyMobile(mobile){
+  if(mobile.length==0){
+    console.log("请输入手机号码！");
+    return false;
+  }
+}
+
 
 module.exports = {
   isLogin: isLogin
