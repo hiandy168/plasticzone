@@ -13,10 +13,10 @@ function isLogin(callback) {
       'X-UA': wx.getStorageSync('XUA')
     },
     success: function (res) {
-      if(res.data.err==0){
+      if (res.data.err == 0) {
         var status = true;
         callback(status);
-      }else{
+      } else {
         wx.showModal({
           title: '塑料圈通讯录',
           content: '您未登录塑料圈,无法查看企业及个人信息',
@@ -27,7 +27,7 @@ function isLogin(callback) {
               })
 
             } else if (res.cancel) {
-              
+
             }
           }
         })
@@ -45,14 +45,33 @@ function isLogin(callback) {
 }
 
 //判断手机号
-function verifyMobile(mobile){
-  if(mobile.length==0){
-    console.log("请输入手机号码！");
-    return false;
+var mobileReg = /^1(3|4|5|7|8)\d{9}$/;
+var helper = {
+  verifyMobile: function (mobile) {
+    if (mobile.length == 0 && mobile.length < 11 && !mobileReg.test(mobile)) {
+      return false;
+    }else{
+      return true;
+    }
+  },
+  verifyPwd:function(pwd){
+    if(pwd.length<6){
+      return false;
+    }else{
+      return true;
+    }
+  },
+  showVerifyToast: function (msg) {
+    wx.showToast({
+      title: msg,
+      icon: 'success',
+      duration: 2000
+    });
   }
 }
 
 
 module.exports = {
-  isLogin: isLogin
+  isLogin: isLogin,
+  helper: helper
 }

@@ -1,4 +1,5 @@
 //login.js
+var common = require('../../common/common.js');
 //获取应用实例
 var app = getApp();
 
@@ -24,6 +25,13 @@ Page({
   },
   login: function () {
     var _this = this;
+    if (common.helper.verifyMobile(this.data.mobile)){
+      console.log(true);
+    }else{
+      common.helper.showVerifyToast("请输入正确的手机号码!")
+      console.log(false);
+    }
+    
     wx.setStorageSync('userid', "");
     wx.setStorageSync('token', "");
     wx.setStorageSync('XUA', "weixin|5.5|" + wx.getStorageSync("userid") + "|" + wx.getStorageSync("token") + "|0|Win32|Win32|Win32|Netscape|Mozilla|0|0|0");
