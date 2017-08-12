@@ -1,0 +1,14 @@
+<view class="header">
+    <view class="releasesearch">
+    <input type="text" placeholder="请输入厂家或牌号"  />
+    </view>
+</view>
+
+<!--
+  <div style="padding: 7px 0px 0px;">
+
+  </div>
+  <div id="searchbox" style="font-size: 12px; right: 10px; width: 35px; background: rgb(255, 255, 255); border-radius: 3px;">
+    全部
+  </div>
+-->

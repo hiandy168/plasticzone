@@ -54,6 +54,12 @@ Page({
           wx.redirectTo({
             url: '../index/index',
           })
+        }else{
+          wx.showToast({
+            title: res.data.msg,
+            icon: 'success',
+            duration: 2000
+          });
         }
       },
       fail: function (res) {

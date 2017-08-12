@@ -1,14 +1,11 @@
 {
   "pages": [
-    
-    
+    "pages/release/release",
     "pages/index/index",
     "pages/personinfo/personinfo",
     "pages/quickrelease/quickrelease",
-    
     "pages/myzone/myzone",
     "pages/login/login",
-    
     "pages/mysupply/mysupply",
     "pages/mybuy/mybuy",
     "pages/plasticconfig/plasticconfig",
@@ -18,6 +15,7 @@
     "pages/protocol/protocol",
     "pages/lookme/lookme",
     "pages/help/help"
+    
   ],
   "window": {
     "backgroundTextStyle": "light",
