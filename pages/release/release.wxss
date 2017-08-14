@@ -66,3 +66,20 @@
 .releasefilter text.on {
     color: #ff4f00;
 }
+
+.releaseUl {
+    margin: 0;
+    padding: 0;
+    font-size: 24rpx;
+    color: #646464;
+}
+
+.releaseUl li {
+    border-bottom: 1px solid #d6d7dc;
+    background: #FFFFFF;
+    margin: 0 0 20rpx 0;
+    font-size: 28px;
+    line-height: 32rpx;
+    padding: 20rpx;
+    box-sizing: border-box;
+}
