@@ -1,42 +1,76 @@
-<view class="header">
+<!-- <view class="header">
   <view class="releasesearch">
     <input type="text" placeholder="请输入厂家或牌号" />
   </view>
   <view class="searchbox">
     全部
   </view>
-</view>
+</view> -->
 
-<view class="releasefilter">
-  <text class="on">全部</text>
-  <text>智能推荐</text>
-  <text>我的关注</text>
-  <text>我的供求</text>
+<view style=" position:fixed; top:0; left:0; width:100%; z-index:10;">
+  <view class="releasefilter">
+    <text data-id="ALL" bindtap="select" class="on">全部</text>
+    <text data-id="AUTO" bindtap="select">智能推荐</text>
+    <text data-id="CONCERN" bindtap="select">我的关注</text>
+    <text data-id="DEMANDORSUPPLY" bindtap="select">我的供求</text>
+  </view>
 </view>
 
 <view class="releaseUl">
-  <view class="li">
-    <view class="" style="display: block; height: 35px; overflow: hidden;">
-      <view class="myreleaseInfo">
-        <view style="width: 30px; height: 30px; float: left; position: relative;">
-          <view class="avator"><img src="http://statics.myplas.com/myapp/img/male.jpg"></view>
-          <view class="iconV v2"></view>
+
+  <view class="li" wx:for="{{release}}">
+    <view class="myreleaseInfo" data-id="{{item.user_id}}" bindtap="toPersonInfo">
+      <view style="width: 60rpx; height: 60rpx; float: left; position: relative;">
+        <view class="avator">
+          <image src="{{item.thumb}}"></image>
         </view>
-        <view class="myreleasetxt">
-          <view style="line-height: 30px;">个体加工破碎料&nbsp;姜兆昆</view>
-        </view>
+        <view class="iconV {{item.is_pass == 1 ? 'v1':'v2'}}"></view>
+      </view>
+      <view class="myreleasetxt">
+        <view style="line-height: 60rpx; color: #63769d;">{{item.c_name}} {{item.name}}</view>
       </view>
     </view>
     <view class="myreleasetxt2">
-      <view style="overflow: hidden; height: auto; max-height: 44px;">
-      <view style="color: rgb(99, 118, 157);">
-        <view class="iconSale"></view>供给</view>
-          <view>价格1470.00元左右/PE/临沂/临沂/长期出售电缆皮 纯黑破碎料(水洗) 白加黑破碎料(干粉) 需要的老板来电 15092388151</view>
-        </view>
-      <view style="color: rgb(153, 153, 153);">
-        08-14 22:21
+      <view style="overflow: hidden; line-height:45rpx;">
+        <text wx:if="{{item.type==2}}" style="color: #63769d;">供给 </text>
+        <text wx:else style="color: #ea8010;">求购 </text>
+        {{item.contents}}
+      </view>
+      <view style="color: rgb(153, 153, 153); text-align:right;">
+        {{item.input_time}}
       </view>
     </view>
   </view>
 
+</view>
+
+<view class="more" hidden="{{moreHidden}}">
+  加载中...
+</view>
+
+<view class="footer">
+  <view class="footerli">
+    <view class="footerwrap {{isRelease}}" bindtap="toRelease">
+      <view class="footerico footer1"></view>
+      <text>供求</text>
+    </view>
+  </view>
+  <view class="footerli">
+    <view class="footerwrap {{isIndex}}" bindtap="toIndex">
+      <view class="footerico footer2"></view>
+      <text>通讯录</text>
+    </view>
+  </view>
+  <view class="footerli">
+    <view class="footerwrap" bindtap="toQuickRelease">
+      <view class="footerico footer3"></view>
+      <text>发供求</text>
+    </view>
+  </view>
+  <view class="footerli">
+    <view class="footerwrap {{isMyzone}}" bindtap="toMyzone">
+      <view class="footerico footer4"></view>
+      <text>我的</text>
+    </view>
+  </view>
 </view>

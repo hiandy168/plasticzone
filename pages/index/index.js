@@ -19,16 +19,6 @@ Page({
     token: "",
     moreHidden:true
   },
-  toRelease: function () {
-    this.setData({
-      token: wx.getStorageSync('token')
-    });
-    if (this.data.token) {
-
-    } else {
-
-    }
-  },
   toPersonInfo:function(event){
     console.log(event.currentTarget.dataset.id);
     common.isLogin(function (status) {
@@ -160,6 +150,17 @@ Page({
   },
   toIndex: function () {
 
+  },
+  toRelease: function () {
+    common.isLogin(function (status) {
+      if (status) {
+        wx.redirectTo({
+          url: '../../pages/release/release',
+        })
+      } else {
+
+      }
+    })
   },
   fnOther: function () {
     var _this = this;
