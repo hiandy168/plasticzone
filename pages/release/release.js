@@ -18,6 +18,7 @@ Page({
     token: "",
     sortField1: "ALL",
     sortField2: "",
+    selectOn: "ALL",
     moreHidden: true
   },
   toPersonInfo: function (event) {
@@ -141,51 +142,67 @@ Page({
       }
     })
   },
-  select:function(event){
-    var _this=this;
-    var status=event.currentTarget.dataset.id;
+  select: function (event) {
+    var _this = this;
+    var status = event.currentTarget.dataset.id;
     switch (status) {
       case "ALL":
+        wx.pageScrollTo({
+          scrollTop: 0
+        })
         wx.showLoading({
           title: '加载中',
         })
         this.setData({
           page: 1,
-          sortField1:"ALL",
-          sortField2:""
+          sortField1: "ALL",
+          sortField2: "",
+          selectOn: "ALL"
         });
         this.getRelease(this.data.page, this.data.size, this.data.sortField1, this.data.sortField2);
         break;
       case "AUTO":
+        wx.pageScrollTo({
+          scrollTop: 0
+        })
         wx.showLoading({
           title: '加载中',
         })
         this.setData({
           page: 1,
           sortField1: "",
-          sortField2: "AUTO"
+          sortField2: "AUTO",
+          selectOn: "AUTO"
         });
         this.getRelease(this.data.page, this.data.size, this.data.sortField1, this.data.sortField2);
         break;
       case "CONCERN":
+        wx.pageScrollTo({
+          scrollTop: 0
+        })
         wx.showLoading({
           title: '加载中',
         })
         this.setData({
           page: 1,
           sortField1: "",
-          sortField2: "CONCERN"
+          sortField2: "CONCERN",
+          selectOn: "CONCERN"
         });
         this.getRelease(this.data.page, this.data.size, this.data.sortField1, this.data.sortField2);
         break;
       case "DEMANDORSUPPLY":
+        wx.pageScrollTo({
+          scrollTop: 0
+        })
         wx.showLoading({
           title: '加载中',
         })
         this.setData({
           page: 1,
           sortField1: "",
-          sortField2: "DEMANDORSUPPLY"
+          sortField2: "DEMANDORSUPPLY",
+          selectOn: "DEMANDORSUPPLY"
         });
         this.getRelease(this.data.page, this.data.size, this.data.sortField1, this.data.sortField2);
         break;
@@ -215,6 +232,7 @@ Page({
         if (res.data.err == 0) {
           if (_this.data.page == 1) {
             _this.setData({
+              condition: res.data.err,
               release: res.data.data
             });
           } else {
@@ -237,6 +255,13 @@ Page({
               }
             }
           });
+        } else if (res.data.err == 2) {
+          _this.setData({
+            condition: res.data.err,
+            errmsg: res.data.msg,
+            release: [],
+            moreHidden: true
+          });
         } else if (res.data.err == 3) {
           wx.showToast({
             title: res.data.msg,
@@ -244,6 +269,41 @@ Page({
             duration: 2000
           });
           _this.setData({ moreHidden: true });
+        } else if (res.data.err == 4) {
+          _this.setData({
+            condition: res.data.err,
+            errmsg: res.data.msg,
+            release: [],
+            moreHidden: true
+          });
+        } else if (res.data.err == 6) {
+          _this.setData({
+            condition: res.data.err,
+            errmsg: res.data.msg,
+            release: [],
+            moreHidden: true
+          });
+        } else if (res.data.err == 7) {
+          _this.setData({
+            condition: res.data.err,
+            errmsg: res.data.msg,
+            release: [],
+            moreHidden: true
+          });
+        } else if (res.data.err == 8) {
+          _this.setData({
+            condition: res.data.err,
+            errmsg: res.data.msg,
+            release: [],
+            moreHidden: true
+          });
+        } else if (res.data.err == 9) {
+          _this.setData({
+            condition: res.data.err,
+            errmsg: res.data.msg,
+            release: [],
+            moreHidden: true
+          });
         }
       },
       fail: function (res) {

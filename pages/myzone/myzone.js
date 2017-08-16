@@ -25,14 +25,15 @@ Page({
     memberlevel:""
   },
   toRelease: function () {
-    this.setData({
-      token: wx.getStorageSync('token')
-    });
-    if (this.data.token) {
+    common.isLogin(function (status) {
+      if (status) {
+        wx.redirectTo({
+          url: '../../pages/release/release',
+        })
+      } else {
 
-    } else {
-
-    }
+      }
+    })
   },
   toQuickRelease: function () {
     common.isLogin(function (status) {

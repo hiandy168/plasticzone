@@ -1,32 +1,48 @@
-page{
-    background: #efeff4;
-}
-.loginwrap{
-    margin: 50rpx 0 0 0;
-}
-.loginPic{ width: 150rpx; height: 150rpx; margin: 0 auto 50rpx auto; background: url(http://statics.myplas.com/myapp/img/avator.png) no-repeat; background-size: 100% 100%;}
-.loginbox{
-    width: 100%;
-    background: #FFFFFF;
-    padding: 0 40rpx;
-    box-sizing: border-box;
-}
-.logininput{
-    font-size: 34rpx;
-    color: #bbbbbb;
-    height: 110rpx;
-    line-height: 110rpx;
+page {
+  background: #efeff4;
 }
 
-.loginbtn{
-    width: auto;
-    height: 86rpx;
-    line-height: 86rpx;
-    background: #ff6600;
-    color: #FFFFFF;
-    font-size: 34rpx;
-    text-align: center;
-    border-radius: 10rpx;
-    margin: 80rpx 40rpx 0 40rpx;
+.loginwrap {
+  margin: 50rpx 0 0 0;
 }
-.loginprotocol{ padding: 40rpx; font-size: 28rpx; text-align: center; color: #999999;}
+
+.loginPic {
+  width: 150rpx;
+  height: 150rpx;
+  margin: 0 auto 50rpx auto;
+  background: url(http://statics.myplas.com/myapp/img/avator.png) no-repeat;
+  background-size: 100% 100%;
+}
+
+.loginbox {
+  width: 100%;
+  background: #fff;
+  padding: 0 40rpx;
+  box-sizing: border-box;
+}
+
+.logininput {
+  font-size: 34rpx;
+  color: #bbb;
+  height: 110rpx;
+  line-height: 110rpx;
+}
+
+.loginbtn {
+  width: auto;
+  height: 86rpx;
+  line-height: 86rpx;
+  background: #f60;
+  color: #fff;
+  font-size: 34rpx;
+  text-align: center;
+  border-radius: 10rpx;
+  margin: 80rpx 40rpx 0 40rpx;
+}
+
+.loginprotocol {
+  padding: 40rpx;
+  font-size: 28rpx;
+  text-align: left;
+  color: #999;
+}

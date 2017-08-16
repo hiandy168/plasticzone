@@ -1,4 +1,4 @@
-//mysupply.js
+//quickerelease.js
 
 //获取应用实例
 var app = getApp();
@@ -48,8 +48,8 @@ Page({
       'f_name': this.data.f_name,
       'store_house': this.data.store_house,
       'price': this.data.price,
-      'type':1,
-      'quan_type':0,
+      'type':"1",
+      'quan_type':"0",
       'content':""
     }
     

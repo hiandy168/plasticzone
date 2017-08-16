@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/release/release",
     "pages/index/index",
+    "pages/release/release",
     "pages/personinfo/personinfo",
     "pages/quickrelease/quickrelease",
     "pages/myzone/myzone",
@@ -15,7 +15,6 @@
     "pages/protocol/protocol",
     "pages/lookme/lookme",
     "pages/help/help"
-    
   ],
   "window": {
     "backgroundTextStyle": "light",

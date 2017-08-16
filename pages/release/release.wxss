@@ -145,6 +145,64 @@ page {
   color: #666;
 }
 
+.releaseMsg {
+  text-align: center;
+  padding: 110rpx 0 0 0;
+}
+
+.releaseMsgHead {
+  width: 348rpx;
+  height: 180rpx;
+  display: inline-block;
+  background: url(http://statics.myplas.com/myapp/img/releaseMsg.png) no-repeat;
+  background-size: 100% 100%;
+}
+
+.releaseMsgHead2 {
+  width: 348rpx;
+  height: 214rpx;
+  display: inline-block;
+  background: url(http://statics.myplas.com/myapp/img/releaseMsg2.png) no-repeat;
+  background-size: 100% 100%;
+}
+
+.releaseMsgHead3 {
+  width: 348rpx;
+  height: 198rpx;
+  display: inline-block;
+  background: url(http://statics.myplas.com/myapp/img/releaseMsg3.png) no-repeat;
+  background-size: 100% 100%;
+}
+
+.releaseTxt {
+  padding: 0 40rpx;
+  line-height: 50rpx;
+  font-size: 30rpx;
+  color: #666;
+}
+
+.releaseMsg .a {
+  width: 270px;
+  height: 40px;
+  margin: 30px 0 0 0;
+  display: inline-block;
+  color: #fff;
+  border-bottom: 1px solid #bf3d00;
+  line-height: 40px;
+  background: #ff4f00;
+  border-radius: 3px;
+}
+
+.releaseMsgIntro {
+  width: 100%;
+  margin: 15px 0 0 0;
+  display: inline-block;
+  max-width: 375px;
+  height: 95px;
+  background: url(http://statics.myplas.com/myapp/img/releaseMsgIntro.png) no-repeat;
+  background-size: 100% 100%;
+}
+
 /* 底部导航 */
 
 .footer {

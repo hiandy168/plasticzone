@@ -9,10 +9,10 @@
 
 <view style=" position:fixed; top:0; left:0; width:100%; z-index:10;">
   <view class="releasefilter">
-    <text data-id="ALL" bindtap="select" class="on">全部</text>
-    <text data-id="AUTO" bindtap="select">智能推荐</text>
-    <text data-id="CONCERN" bindtap="select">我的关注</text>
-    <text data-id="DEMANDORSUPPLY" bindtap="select">我的供求</text>
+    <text data-id="ALL" bindtap="select" class="{{selectOn=='ALL'?'on':''}}">全部</text>
+    <text data-id="AUTO" bindtap="select" class="{{selectOn=='AUTO'?'on':''}}">智能推荐</text>
+    <text data-id="CONCERN" bindtap="select" class="{{selectOn=='CONCERN'?'on':''}}">我的关注</text>
+    <text data-id="DEMANDORSUPPLY" bindtap="select" class="{{selectOn=='DEMANDORSUPPLY'?'on':''}}">我的供求</text>
   </view>
 </view>
 
@@ -47,6 +47,43 @@
 <view class="more" hidden="{{moreHidden}}">
   加载中...
 </view>
+
+
+	<view class="releaseMsg" wx:if="{{condition==7}}">
+		<view class="releaseMsgHead"></view>
+		<view class="releaseTxt">{{errmsg}}</view>
+		<view class="a">去发布</view>
+		<view class="releaseMsgIntro"></view>
+	</view>
+
+	<view class="releaseMsg" wx:if="{{condition==8}}">
+		<view class="releaseMsgHead"></view>
+		<view class="releaseTxt">{{errmsg}}</view>
+		<view class="a">去发布</view>
+	</view>
+
+	<view class="releaseMsg" wx:if="{{condition==2}}">
+		<view class="releaseMsgHead2"></view>
+		<view class="releaseTxt">{{errmsg}}</view>
+	</view>
+
+	<view class="releaseMsg" wx:if="{{condition==6}}">
+		<view class="releaseMsgHead2"></view>
+		<view class="releaseTxt">{{errmsg}}</view>
+	</view>
+
+	<view class="releaseMsg" wx:if="{{condition==9}}">
+		<view class="releaseMsgHead3"></view>
+		<view class="releaseTxt">{{errmsg}}</view>
+		<view class="a">去关注</view>
+	</view>
+
+	<view class="releaseMsg" wx:if="{{condition==4}}">
+		<view class="releaseMsgHead2"></view>
+		<view class="releaseTxt">{{errmsg}}</view>
+		<view class="releaseMsgIntro"></view>
+	</view>
+
 
 <view class="footer">
   <view class="footerli">

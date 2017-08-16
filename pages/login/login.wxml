@@ -7,4 +7,7 @@
 </view>
 
 <view class="loginbtn" bindtap="login">登录</view>
-<view class="loginprotocol" bindtap="toProtocol">《我的塑料网用户服务协议》</view>
+<view class="loginprotocol" bindtap="toProtocol">
+《我的塑料网用户服务协议》
+<view style="float:right;">注册</view>
+</view>
