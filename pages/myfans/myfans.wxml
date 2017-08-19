@@ -8,17 +8,13 @@
     </view>
     <view class="nameinfo">
       <view class="p first">
-        <view class="icon wxGs"></view>
-        {{item.user_id.c_name}}
+        {{item.user_id.name}} {{item.user_id.mobile}}
       </view>
       <view class="p second">
-        <view class="icon wxName"></view>
-        {{item.user_id.name}}
-        <view class="icon wxTel"></view>
-        {{item.user_id.mobile}}
+        {{item.user_id.c_name}}
       </view>
       <view class="p third">
-        发布供给:{{item.user_id.sale}}条 发布求购:{{item.user_id.buy}}条
+        供给信息:{{item.user_id.sale}}条 求购信息:{{item.user_id.buy}}条
       </view>
     </view>
   </view>

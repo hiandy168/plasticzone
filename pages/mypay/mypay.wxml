@@ -8,17 +8,13 @@
     </view>
     <view class="nameinfo">
       <view class="p first">
-        <view class="icon wxGs"></view>
-        {{item.focused_id.c_name}}
+        {{item.focused_id.name}} {{item.focused_id.mobile}}
       </view>
       <view class="p second">
-        <view class="icon wxName"></view>
-        {{item.focused_id.name}}
-        <view class="icon wxTel"></view>
-        {{item.focused_id.mobile}}
+        {{item.focused_id.c_name}}
       </view>
       <view class="p third">
-        发布供给:{{item.focused_id.sale}}条 发布求购:{{item.focused_id.buy}}条
+        供给信息:{{item.focused_id.sale}}条 求购信息:{{item.focused_id.buy}}条
       </view>
     </view>
   </view>
