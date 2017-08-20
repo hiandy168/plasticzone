@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/register/register",
     "pages/index/index",
     "pages/release/release",
     "pages/personinfo/personinfo",
@@ -15,6 +16,7 @@
     "pages/protocol/protocol",
     "pages/lookme/lookme",
     "pages/help/help"
+    
   ],
   "window": {
     "backgroundTextStyle": "light",

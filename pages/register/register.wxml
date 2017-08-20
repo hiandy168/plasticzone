@@ -1,0 +1,36 @@
+<!--register.wxml-->
+<view class="registerWrap">
+  <view class="registerTitle">
+    <view class="arrowLeft"></view>帐号信息
+  </view>
+  <view class="registerInput2">
+    <view class="registerBox2">
+      <strong>手机号码:</strong>
+      <input type="tel" maxlength="11" placeholder="请输入您的手机号码" />
+    </view>
+    <view class="registerBox2">
+      <strong>设置密码:</strong>
+      <input type="password" placeholder="请输入密码" />
+    </view>
+    <view class="registerBox2">
+      <strong>手机验证码:</strong>
+      <input type="tel" maxlength="6" placeholder="请输入收到的验证码" />
+    </view>
+  </view>
+  <view class="registerTitle">
+    <view class="arrowLeft"></view>更多信息
+  </view>
+  <view class="registerInput2">
+    <view class="registerBox2">
+      <strong>姓名:</strong>
+      <input type="text" placeholder="请输入您的姓名" />
+    </view>
+    <view class="registerBox2">
+      <strong>公司名称:</strong>
+      <input type="text" placeholder="请输入您的公司全称" />
+    </view>
+    <view class="registerBox2">
+      <strong>企业类型:</strong>
+    </view>
+  </view>
+</view>
