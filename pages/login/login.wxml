@@ -8,4 +8,5 @@
 
 <view class="loginbtn" bindtap="login">登录</view>
 <view class="loginprotocol">
+  <!-- <view style="float:right; color:# 63769d;">注册</view> -->
 </view>
