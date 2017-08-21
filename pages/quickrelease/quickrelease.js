@@ -42,24 +42,17 @@ Page({
   },
   releaseBuy:function(){
     var _this=this;
-    var data=[];
-    var arr={
-      'model':this.data.model.toUpperCase(),
-      'f_name': this.data.f_name,
-      'store_house': this.data.store_house,
-      'price': this.data.price,
-      'type':"1",
-      'quan_type':"0",
-      'content':""
-    }
-    
-    data.push(arr);
-    console.log(data);
     wx.request({
-      url: app.globalData.apiHost + '/releaseMsg/pub',
+      url: app.globalData.apiHost + '/releaseMsg/releaseNewDemand',
       data: {
-        data:data,
-        token: wx.getStorageSync('token')
+        mode: 2,
+        model: this.data.model.toUpperCase(),
+        vendor: this.data.f_name,
+        storehouse: this.data.store_house,
+        price: this.data.price,
+        type: 1,
+        channel: 0,
+        content: ""
       },
       method: "POST",
       header: {
@@ -71,14 +64,56 @@ Page({
           wx.showToast({
             title: res.data.msg,
             icon: 'success',
-            duration: 2000
+            duration: 2500
           })
         }else{
           wx.showToast({
-            title: "提交失败",
+            title: res.data.msg,
             icon: 'success',
-            duration: 2000
+            duration: 2500
           })         
+        }
+      },
+      fail: function (res) {
+
+      },
+      complete: function () {
+
+      }
+    });
+  },
+  releaseSupply: function () {
+    var _this = this;
+    wx.request({
+      url: app.globalData.apiHost + '/releaseMsg/releaseNewDemand',
+      data: {
+        mode: 2,
+        model: this.data.model.toUpperCase(),
+        vendor: this.data.f_name,
+        storehouse: this.data.store_house,
+        price: this.data.price,
+        type: 2,
+        channel: 0,
+        content: ""
+      },
+      method: "POST",
+      header: {
+        'content-type': 'application/x-www-form-urlencoded',
+        'X-UA': wx.getStorageSync('XUA')
+      },
+      success: function (res) {
+        if (res.data.err == 0) {
+          wx.showToast({
+            title: res.data.msg,
+            icon: 'success',
+            duration: 2500
+          })
+        } else {
+          wx.showToast({
+            title: res.data.msg,
+            icon: 'success',
+            duration: 2500
+          })
         }
       },
       fail: function (res) {

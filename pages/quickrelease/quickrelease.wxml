@@ -59,7 +59,7 @@
     </view>
   </view>
   <view class="tips">填写准确供求，参与系统比价；</view>
-  <view class="release">发布供给</view>
+  <view bindtap="releaseSupply" class="release">发布供给</view>
 </view>
 
 

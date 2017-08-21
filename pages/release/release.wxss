@@ -107,6 +107,11 @@ page {
   overflow: hidden;
 }
 
+.avator image {
+  width: 60rpx;
+  height: 60rpx;
+}
+
 .myreleaseInfo .myreleasetxt {
   margin: 0 0 0 80rpx;
 }
