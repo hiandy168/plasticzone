@@ -1,6 +1,6 @@
 {
   "pages": [
-    "pages/register/register",
+    
     "pages/index/index",
     "pages/release/release",
     "pages/personinfo/personinfo",
@@ -15,6 +15,7 @@
     "pages/myinvite/myinvite",
     "pages/protocol/protocol",
     "pages/lookme/lookme",
+    "pages/register/register",
     "pages/help/help"
     
   ],
